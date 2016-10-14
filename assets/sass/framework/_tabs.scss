@@ -1,0 +1,185 @@
+/************************************
+**************** TABS ***************
+************************************/
+
+/*!
+ * Bootstrap v2.3.2
+ *
+ * Copyright 2012 Twitter, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Designed and built with all the love in the world @twitter by @mdo and @fat.
+ */
+
+
+.worko-tab-container {
+  margin:0;
+  @include font-gotham-book;
+
+}
+
+// Overwriting Bootstrap
+
+.b2b-nav .nav-tabs > li:hover,
+.nav-tabs > li:focus {
+      background: $color-background-lightgrey;
+      border-bottom: 1px solid $color-background-grey;
+}
+
+.b2b-nav .nav-tabs > li a:hover {
+  background: $color-background-lightgrey;
+}
+
+.NTC {
+	margin: 0px auto;
+  width: 100%;
+}
+
+/* B2B Full-width Tabs */
+.b2b-nav .nav-tabs {
+  @include font-gotham-book;
+
+  @include display(flex);
+  @include flex-direction(row);
+  @include flex-wrap(wrap-reverse);
+  border-bottom: $color-border;
+  list-style: none;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.b2b-nav .nav-tabs li {
+  @include font-gotham-book;
+  @include transition(background 0.2s);
+  background: $color-background-lightgrey;
+  cursor: pointer;
+  flex-grow: 1;
+  float: left;
+  list-style-type:none !important;
+  text-align: center;
+  z-index: 1;
+  overflow: hidden;
+  border-left: 2px solid $color-background-grey;
+  border-bottom: 1px solid $color-background-grey;
+  &:first-child {
+    border-left: none;
+  }
+}
+
+
+
+
+
+.b2b-nav .nav-tabs li.active {
+  border-bottom: 1px solid white;
+  &:hover {
+    border-bottom: 1px solid white;
+    background: white;
+  }
+}
+
+.b2b-nav .nav-tabs li a {
+  @include font-gotham-book;
+  @include font-size(1.125);
+  @include transition(background 0.2s);
+  color: $color-text-medium-grey;
+  display: block;
+  @include font-gotham-book;
+  font-weight: bold;
+  line-height: 21px;
+  margin: 0;
+  padding: 20px 0;
+  text-decoration:none;
+  text-transform: capitalize;
+  border-top: 4px solid $color-background-lightgrey;
+
+  .count {
+    background: $color-text-medium-grey;
+
+  }
+}
+
+.b2b-nav .nav-tabs .active {
+  background: #f8f8f8;
+  position: relative;
+  border-bottom: 1px solid white;
+  background: white;
+
+  .count {
+    background: $color-text-heading;
+  }
+
+
+
+  a {
+    background: white;
+    color: $color-text-heading;
+    padding: 20px 0 20px 0;
+    border-top: 4px solid $color-primary-green;
+  }
+
+  a:hover {
+    border-bottom: 0;
+    border-top: 4px solid $color-primary-green;
+    background: white;
+  }
+}
+
+.b2b-nav .nav-tabs {
+
+  .count {
+    @include font-size(0.875);
+    display: inline-block;
+    border-radius: 15px;
+    padding: 0 3px;
+    background: $color-text-heading;
+    color: white;
+    padding: 0 6px;
+    position: relative;
+    top: -3px;
+    line-height: 21px;
+  }
+}
+
+.b2b-nav .tabs-scout li{
+  width: 26%;
+  a {
+    border-top: 2px solid $color-background-grey;
+  }
+}
+
+/* = MEDIA QUERIES = */
+
+// @include media($mq-small) {
+
+@include media(min-width 675px 12){
+  .b2b-nav .tabs-scout li{
+    width: auto;
+    a {
+      border-top:none;
+    }
+  }
+}
+// min-width 768px
+//////////////////////////////////////////////////////
+@include media ($mq-medium) {
+  .b2b-nav .nav-tabs {
+    @include flex-wrap(nowrap);
+  }
+
+  .b2b-nav .nav-tabs li,
+  .b2b-nav .nav-tabs li:first-child,
+  .b2b-nav .nav-tabs li:nth-child(2),
+  .b2b-nav .nav-tabs li:nth-child(n+4){
+    width: 20%;
+    top: 0;
+    position: static;
+  }
+
+
+}

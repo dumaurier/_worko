@@ -1,0 +1,301 @@
+.employer-header-anon{
+  position: fixed;
+  width: 100vw;
+  background: $color-white;
+}
+
+
+//resets - fix in the framework
+.employer-header-anon ul{
+  padding: 0;
+}
+
+.employer-header-anon li{
+  list-style: none;
+}
+//end resets
+
+.eha-support-container{
+  border-bottom: 1px solid  $color-border;
+}
+
+.eha-support-nav{
+  @include max-width-aligned;
+  height: 30px;
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+.eha-support-nav-item{
+  display: inline-block;
+  height: 100%;
+}
+
+.eha-support-nav-item-link{
+  @include font-size(0.775);
+  @include font-gotham-medium;
+  color: $color-dark-grey;
+  display: inline-block;
+  line-height: 30px;
+  margin: 0 $space-default;
+}
+
+.eha-primary-container{
+  @include max-width-aligned;
+  padding: 0;
+  display: flex;
+  height: 70px;
+  justify-content: space-between;
+
+  ul{
+    margin: 0;
+  }
+}
+
+.eha-logo-container{
+  display: block;
+  height: 70px;
+  width: 150px;
+}
+
+.worko-logo{
+  width: 100%;
+  height: 100%;
+}
+
+.eha-nav-container{
+  background: $color-white;
+  border-right: 1px solid #ccc;
+  position: fixed;
+  width: 300px;
+  height: 100vh;
+  margin-top: 70px;
+  transform: translateX(-310px);
+  transition: transform .3s ease;
+
+  &.is-active{
+    transform: translateX(0);
+  }
+}
+
+.eha-nav{
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+//MAIN NAV
+.eha-nav{
+  @include clearfix;
+}
+
+.eha-nav--sub{
+  display: none;
+  position: absolute;
+  width: 210px;
+  left: 0;
+  top:  70px;
+  background: $color-white;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+.eha-nav--sub-item{
+  @include font-gotham-medium;
+  color: $color-text-heading;
+  padding: $space-default $content-spacing--small;
+
+  &:hover{
+    color: $color-primary-green;
+  }
+}
+
+.eha-nav-item{
+  position: relative;
+  display: inline-block;
+  float: left;
+
+  &::before{
+    background: $color-primary-green;
+    content: "";
+    display: block;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    width: 100%;
+    height: 2px;
+    transition: transform .2s cubic-bezier(.24,.55,.25,.55);
+    transform: scaleX(0);
+  }
+
+  &:hover{
+    text-decoration: none;
+
+    &::before{
+    transform: scaleX(1);;
+    }
+
+    .eha-nav--sub{
+      display: block;
+    }
+  }
+}
+
+.eha-nav-item-link{
+  @include font-gotham-medium;
+  @include font-size(1);
+  color: $color-text-heading;
+  display: inline-block;
+  height: 70px;
+  line-height: 70px;
+  padding: 0 $content-spacing--small;
+  position: relative;
+}
+
+
+
+.eha-signin-item{
+  float: left;
+}
+
+.eha-signin-item-link{
+  @include font-gotham-medium;
+  @include font-size(0.8125);
+  display: inline-block;
+  line-height: 70px;
+  padding: 0 $space-default;
+}
+
+////MOBILE BUTTON STUFF
+.eha-primary-container {
+  .menu-icon-container{
+    -webkit-appearance: none;
+    background: $color-white;
+    border: none;
+    margin: 0 20px;
+  }
+
+  .menu-icon--group{
+    background: $color-white;
+    stroke: $color-text-heading;
+  }
+
+  .menu-text{
+    color: $color-text-heading;
+  }
+}
+
+@include media($mq-small){
+  .eha-primary-container{
+    padding: 0 $space-default;
+    justify-content: flex-start;
+  }
+
+  .eha-signin{
+    position: absolute;
+    right: 20px;
+  }
+}
+
+@include media($mq-tabby){
+  //MAIN NAV
+  .eha-primary-container .menu-icon-container{
+    display: none;
+  }
+
+  .eha-primary-container{
+    justify-content: space-between;
+  }
+
+  .eha-signin{
+    position: relative;
+  }
+
+  .eha-nav-container{
+    position: relative;
+    height: 100%;
+    width: auto;
+    margin-top: 0;
+    border-right: none;
+    transform: translateX(0);
+  }
+
+  .eha-nav{
+    display: block;
+    @include clearfix;
+  }
+
+  .eha-nav--sub{
+    display: none;
+    position: absolute;
+    width: 210px;
+    left: 0;
+    top:  70px;
+    background: $color-white;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+  }
+
+  .eha-nav--sub-item{
+    @include font-gotham-medium;
+    color: $color-text-heading;
+    padding: $space-default $content-spacing--small;
+
+    &:hover{
+      color: $color-primary-green;
+    }
+  }
+
+  .eha-nav-item{
+    position: relative;
+    display: inline-block;
+    float: left;
+
+    &::before{
+      background: $color-primary-green;
+      content: "";
+      display: block;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      bottom: 20px;
+      width: 100%;
+      height: 2px;
+      transition: transform .2s cubic-bezier(.24,.55,.25,.55);
+      transform: scaleX(0);
+    }
+
+    &:hover{
+      text-decoration: none;
+
+      &::before{
+      transform: scaleX(1);;
+      }
+
+      .eha-nav--sub{
+        display: block;
+      }
+    }
+  }
+
+  .eha-nav-item-link{
+    @include font-gotham-medium;
+    @include font-size(1);
+    color: $color-text-heading;
+    display: inline-block;
+    height: 70px;
+    line-height: 70px;
+    padding: 0 $content-spacing--small;
+    position: relative;
+  }
+
+}
+
+@include media($mq-large){
+  .eha-primary-container{
+    padding: 0 20px;
+  }
+}

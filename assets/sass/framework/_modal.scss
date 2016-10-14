@@ -1,0 +1,232 @@
+﻿
+﻿body.modal-is-active {
+	overflow: hidden;
+ 
+	&::before {
+ 		background: rgba(0,0,0,.4);
+ 		content: '';
+ 		display: block;
+ 		pointer-events: none;
+ 		position:fixed;
+ 		width: 100vw;
+ 		height: 100%;
+	}
+}
+ 
+.modal-hidden {
+	display: none;
+}
+ 
+.modal {
+	color: #6A6A6A;
+	height: 100%;
+	overflow: hidden;
+	padding: 0px 0px 20px ;
+	top: 0;
+	width: 100%;
+	z-index: 1000;
+	border: none;
+ 
+	&.is-active{
+		position: fixed;
+		left:0;
+		overflow-y: scroll;
+	}
+ 
+	&:focus{
+		outline: none;
+	}
+ 
+ 
+}
+ 
+// is-active on modal-contents, modal-close, modal
+ 
+.modal-contents {
+	@include clearfix;
+	//@include transform(translateY(0%));
+	//@include transition(transform .3s cubic-bezier(.09,.14,.37,.99), .2s);
+	background: #fff;
+	border: 1px solid #ccc;
+	margin: 0 auto;
+	//opacity: 0;
+	padding: 0;
+	position: relative;
+ 
+	&.is-active {
+		@include transform(translateY(120px));
+		opacity: 1;
+		width: 75vw;
+		z-index: 10000;
+	}
+}
+ 
+.modal-header{
+	@include font-size(1.1);
+	//background: $color-primary-green;
+	color: #25282e;
+	letter-spacing: 0.5px;
+	margin: 0;
+	padding: 10px;
+	font-weight: 400;
+	border-left: 10px solid $color-primary-green;
+}
+ 
+.modal-contents input {
+	@include appearance(none);
+	border-radius: 4px;
+}
+ 
+.modal-contents p, .modal-contents label {
+	@include font-size(0.8);
+	margin: 15px 0;
+	padding: 10px 20px;
+}
+ 
+.modal-contents label {
+	display: block;
+	font-family:'Gotham A','Gotham B', Arial,sans-serif;
+	font-weight: 300;
+	margin: 0;
+	padding: 0 20px 10px;
+}
+ 
+ 
+.modal-contents input[type="text"]{
+	@include font-size(0.875);
+	@include transition(.2s);
+	border: 1px solid $color-border;
+	display: block;
+	margin: 5px 0 0;
+	padding: 8px 10px;
+	width: 100%;
+ 
+	&:focus {
+		border-radius: 4px;
+		border: 1px solid $color-secondary-darkblue;
+		outline: none;
+		outline-style: none;
+	}
+}
+ 
+.modal-contents input[type="submit"]{
+	@include font-size(1);
+	//@include transition(.2s);
+	background: $color-primary-green;
+	border: 1px solid transparent;
+	color: #fff;
+	cursor: pointer;
+	float: right;
+	font-weight: 600;
+	letter-spacing: 0.5px;
+	margin: 10px 20px 20px 15px;
+	padding: 10px 20px;
+ 
+ 
+	&:focus {
+		border-radius: 4px;
+		border: 1px solid $color-secondary-darkblue;
+		outline: none;
+		outline-style: none;
+	}
+}
+ 
+.modal-contents .ss-delete {
+   
+	color: $color-primary-green;
+	font-size: 25px;
+	margin: 0;
+	position: absolute;
+	top: -3px;
+	left: 0;
+ 
+}
+ 
+.modal-close {
+	@include font-size(1);
+	background: $color-primary-green;
+	border-radius: 50%;
+	border: 1px solid #fff;
+	color: #fff;
+	cursor: pointer;
+	position: absolute;
+	right: 5px;
+	top: 15px;
+	opacity: 0;
+	pointer-events: none;
+	background: white;
+	width: 25px;
+	height: 25px;
+ 
+	&:focus {
+		border: 1px solid $color-secondary-darkblue;
+		outline: none;
+		outline-style: none;
+	}
+ 
+ 
+	&.is-active{
+		opacity: 1;
+		pointer-events: auto;
+	}
+}
+ 
+@media screen and (min-width: 370px){
+	.modal-contents {
+		&.is-active{
+ 			width: 70vw;
+		}
+     
+ 
+		&.is-active {
+			@include transform(translateY(120px));
+		}
+	}
+ 
+	.modal-contents p, .modal-contents label {
+			@include font-size(1);
+		}
+}
+ 
+@media screen and (min-width: 768px) {
+	.modal-contents {
+		&.is-active{
+ 			width: 60vw;
+		}
+	}
+ 
+	.modal-header, .modal-contents label, .modal-contents p {
+		padding-right: 30px;
+	}
+ 
+	.modal-header {
+		@include font-size(1.125);
+	}
+ 
+	.modal-contents input[type="submit"] {
+		margin: 20px 30px 20px 15px;
+	}
+ 
+	.modal-close {
+		right: 30px;
+	}
+
+	.modal-privacy {
+		clear: both;
+	}
+
+	.modal-privacy p{
+		@include font-size(.8);
+		padding: 10px 30px 10px 10px;
+		text-align: right;
+	}
+
+}
+ 
+@include media($mq-large) {
+	.modal-contents {
+		&.is-active{
+ 			width: 40vw;
+		}
+	}
+}

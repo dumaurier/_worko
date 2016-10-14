@@ -1,0 +1,127 @@
+﻿.alert{
+width: 100%;
+color: #fff;
+position: relative;
+padding: 20px;
+margin-bottom: 20px;
+
+	&:before{
+		position: absolute;
+		font-family: 'SS Workopolis';
+		font-size: 18px;
+	}
+
+	.btn4{
+		border: 2px solid #fff;
+		border-radius: 4px;
+		@include font-gotham-book;
+		@include transition (all .2s ease);
+	}
+
+	&.alert--info{
+		background: $color-primary-blue;
+
+		&:before{
+			content: 'ℹ';
+			background: $color-primary-blue;
+
+		}
+
+		//sets knockout colour for button to match alert style
+		.btn4{
+			color: $color-primary-blue;
+
+			&:hover{
+				border: 2px solid #fff;
+				color: #fff;
+				background: $color-primary-blue;
+			}
+		}
+	}
+
+	&.alert--success{
+		background: $color-primary-green;
+		p {
+			color: $color-white;
+		}
+		&:before{
+			content: '✓';
+			background: $color-primary-green;
+
+		}
+
+		//sets knockout colour for button to match alert style
+		.btn4{
+			color: $color-primary-green;
+
+			&:hover{
+				border: 2px solid #fff;
+				color: #fff;
+				background: $color-primary-green;
+			}
+		}
+	}
+
+	&.alert--warning{
+		background: $color-tertiary-orange;
+
+		&:before{
+			content: '⚠';
+			background: $color-tertiary-orange;
+
+		}
+
+		//sets knockout colour for button to match alert style
+		.btn4{
+			color: $color-tertiary-orange;
+
+			&:hover{
+				border: 2px solid #fff;
+				color: #fff;
+				background: $color-tertiary-orange;
+			}
+		}
+	}
+
+	&.alert--error{
+		background: $color-tertiary-darkpink;
+
+		&:before{
+			content: '⚠';
+		}
+
+		//sets knockout colour for button to match alert style
+		.btn4{
+			color: $color-tertiary-darkpink;
+
+			&:hover{
+				border: 2px solid #fff;
+				color: #fff;
+				background: $color-tertiary-darkpink;
+			}
+		}
+	}
+
+	.alert-text{
+		max-width: 100%;
+		margin: 0 0 0 40px;
+	}
+
+	.alert-actions{
+		display: block;
+		float: right;
+
+		.btn4{
+			margin-right: 20px;
+		}
+
+		.link{
+			font-size: 14px;
+		}
+	}
+
+	.alert-button {
+		float: none;
+		text-align: right;
+	}
+}
