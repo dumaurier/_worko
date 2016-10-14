@@ -3,8 +3,10 @@ var browserSync = require('browser-sync');
 var sass        = require('gulp-sass');
 var prefix      = require('gulp-autoprefixer');
 var cp          = require('child_process');
-var bourbon = require("node-bourbon").includePaths;
-var neat = require("node-neat").includePaths;
+var bourbon     = require("node-bourbon").includePaths;
+var neat        = require("node-neat").includePaths;
+var concat      = require('gulp-concat');
+var uglify      = require('gulp-uglify');
 
 var jekyll   = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 var messages = {
@@ -19,6 +21,24 @@ gulp.task('jekyll-build', function (done) {
     return cp.spawn( jekyll , ['build'], {stdio: 'inherit'})
         .on('close', done);
 });
+
+/**
+ * Bundles JS
+ */
+
+ gulp.task('scripts', function(){
+   return gulp.src([
+     'assets/js/vendor/jquery-3.1.1.min.js',
+     'assets/js/vendor/fontfaceobserver.js',
+     'assets/js/vendor/hogan-3.0.2.min.js',
+     'assets/js/objects/**/*.js',
+     'assets/js/page/**/*.js'
+   ])
+   .pipe(concat('bundle.js'))
+   .pipe(uglify())
+   .pipe(gulp.dest('assets/dist'));
+ });
+
 
 /**
  * Rebuild Jekyll & do page reload
@@ -61,11 +81,11 @@ gulp.task('sass', function () {
  */
 gulp.task('watch', function () {
     gulp.watch('assets/**/*.scss', ['sass']);
-    gulp.watch(['*.html','js/*.js', '_layouts/*.html', '_posts/*'], ['jekyll-rebuild']);
+    gulp.watch(['*.html','js/**/*.js', '_layouts/*.html', '_includes/*.html', '_posts/*'], ['jekyll-rebuild']);
 });
 
 /**
  * Default task, running just `gulp` will compile the sass,
  * compile the jekyll site, launch BrowserSync & watch files.
  */
-gulp.task('default', ['browser-sync', 'watch']);
+gulp.task('default', ['scripts','browser-sync', 'watch']);

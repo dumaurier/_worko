@@ -276,3 +276,87 @@ html {
 @media screen and (min-width: 1240px) {
   .eha-primary-container {
     padding: 0 20px; } }
+
+.menu-icon-container {
+  display: box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-align: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -ms-flex-align: center;
+  height: 60px;
+  float: left;
+  width: auto;
+  padding: 5px 10px;
+  cursor: pointer; }
+
+.menu-text {
+  font-family: Arial, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 14px;
+  font-size: 0.875rem;
+  display: inline-block;
+  margin-left: 10px;
+  color: #fff; }
+  .fonts-loaded .menu-text {
+    font-family: 'Gotham A', 'Gotham B', Arial, sans-serif; }
+
+.menu-text__close {
+  display: none; }
+
+.menu-icon-container.is-active .menu-text__close {
+  display: inline;
+  color: #fff; }
+
+.menu-text__open {
+  display: inline; }
+
+.menu-icon-container.is-active .menu-text__open {
+  display: none; }
+
+.menu-icon {
+  width: 30px;
+  height: 30px; }
+
+.menu-icon--group {
+  display: block;
+  stroke: #fff; }
+
+.menu-icon-container.is-active .menu-icon--group {
+  stroke: #F2F2F2; }
+
+.menu-icon--line {
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+  opacity: 1;
+  transition: all .1s linear; }
+
+.menu-icon-container.is-active .menu-icon--line:first-of-type {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transform-origin: 15px 55px;
+          transform-origin: 15px 55px; }
+
+.menu-icon-container.is-active .menu-icon--line:nth-of-type(2) {
+  opacity: 0; }
+
+.menu-icon-container.is-active .menu-icon--line:last-of-type {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-transform-origin: 25px 95px;
+          transform-origin: 25px 95px; }
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }

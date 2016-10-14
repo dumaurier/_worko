@@ -24,6 +24,14 @@
   ],
   "homepage": "http://workopolis.com",
   "dependencies": {
-    "bourbon-neat": "^1.8.0"
+    "bourbon-neat": "^1.8.0",
+    "gulp": "^3.9.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dumaurier/_worko.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dumaurier/_worko/issues"
   }
 }

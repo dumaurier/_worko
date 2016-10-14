@@ -1,0 +1,278 @@
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+.employer-header-anon {
+  position: fixed;
+  width: 100vw;
+  background: #fff; }
+
+.employer-header-anon ul {
+  padding: 0; }
+
+.employer-header-anon li {
+  list-style: none; }
+
+.eha-support-container {
+  border-bottom: 1px solid #CCC; }
+
+.eha-support-nav {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 30px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: end;
+      justify-content: flex-end; }
+
+.eha-support-nav-item {
+  display: inline-block;
+  height: 100%; }
+
+.eha-support-nav-item-link {
+  font-size: 12.4px;
+  font-size: 0.775rem;
+  font-family: Arial, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: #25282e;
+  display: inline-block;
+  line-height: 30px;
+  margin: 0 10px; }
+  .fonts-loaded .eha-support-nav-item-link {
+    font-family: 'Gotham A', 'Gotham B', Arial, sans-serif; }
+
+.eha-primary-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+  padding: 0;
+  display: -ms-flexbox;
+  display: flex;
+  height: 70px;
+  -ms-flex-pack: justify;
+      justify-content: space-between; }
+  .eha-primary-container ul {
+    margin: 0; }
+
+.eha-logo-container {
+  display: block;
+  height: 70px;
+  width: 150px; }
+
+.worko-logo {
+  width: 100%;
+  height: 100%; }
+
+.eha-nav-container {
+  background: #fff;
+  border-right: 1px solid #ccc;
+  position: fixed;
+  width: 300px;
+  height: 100vh;
+  margin-top: 70px;
+  -webkit-transform: translateX(-310px);
+          transform: translateX(-310px);
+  transition: -webkit-transform .3s ease;
+  transition: transform .3s ease; }
+  .eha-nav-container.is-active {
+    -webkit-transform: translateX(0);
+            transform: translateX(0); }
+
+.eha-nav {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column; }
+
+.eha-nav::after {
+  clear: both;
+  content: "";
+  display: table; }
+
+.eha-nav--sub {
+  display: none;
+  position: absolute;
+  width: 210px;
+  left: 0;
+  top: 70px;
+  background: #fff;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc; }
+
+.eha-nav--sub-item {
+  font-family: Arial, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: #25282E;
+  padding: 10px 20px; }
+  .fonts-loaded .eha-nav--sub-item {
+    font-family: 'Gotham A', 'Gotham B', Arial, sans-serif; }
+  .eha-nav--sub-item:hover {
+    color: #5AA323; }
+
+.eha-nav-item {
+  position: relative;
+  display: inline-block;
+  float: left; }
+  .eha-nav-item::before {
+    background: #5AA323;
+    content: "";
+    display: block;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    width: 100%;
+    height: 2px;
+    transition: -webkit-transform 0.2s cubic-bezier(0.24, 0.55, 0.25, 0.55);
+    transition: transform 0.2s cubic-bezier(0.24, 0.55, 0.25, 0.55);
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0); }
+  .eha-nav-item:hover {
+    text-decoration: none; }
+    .eha-nav-item:hover::before {
+      -webkit-transform: scaleX(1);
+              transform: scaleX(1); }
+    .eha-nav-item:hover .eha-nav--sub {
+      display: block; }
+
+.eha-nav-item-link {
+  font-family: Arial, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+  font-size: 1rem;
+  color: #25282E;
+  display: inline-block;
+  height: 70px;
+  line-height: 70px;
+  padding: 0 20px;
+  position: relative; }
+  .fonts-loaded .eha-nav-item-link {
+    font-family: 'Gotham A', 'Gotham B', Arial, sans-serif; }
+
+.eha-signin-item {
+  float: left; }
+
+.eha-signin-item-link {
+  font-family: Arial, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 13px;
+  font-size: 0.8125rem;
+  display: inline-block;
+  line-height: 70px;
+  padding: 0 10px; }
+  .fonts-loaded .eha-signin-item-link {
+    font-family: 'Gotham A', 'Gotham B', Arial, sans-serif; }
+
+.eha-primary-container .menu-icon-container {
+  -webkit-appearance: none;
+  background: #fff;
+  border: none;
+  margin: 0 20px; }
+
+.eha-primary-container .menu-icon--group {
+  background: #fff;
+  stroke: #25282E; }
+
+.eha-primary-container .menu-text {
+  color: #25282E; }
+
+@media screen and (min-width: 768px) {
+  .eha-primary-container {
+    padding: 0 10px;
+    -ms-flex-pack: start;
+        justify-content: flex-start; }
+  .eha-signin {
+    position: absolute;
+    right: 20px; } }
+
+@media screen and (min-width: 1024px) {
+  .eha-primary-container .menu-icon-container {
+    display: none; }
+  .eha-primary-container {
+    -ms-flex-pack: justify;
+        justify-content: space-between; }
+  .eha-signin {
+    position: relative; }
+  .eha-nav-container {
+    position: relative;
+    height: 100%;
+    width: auto;
+    margin-top: 0;
+    border-right: none;
+    -webkit-transform: translateX(0);
+            transform: translateX(0); }
+  .eha-nav {
+    display: block; }
+    .eha-nav::after {
+      clear: both;
+      content: "";
+      display: table; }
+  .eha-nav--sub {
+    display: none;
+    position: absolute;
+    width: 210px;
+    left: 0;
+    top: 70px;
+    background: #fff;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc; }
+  .eha-nav--sub-item {
+    font-family: Arial, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #25282E;
+    padding: 10px 20px; }
+    .fonts-loaded .eha-nav--sub-item {
+      font-family: 'Gotham A', 'Gotham B', Arial, sans-serif; }
+    .eha-nav--sub-item:hover {
+      color: #5AA323; }
+  .eha-nav-item {
+    position: relative;
+    display: inline-block;
+    float: left; }
+    .eha-nav-item::before {
+      background: #5AA323;
+      content: "";
+      display: block;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      bottom: 20px;
+      width: 100%;
+      height: 2px;
+      transition: -webkit-transform 0.2s cubic-bezier(0.24, 0.55, 0.25, 0.55);
+      transition: transform 0.2s cubic-bezier(0.24, 0.55, 0.25, 0.55);
+      -webkit-transform: scaleX(0);
+              transform: scaleX(0); }
+    .eha-nav-item:hover {
+      text-decoration: none; }
+      .eha-nav-item:hover::before {
+        -webkit-transform: scaleX(1);
+                transform: scaleX(1); }
+      .eha-nav-item:hover .eha-nav--sub {
+        display: block; }
+  .eha-nav-item-link {
+    font-family: Arial, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+    font-size: 1rem;
+    color: #25282E;
+    display: inline-block;
+    height: 70px;
+    line-height: 70px;
+    padding: 0 20px;
+    position: relative; }
+    .fonts-loaded .eha-nav-item-link {
+      font-family: 'Gotham A', 'Gotham B', Arial, sans-serif; } }
+
+@media screen and (min-width: 1240px) {
+  .eha-primary-container {
+    padding: 0 20px; } }

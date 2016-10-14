@@ -299,3 +299,91 @@
     padding: 0 20px;
   }
 }
+
+//Mobile Hamburger
+.menu-icon-container{
+  @include display(flex);
+  @include align-items(center);
+  height: 60px;
+  float: left;
+  width: auto;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.menu-icon-container.is-active{
+  //background: #25282E;
+}
+
+
+.menu-text{
+  @include font-gotham-medium;
+  @include font-size(0.875);
+  display: inline-block;
+  margin-left: 10px;
+  color: $color-white;
+}
+
+.menu-text__close{
+  display: none;
+}
+
+.menu-icon-container.is-active .menu-text__close {
+  display: inline;
+  color: $color-white;
+}
+
+.menu-text__open{
+  display: inline;
+}
+
+.menu-icon-container.is-active .menu-text__open{
+  display: none;
+}
+
+.menu-icon{
+  width: 30px;
+  height: 30px;
+
+}
+
+.menu-icon--group{
+  display: block;
+  stroke: $color-white;
+}
+
+.menu-icon-container.is-active .menu-icon--group {
+  stroke: #F2F2F2;
+}
+
+.menu-icon--line{
+  transform: rotate(0);
+  opacity: 1;
+  transition: all .1s linear;
+}
+
+.menu-icon-container.is-active .menu-icon--line:first-of-type{
+  transform: rotate(45deg);
+  transform-origin: 15px 55px;
+}
+
+.menu-icon-container.is-active  .menu-icon--line:nth-of-type(2){
+  opacity: 0;
+}
+
+.menu-icon-container.is-active  .menu-icon--line:last-of-type{
+  transform: rotate(-45deg);
+  transform-origin: 25px 95px;
+}
+
+// Hide only visually, but have it available for screenreaders: h5bp.com/v */
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
