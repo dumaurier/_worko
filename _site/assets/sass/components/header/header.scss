@@ -76,6 +76,11 @@
 
   &.is-active{
     transform: translateX(0);
+    background: $color-dark-grey;
+
+    .eha-nav-item-link{
+      color: $color-white;
+    }
   }
 }
 
@@ -386,4 +391,46 @@
     padding: 0;
     position: absolute;
     width: 1px;
+}
+
+// I really need to refactor this.worko-logo
+.worko-logo{
+  width: 134px;
+  height: 40px;
+}
+
+.letter:not(.worko-logo-w){
+  opacity: 1;
+}
+
+.worko-logo-w{
+  @include transform(translateY(0) scale(1) translateX(0));
+}
+
+.worko-logo-skyline{
+  @include transform(translateY(0) scale(1) translateX(0));
+}
+
+
+@media screen and (max-width: 1100px){
+  .worko-logo{
+    width: 45px;
+    height: 45px;
+  }
+
+  .worko-logo-skyline{
+    @include transform(scale(1));
+  }
+
+  .worko-logo-w{
+    @include transform(translateY(-1495px) scale(5.4) translateX(-420px));
+  }
+
+  .letter:not(.worko-logo-w){
+    opacity: 0;
+  }
+
+  .worko-logo-skyline{
+    @include transform(translateY(-440px) scale(2.2) translateX(-630px));
+  }
 }

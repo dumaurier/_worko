@@ -4,6 +4,11 @@ html {
 *, *::after, *::before {
   box-sizing: inherit; }
 
+html,
+body {
+  margin: 0;
+  padding: 0; }
+
 .employer-header-anon {
   position: fixed;
   width: 100vw;
@@ -16,6 +21,7 @@ html {
   list-style: none; }
 
 .eha-support-container {
+  display: none;
   border-bottom: 1px solid #CCC; }
 
 .eha-support-nav {
@@ -49,19 +55,20 @@ html {
   max-width: 1240px;
   margin: 0 auto;
   padding: 0 20px;
-  padding: 0;
+  padding: 0 5px;
   display: -ms-flexbox;
   display: flex;
   height: 70px;
-  -ms-flex-pack: justify;
-      justify-content: space-between; }
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+  -ms-flex-align: center;
+      align-items: center; }
   .eha-primary-container ul {
     margin: 0; }
 
 .eha-logo-container {
   display: block;
-  height: 70px;
-  width: 150px; }
+  width: 50px; }
 
 .worko-logo {
   width: 100%;
@@ -69,18 +76,21 @@ html {
 
 .eha-nav-container {
   background: #fff;
-  border-right: 1px solid #ccc;
   position: fixed;
-  width: 300px;
+  left: 0;
+  top: 70px;
+  width: 100vw;
   height: 100vh;
-  margin-top: 70px;
-  -webkit-transform: translateX(-310px);
-          transform: translateX(-310px);
+  -webkit-transform: translateX(-100vw);
+          transform: translateX(-100vw);
   transition: -webkit-transform .3s ease;
   transition: transform .3s ease; }
   .eha-nav-container.is-active {
     -webkit-transform: translateX(0);
-            transform: translateX(0); }
+            transform: translateX(0);
+    background: #25282e; }
+    .eha-nav-container.is-active .eha-nav-item-link {
+      color: #fff; }
 
 .eha-nav {
   display: -ms-flexbox;
@@ -184,6 +194,8 @@ html {
   color: #25282E; }
 
 @media screen and (min-width: 768px) {
+  .eha-support-container {
+    display: block; }
   .eha-primary-container {
     padding: 0 10px;
     -ms-flex-pack: start;
@@ -205,6 +217,7 @@ html {
     height: 100%;
     width: auto;
     margin-top: 0;
+    top: 0;
     border-right: none;
     -webkit-transform: translateX(0);
             transform: translateX(0); }
@@ -360,3 +373,34 @@ html {
   padding: 0;
   position: absolute;
   width: 1px; }
+
+.worko-logo {
+  width: 134px;
+  height: 40px; }
+
+.letter:not(.worko-logo-w) {
+  opacity: 1; }
+
+.worko-logo-w {
+  -webkit-transform: translateY(0) scale(1) translateX(0);
+  transform: translateY(0) scale(1) translateX(0); }
+
+.worko-logo-skyline {
+  -webkit-transform: translateY(0) scale(1) translateX(0);
+  transform: translateY(0) scale(1) translateX(0); }
+
+@media screen and (max-width: 1100px) {
+  .worko-logo {
+    width: 45px;
+    height: 45px; }
+  .worko-logo-skyline {
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  .worko-logo-w {
+    -webkit-transform: translateY(-1495px) scale(5.4) translateX(-420px);
+    transform: translateY(-1495px) scale(5.4) translateX(-420px); }
+  .letter:not(.worko-logo-w) {
+    opacity: 0; }
+  .worko-logo-skyline {
+    -webkit-transform: translateY(-440px) scale(2.2) translateX(-630px);
+    transform: translateY(-440px) scale(2.2) translateX(-630px); } }
