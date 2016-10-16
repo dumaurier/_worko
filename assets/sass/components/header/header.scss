@@ -166,11 +166,16 @@
 
 .eha-signin-item{
   float: left;
+
+  &:first-of-type{
+    display: none;
+  }
 }
 
 .eha-signin-item-link{
   @include font-gotham-medium;
   @include font-size(0.8125);
+  color: $color-text-heading;
   display: inline-block;
   line-height: 70px;
   padding: 0 $space-default;
@@ -223,7 +228,16 @@
 
   .eha-signin{
     position: relative;
+
   }
+
+  .eha-signin-item{
+  float: left;
+
+  &:first-of-type{
+    display: block;
+  }
+}
 
   .eha-nav-container{
     position: relative;
