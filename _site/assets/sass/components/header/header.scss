@@ -36,7 +36,7 @@
 
 .eha-support-nav-item-link{
   @include font-size(0.775);
-  @include font-gotham-medium;
+  @include font-whitney-bold;
   color: $color-dark-grey;
   display: inline-block;
   line-height: 30px;
@@ -110,7 +110,7 @@
 }
 
 .eha-nav--sub-item{
-  @include font-gotham-medium;
+  @include font-whitney-medium;
   color: $color-text-heading;
   padding: $space-default $content-spacing--small;
 
@@ -125,7 +125,7 @@
 }
 
 .eha-nav-item-link{
-  @include font-gotham-medium;
+  @include font-whitney-medium;
   @include font-size(1);
   color: $color-text-heading;
   display: inline-block;
@@ -146,7 +146,7 @@
 }
 
 .eha-signin-item-link{
-  @include font-gotham-medium;
+  @include font-whitney-medium;
   @include font-size(0.8125);
   color: $color-text-heading;
   display: inline-block;
@@ -239,7 +239,7 @@
   }
 
   .eha-nav--sub-item{
-    @include font-gotham-medium;
+    @include font-whitney-medium;
     color: $color-text-heading;
     padding: $space-default $content-spacing--small;
 
@@ -280,7 +280,7 @@
   }
 
   .eha-nav-item-link{
-    @include font-gotham-medium;
+    @include font-whitney-medium;
     @include font-size(1);
     color: $color-text-heading;
     display: inline-block;
@@ -374,17 +374,6 @@
   transform-origin: 25px 95px;
 }
 
-// Hide only visually, but have it available for screenreaders: h5bp.com/v */
-.visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-}
 
 // I really need to refactor this.worko-logo
 .worko-logo{
