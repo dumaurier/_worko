@@ -239,6 +239,7 @@ $headings-list: h1,h2,h3,h4,h5,h6;
 }
 
 @mixin heading($type) {
+  @include font-whitney-bold;
   font-weight: 600;
   line-height: 1.5;
 

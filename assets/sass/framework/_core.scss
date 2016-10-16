@@ -9,25 +9,28 @@ html,body{
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
 body{
     @include font-gotham-book;
-    color: $color-text-dark;
+    color: $color-text-heading;
 }
 
-.main{
+.container{
     display: block;
     max-width: 100%;
     margin-top: 70px;
     position: relative;
     overflow-y: scroll;
     overflow-x: hidden;
+
+    @include media($mq-small){
+        margin-top: 110px;
+    }
 }
-
-
 
 .link--primary,
 .link--navigation {
@@ -48,7 +51,7 @@ body{
 }
 
 .heading--secondary {
-    @include heading('secondary');
+    @include heading('secondary'); 
     color: $color-text-heading;
 }
 
@@ -68,43 +71,6 @@ body{
         overflow:hidden;
     }
 }
-
-// Hide only visually, but have it available for screenreaders: h5bp.com/v */
-.visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-}
-
-// Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: absolute;
-    width: auto;
-}
-
-.align-left{
-    text-align: left;
-}
-
-.align-right{
-    text-align: right;
-}
-
-.align-center{
-    text-align: center;
-}
-
-
 
 //Disabling input zoom shenanigans on mobile devies
 @include media ($mq-xsmall){
@@ -131,4 +97,11 @@ body{
     textarea:focus, select:hover {
         @include font-size (0.875);
     }
+}
+
+//Resets list into dumb containers
+ul,ol{
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }

@@ -1,9 +1,18 @@
 /************** TYPOGRAPHY *************/
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+	@include font-whitney-bold;
+}
+
 //Base styles for paragraphs and inline quotations
 p{
-    font-family: sans-serif;
-    @include font-size(.875);
+    @include font-gotham-book;
+    @include font-size(1);
     margin-top: $padding-section;
 	line-height:1.5;
     max-width:620px;
@@ -36,42 +45,6 @@ p{
  h6 + p{
     margin-top:0;
     }
-
-
-
-//Base style for a blockquote, strictly follows W3C spec. Check the style guide for the correct markup
-blockquote{
-    background:rgb(245,245,245);
-    margin-left:1.25em;
-    padding:10px;
-    border-left:5px solid $color-primary-green;
-    width:35em;
-
-	> p{
-		margin:0;
-	}
-
-	> p + p{
-		margin-top: $padding-section;
-	}
-
-	footer{
-		margin:.625em 0;
-	}
-
-	footer > cite{
-		font-style:italic;
-		@include font-size(.875);
-		line-height: $padding-section;
-
-		&:before{
-			display:inline-block;
-			content:'\2014';
-		}
-	}
-}
-
-
 
 dt{font-weight:bold;}
 
