@@ -64,7 +64,7 @@
 }
 
 .sidebar-block-heading {
-	@include heading('tertiary', $padding: 0 0 $header-spacing 0);
+	@include heading('tertiary');
 	color: $color-text-heading;
 
 	.sidebar-clean &{

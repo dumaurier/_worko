@@ -1,9 +1,10 @@
+
+
 .employer-header-anon{
   position: fixed;
   width: 100vw;
   background: $color-white;
 }
-
 
 //resets - fix in the framework
 .employer-header-anon ul{
@@ -16,6 +17,7 @@
 //end resets
 
 .eha-support-container{
+  display: none;
   border-bottom: 1px solid  $color-border;
 }
 
@@ -43,10 +45,11 @@
 
 .eha-primary-container{
   @include max-width-aligned;
-  padding: 0;
+  padding: 0 5px;
   display: flex;
   height: 70px;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-items: center;
 
   ul{
     margin: 0;
@@ -55,8 +58,7 @@
 
 .eha-logo-container{
   display: block;
-  height: 70px;
-  width: 150px;
+  width: 50px;
 }
 
 .worko-logo{
@@ -66,12 +68,12 @@
 
 .eha-nav-container{
   background: $color-white;
-  border-right: 1px solid #ccc;
   position: fixed;
-  width: 300px;
+  left: 0;
+  top: 70px;
+  width: 100vw;
   height: 100vh;
-  margin-top: 70px;
-  transform: translateX(-310px);
+  transform: translateX(-100vw);
   transition: transform .3s ease;
 
   &.is-active{
@@ -194,6 +196,10 @@
 }
 
 @include media($mq-small){
+  .eha-support-container{
+    display: block;
+  }
+
   .eha-primary-container{
     padding: 0 $space-default;
     justify-content: flex-start;
@@ -224,6 +230,7 @@
     height: 100%;
     width: auto;
     margin-top: 0;
+    top: 0;
     border-right: none;
     transform: translateX(0);
   }

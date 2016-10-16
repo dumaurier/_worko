@@ -48,26 +48,6 @@ $headings-list: h1,h2,h3,h4,h5,h6;
     }
 }
 
-@mixin heading($type: '', $color: $color-text-dark, $padding: $space-default 0, $display: block) {
-  @include font-whitney-medium;
-  color: $color;
-  display: $display;
-  margin: 0;
-  padding: $padding;
-
-  @if $type == 'primary' {
-    @include font-size($fontSize-heading--primary);
-  } @else if $type == 'secondary' {
-    @include font-size( $fontSize-heading--secondary);
-  } @else if $type == 'tertiary' {
-    @include font-size($fontSize-heading--tertiary);
-  } @else if $type == 'quaternary' {
-    @include font-size($fontSize-heading--quaternary);
-  } @else {
-    @include font-size($fontSize-heading--primary);
-  }
-}
-
 //Heading and Sub-headings for Redesign
 @mixin section-heading($display: block, $padding: 50px 0, $color: $color-text-dark, $font-size: $fontSize-heading--primary){
     display: $display;
@@ -247,4 +227,37 @@ $headings-list: h1,h2,h3,h4,h5,h6;
   @include display(flex);
   @include flex-flow(wrap row);
   @include align-items(center);
+}
+
+@mixin zed ($z) {
+  @if $z == "low"{z-index: 100;}
+  @else if $z == "mid"{z-index: 200;}
+  @else if $z == "high"{z-index: 300;}
+  @else if $z == "top"{z-index: 400;}
+  @else if $z == "hammer"{z-index: 9999 !important;}
+  @else {z-index: 0;}
+}
+
+@mixin heading($type) {
+  font-weight: 600;
+  line-height: 1.5;
+
+  @if $type == "primary"{font-size: 2.2rem;font-weight: 700;}
+  @else if $type == "secondary"{font-size: 2.1rem;font-weight: 600;}
+  @else if $type == "tertiary"{font-size: 1.8rem;font-weight: 600;}
+  @else if $type == "quaternary"{font-size: 1.3rem;}
+  @else {font-size: 1rem;}
+}
+
+@mixin list {
+  list-style-type: square;
+  padding: 0 20px;
+}
+
+@mixin clearfix {
+  &::after{
+    content:"";
+    display:block;
+    clear:both;
+  }
 }

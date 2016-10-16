@@ -7,6 +7,7 @@ var bourbon     = require("node-bourbon").includePaths;
 var neat        = require("node-neat").includePaths;
 var concat      = require('gulp-concat');
 var uglify      = require('gulp-uglify');
+var htmlmin     = require('gulp-htmlmin');
 
 var jekyll   = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 var messages = {
@@ -19,7 +20,7 @@ var messages = {
 gulp.task('jekyll-build', function (done) {
     browserSync.notify(messages.jekyllBuild);
     return cp.spawn( jekyll , ['build'], {stdio: 'inherit'})
-        .on('close', done);
+        .on('close', done)   
 });
 
 /**
@@ -39,11 +40,21 @@ gulp.task('jekyll-build', function (done) {
    .pipe(gulp.dest('assets/dist'));
  });
 
+/**
+ * Minify HTML
+ */
+gulp.task('minify', function() {
+  return gulp.src('_site/index.html')
+    .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(gulp.dest('_site'));
+}); 
+
 
 /**
  * Rebuild Jekyll & do page reload
  */
 gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
+
     browserSync.reload();
 });
 
@@ -62,8 +73,9 @@ gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
  * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)
  */
 gulp.task('sass', function () {
-    return gulp.src('assets/sass/header.scss')
+    return gulp.src('assets/sass/base.scss')
         .pipe(sass({
+            outputStyle: 'compressed',
             includePaths: ['scss'],
             includePaths: bourbon,
             includePaths: neat,
