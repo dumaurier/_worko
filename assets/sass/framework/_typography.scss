@@ -13,11 +13,10 @@ h6{
 p{
     @include font-gotham-book;
     @include font-size(1);
-    margin-top: $padding-section;
 	line-height:1.5;
-    max-width:620px;
     text-align:left;
     word-break:normal;
+    margin: 0;
 
 		> q{
 			font-style:italic;
@@ -34,6 +33,10 @@ p{
 			&:before { content: open-quote; }
 			&:after { content: close-quote; }
 		}
+
+        + p{
+            margin-top: $padding-section;
+        }
     }
 
  //Removes margin-top from paragraphs preceded by a heading. Space between the heading and first paragraph will be handled by the margin on the heading.

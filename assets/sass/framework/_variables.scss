@@ -3,7 +3,7 @@
 ////////////////////////////////////////
 $max-width: 1240px;
 $mq-small: new-breakpoint(min-width 768px 12);
-$mq-medium: $mq-tabby; //Just Testing if this will work
+$mq-medium: new-breakpoint(min-width 960px 12);
 $mq-tabby: new-breakpoint(min-width 1024px 12);
 $mq-large: new-breakpoint(min-width 1240px);
 
@@ -17,7 +17,7 @@ $mq-small-landscape: new-breakpoint(max-height 375px 12);
 
 
 //////////////////////////////////////
-//Offical New Colours - Late 2016 ////
+//Offical New Colours - Late 2016 ////      
 //////////////////////////////////////
 $color-green: #39822b;
 $color-blue: #007ac9;
