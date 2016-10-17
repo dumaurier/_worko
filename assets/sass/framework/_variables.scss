@@ -1,70 +1,47 @@
-// Breakpoints
+////////////////////////////////////////
+////////////  Breakpoints ///////////////
+////////////////////////////////////////
 $max-width: 1240px;
-$mq-small-height: new-breakpoint(max-width 340px max-height 480px 12);
-$mq-small-landscape: new-breakpoint(max-height 375px 12);
-$mq-xsmall: new-breakpoint(min-width 320px 12);
 $mq-small: new-breakpoint(min-width 768px 12);
-$mq-medium: new-breakpoint(min-width 960px 12);
+$mq-medium: $mq-tabby; //Just Testing if this will work
 $mq-tabby: new-breakpoint(min-width 1024px 12);
 $mq-large: new-breakpoint(min-width 1240px);
 
-// Colours
-$color-primary-green: #5AA323;
-$color-primary-darkgreen: #427730;
-$color-primary-blue: #007AC9;
-
-$color-secondary-yellowgreen: #BED600;
-$color-secondary-grassgreen: #009B34;
-$color-secondary-darkergreen: #3C8A2E;
-$color-secondary-darkblue: #007AC9;
-$color-secondary-lightblue: #00A9E0;
-$color-secondary-darkteal: #037872;
-$color-secondary-lightteal: #027f79;
-
-$color-tertiary-burntorange: #D2492A;
-$color-tertiary-orange: #FFA100;
-$color-tertiary-hotpink: #E167AE;
-$color-tertiary-darkpink: #C32682;
-$color-tertiary-purple: #850057;
-
-$color-black: #1c1d20;
-$color-dark-grey: #25282e;
-$color-light-grey: #acb1bb;
-$color-icon-grey: #c1c6ce;
-$color-background-grey: #eeeeee;
-$color-red: #ff0000;
-$color-blue-grey: #697180;
-$color-background: #dedede;
-
-//Colours - B2B Redesign
+//////////////////////////////////////
+// The Breakpoints below should only 
+// be used in special circumstances
+//////////////////////////////////////
+$mq-xsmall: new-breakpoint(min-width 320px 12);
+$mq-small-height: new-breakpoint(max-width 340px max-height 480px 12);
+$mq-small-landscape: new-breakpoint(max-height 375px 12);
 
 
-// Text colours
-$color-text-green: #347E1B;
-$color-text-dark: #6A6A6A;
-$color-text-light: #777;
-$color-text-sluggish: #81858d; //see Aurelie if not happy :)
-$color-text-darkbg: #F2F2F2;
-$color-text-heading: #25282E;
-$color-white: #fff;
-$color-black: #000;
-$color-highlight: #D10074;
-$color-disabled: #A6A7A9;
-$color-border: #CCC;
-$color-nav-item: $color-text-heading;
-$color-nav-link: $color-text-green;
+//////////////////////////////////////
+//Offical New Colours - Late 2016 ////
+//////////////////////////////////////
+$color-green: #39822b;
+$color-blue: #007ac9;
+$color-purple: #850057;
+$color-pink: #d10074;
+$color-orange: #cf4829;
+$color-green-neon: #69be28;
+$color-white: #ffffff;
+
+//Blacks & Greys
+$grey-dark: #25282e;
+$grey: #525967;
+$grey-light: #caced4;
+$grey-steel: #e5e8ea;
+$grey-ghost: #f2f4f5;
+
+//Brands and such
 $color-social-fb: #3b5998;
-$color-text-error: #D2492A;
-$color-text-rhyhorn: #63656a;
-$color-text-medium-grey: #81858D;
 
-// Background colours
-$color-background-grey: #eeeeee;
-$color-background-lightgrey: #f6f6f6;
-$background-color-menu: #eee;
-$background-color-dark: $color-text-heading;
-$background-color-copyright: #1e2025;
-$background-color-messages: #A70240;
+
+/////////////////////////////
+/// SPACINGS AND DEFAULTS ///
+////////////////////////////
+
 
 // Headings
 $fontSize-heading--primary: 1.875; //35px
@@ -86,3 +63,64 @@ $header-spacing: 35px;
 $sidebar-spacing: 25px;
 
 $nav-height: 70px;
+
+
+
+
+
+///////////////////////////////////////////
+/// Old colour variables have been mapped
+/// to our new colour pallete. Do not change
+/// any of these values. 
+/////////////////////////////////////////// 
+$color-primary-green: $color-green;
+$color-primary-darkgreen: $color-green;
+$color-primary-blue: $color-blue;
+
+$color-secondary-yellowgreen: $color-green-neon;
+$color-secondary-grassgreen: $color-green;
+$color-secondary-darkergreen: $color-green;
+$color-secondary-darkblue: $color-blue;
+$color-secondary-lightblue: $color-blue;
+$color-secondary-darkteal: $color-blue;
+$color-secondary-lightteal: $color-blue;
+
+$color-tertiary-burntorange: $color-orange;
+$color-tertiary-orange: $color-orange;
+$color-tertiary-hotpink: $color-pink;
+$color-tertiary-darkpink: $color-pink;
+$color-tertiary-purple: $color-purple;
+
+$color-black: $grey-dark;
+$color-dark-grey: $grey-dark;
+$color-light-grey: $grey-light;
+$color-icon-grey: $grey;
+$color-background-grey: $grey-ghost;
+$color-blue-grey: $grey;
+$color-background: $grey-ghost;
+
+//Colours - B2B Redesign
+// Text colours
+$color-text-green: $color-green;
+$color-text-dark: $grey-dark;
+$color-text-light: $grey;
+$color-text-sluggish: $grey; //see Aurelie if not happy :)
+$color-text-darkbg: $grey-steel;
+$color-text-heading: $grey-dark;
+$color-white: $color-white;
+$color-black: $grey-dark;
+$color-highlight: $color-pink;
+$color-disabled: $grey-light;
+$color-border: $grey-light;;
+$color-nav-item: $grey-dark;
+$color-nav-link: $color-green;
+$color-text-error: $color-orange;
+$color-text-medium-grey: $grey;
+
+// Background colours
+$color-background-grey: $grey-ghost;
+$color-background-lightgrey: $grey-steel;
+$background-color-menu: $grey-ghost;
+$background-color-dark: $grey-dark;
+$background-color-copyrigh: $grey-dark;
+$background-color-messages: $color-purple;

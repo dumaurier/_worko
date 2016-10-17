@@ -4,6 +4,8 @@
   position: fixed;
   width: 100vw;
   background: $color-white;
+  top: 0;
+  @include zed(top);
 }
 
 //resets - fix in the framework
