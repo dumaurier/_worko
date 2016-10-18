@@ -39,3 +39,12 @@
         margin: $space-default;
     }
 }
+
+.product-block{
+  width: 300px;
+  height: 360px;
+  float: left;
+  border: 1px solid $grey;
+  padding: 20px;
+  margin: 10px;
+}

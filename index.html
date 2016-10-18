@@ -1,62 +1,69 @@
 ---
 layout: default
 title: worko
---- 
+---
 
 <main class="container">
 
-    <h1>Hello</h1>
-    <p>This is a paragraph.</p>
-    <p><strong>This text is strong</strong></p>
-    <ul class="list">
-        <li>List one</li>
-        <li>List Two lskfjldskjflksdjf</li>
-    </ul>
+  <h1>Jekyll - Workopolis Static Pagse</h1>
 
-<button class="btn">button</button>
+  <p>This is a demo to test whether or not we can use Jekyll for creating marketing pages instead of WordPress</p>
 
-<section class="sg-colour">
-    <div class="color color-1">
-        <p>$color-green: #39822b;</p>
-    </div>
-    <div class="color color-2">
-         <p>$color-blue: #007ac9;</p>
-    </div>
-    <div class="color color-3">
-        <p>$color-purple: #850057;</p>
-    </div>
-    <div class="color color-4">
-         <p>$color-pink: #d10074;</p>
-    </div>
-    <div class="color color-5">
-        <p>$color-orange: #cf4829;</p>
-    </div>
-    <div class="color color-6">
-         <p>$color-green-neon: #69be28;</p>
-    </div>
-    <div class="color color-7">
-        <p>$color-white: #ffffff;</p>
-    </div>
-    <div class="color color-8">
-         <p>$grey-dark: #25282e;</p>
-    </div>
-    <div class="color color-9">
-        <p>$grey: #525967;</p>
-    </div>
-    <div class="color color-10">
-         <p>$grey-light: #caced4;</p>
-    </div>
-    <div class="color color-11">
-        <p>$grey-steel: #e5e8ea;</p>
-    </div>
-    <div class="color color-12">
-         <p>$grey-ghost: #f2f4f5;</p>
-    </div>
+  <h2>Page Creation and Routes</h2>
+  <p>Static pages can be created in the <code>pages</code> folder. At the top of each HTML page you can define things like page layout, title and url. To define the pages URL just add a permalink to the Front Matter:</p>
 
-</section>
+{% highlight html %}
+---
+layout: default
+title: Workopolis | Post A Job
+permalink: /post-a-job/
+---
+{% endhighlight %}
+
+<p>The Job Posting page will now be
+
+<h2>Working with Collections</h2>
+
+<p>Collections allow us to create structured data that can be referenced anywhere on the site. New Collections are defined in <code>_config.yml</code> and the collection data is stored in the folder matching the name of the collection.</p>
+
+{% highlight html %}
+name: Worko
+markdown: kramdown
+highlighter: rouge
+exclude: ["node_modules", "gulpfile.js", "package.json"]
+port: 4000
+collections:
+  products:
+{% endhighlight %}
+
+<p>Each record in the collection contains Front Matter and Markdown. Information defined in Front Matter can be used to output specific data from the collection</p>
+
+<p>This demo has a Collection called <code>_products</code> that contains information on a few Workopolis B2B products. To output this information we can use Liquid templats to loop through the collection:</p>
+
+{% highlight html %}
+{% raw %}
+{% for product in site.products %}
+<div class="product-block">
+  <h4>{{product.title}}</h5>
+  <strong>{{product.price}}</strong>
+  <p>{{product.short-description}}</p>
+  <a class="btn" href="{{product.buy-button}}">Buy Now For {{product.price}}</a>
+</div>
+{% endfor %}
+{% endraw %}
+{% endhighlight %}
+
+<p>This will generate markup for each entry in the collection:</p>
+
+{% for product in site.products %}
+<div class="product-block">
+  <h4>{{product.title}}</h5>
+  <strong>{{product.price}}</strong>
+  <p>{{product.short-description}}</p>
+  <a class="btn" href="{{product.buy-button}}">Buy Now For {{product.price}}</a>
+</div>
+{% endfor %}
 
 
 
 </main>
-
-

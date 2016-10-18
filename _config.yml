@@ -1,6 +1,7 @@
 name: Worko
-markdown: redcarpet
-highlighter: pygments # or rouge or null
+markdown: kramdown
+highlighter: rouge
 exclude: ["node_modules", "gulpfile.js", "package.json"]
 port: 4000
-
+collections:
+  products:
