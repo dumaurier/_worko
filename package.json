@@ -1,6 +1,6 @@
 {
   "name": "worko-static",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "bare bones starter for workopolis",
   "main": "gulpfile.js",
   "scripts": {
@@ -15,7 +15,9 @@
     "gulp-htmlmin": "^3.0.0",
     "gulp-sass": "^2.1.0",
     "node-bourbon": "^4.2.8",
-    "node-neat": "^1.7.2"
+    "node-neat": "^1.7.2",
+    "gulp-concat": "2.6.0",
+    "gulp-uglify": "2.0.0"
   },
   "keywords": [
     "jekyll",
