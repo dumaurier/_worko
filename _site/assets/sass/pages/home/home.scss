@@ -34,7 +34,8 @@
     display: flex;
     flex-wrap: wrap;
 
-     *{
-        flex: 2 0 20vw;
+     > * {
+        flex: 1 0 25vw;
+        margin: $space-default;
     }
 }

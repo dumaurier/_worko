@@ -21,11 +21,10 @@ body{
 
 .container{
     display: block;
-    max-width: 100%;
-    margin-top: 70px;
+    max-width: $max-width;
+    margin: 70px auto 0 auto;
     position: relative;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    padding: 0 $space-default;
 
     @include media($mq-small){
         margin-top: 110px;
