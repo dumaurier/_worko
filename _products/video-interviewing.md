@@ -1,4 +1,5 @@
 ---
+shortname: "video"
 title: "Video Interviewing"
 price: "$225"
 url: "http://hiring.workopolis.com/solutions/all-solutions/"

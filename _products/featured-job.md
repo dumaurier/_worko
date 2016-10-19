@@ -1,4 +1,5 @@
 ---
+shortname: "featured"
 title: "Featured Job"
 price: "$263"
 url: "http://hiring.workopolis.com/solutions/post-a-job/#perks-posting"

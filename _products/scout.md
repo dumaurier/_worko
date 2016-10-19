@@ -1,4 +1,5 @@
 ---
+shortname: "scout"
 title: "Recruiter Assisted Job Posting"
 price: "$745"
 url: "http://hiring.workopolis.com/product/find-employees-with-scout/"

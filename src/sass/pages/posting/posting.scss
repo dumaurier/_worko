@@ -1,0 +1,52 @@
+.block{
+  @include fill-parent;
+
+  + .block{
+    margin-top: $content-spacing;
+  }
+}
+
+.block-hero{
+  h1{
+    @include heading(primary);
+    text-align: center;
+  }
+
+  p{
+    width: 30vw;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .btn{
+    margin-top: $space-default * 2;
+  }
+}
+
+.block-feature{
+  display: flex;
+  justify-content: space-between;
+
+  .feature-block{
+    background: $grey-ghost;
+    flex: 0 0 300px;
+    padding: $content-spacing--small;
+    margin: $space-default;
+  }
+}
+
+.block-products{
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: wrap;;
+
+  h2{
+    flex: 0 0 100%;
+  }
+
+  .product{
+    flex: 1 0 30%;
+  }
+
+
+}

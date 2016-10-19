@@ -7,7 +7,7 @@ permalink: /post-a-job/
 <main class="container">
     <section class="block block-hero">
       <h1>Job Postings that work</h1>
-      <p>Posting are powered to reach thousands of people looking for work at a company like yours. So you can  find the best person for the job.
+      <p>Posting are powered to reach thousands of people looking for work at a company like yours. So you can  find the best person for the job.</p>
       <a class="btn" href="/">Get started - Post a job today</a>
     </section>
 
@@ -23,6 +23,21 @@ permalink: /post-a-job/
 
     <section class="block block-products">
       <h2>Post a job that does everything you want it to. And then some.</h2>
+
+      {% assign video = site.products | where: "shortname", "video"  | first %}
+      <div class="product">
+        <h3>{{ video.title}}</h3>
+        <p>{{ video.short-description }}</p>
+        <a class="btn" href="{{ video.url }}">But now for {{ video.price}}</a>
+      </div>
+
+      {% assign niche = site.products | where: "shortname", "niche"  | first %}
+      <div class="product">
+        <h3>{{ niche.title}}</h3>
+        <p>{{ niche.short-description }}</p>
+        <a class="btn" href="{{ niche.url }}">But now for {{ niche.price}}</a>
+      </div>
+
 
 
 

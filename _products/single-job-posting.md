@@ -1,4 +1,5 @@
 ---
+shortname: "posting"
 title: "Single Job Posting"
 price: "$595"
 url: "http://hiring.workopolis.com/solutions/post-a-job/"

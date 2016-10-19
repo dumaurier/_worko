@@ -1,4 +1,5 @@
 ---
+shortname: "logo"
 title: "Company Logo"
 price: "$79"
 url: "http://hiring.workopolis.com/solutions/all-solutions/"
