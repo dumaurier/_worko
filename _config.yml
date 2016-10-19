@@ -1,7 +1,7 @@
 name: Worko
 markdown: kramdown
 highlighter: rouge
-exclude: ["node_modules", "gulpfile.js", "package.json"]
+exclude: ["node_modules", "gulpfile.js", "package.json","src"]
 port: 4000
 collections:
   products:

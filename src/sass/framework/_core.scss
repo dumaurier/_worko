@@ -24,7 +24,7 @@ body{
     max-width: $max-width;
     margin: 70px auto 0 auto;
     position: relative;
-    padding: 0 $space-default;
+    padding: 0 $padding-section $section-spacing $padding-section;
 
     @include media($mq-small){
         margin-top: 110px;
