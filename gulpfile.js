@@ -20,7 +20,7 @@ var messages = {
 gulp.task('jekyll-build', function (done) {
     browserSync.notify(messages.jekyllBuild);
     return cp.spawn( jekyll , ['build'], {stdio: 'inherit'})
-        .on('close', done)   
+        .on('close', done)
 });
 
 /**
@@ -47,7 +47,7 @@ gulp.task('minify', function() {
   return gulp.src('_site/index.html')
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest('_site'));
-}); 
+});
 
 
 /**

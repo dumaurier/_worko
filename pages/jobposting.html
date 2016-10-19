@@ -5,5 +5,26 @@ permalink: /post-a-job/
 ---
 
 <main class="container">
-    <h1>Post a job</h1>
+    <section class="block block-hero">
+      <h1>Job Postings that work</h1>
+      <p>Posting are powered to reach thousands of people looking for work at a company like yours. So you can  find the best person for the job.
+      <a class="btn" href="/">Get started - Post a job today</a>
+    </section>
+
+    <section class="block block-feature">
+      {% for feature in site.data.posting_features %}
+      <div class="feature-block">
+        <img src="{{feature.imgurl}}" alt="{{feature.title}}" />
+        <h4>{{feature.title}}</h4>
+        <p>{{feature.shortdesc}}</p>
+      </div>
+      {% endfor %}
+    </section>
+
+    <section class="block block-products">
+      <h2>Post a job that does everything you want it to. And then some.</h2>
+
+
+
+    </section>
 </main>
