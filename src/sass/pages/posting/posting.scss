@@ -28,25 +28,72 @@
   justify-content: space-between;
 
   .feature-block{
-    background: $grey-ghost;
-    flex: 0 0 300px;
+    //background: $grey-ghost;
+    flex: 1 0 0px;
     padding: $content-spacing--small;
     margin: $space-default;
+
+    h4{
+      @include heading(quaternary);
+    }
+
+    img{
+      width: 100%;
+    }
+  }
+}
+
+.block-recruitment{
+  background-image: url('http://hiring.workopolis.com/wp-content/uploads/sites/3/2016/08/applicant-manager-screenshot-bg.jpg');
+  height: 500px;
+  background-size: cover;
+  padding: 20px 60px 20px 60px;
+  
+  h4{
+    color: $color-white;
+    @include heading(primary);
+    width: 35%;
+  }
+
+  p{
+    color: $color-white;
+    width: 30vw;
+  }
+
+  ul{
+    @include list;
+    margin-top: $header-spacing;
+    color: $color-white;
   }
 }
 
 .block-products{
   display: flex;
   flex-wrap: wrap;
-  flex-flow: wrap;;
+  justify-content: space-around;
+  background: $grey-ghost;
+  padding: $container-spacing;
 
   h2{
+    @include heading(primary);
     flex: 0 0 100%;
+    padding: 0 $container-spacing;
   }
 
   .product{
-    flex: 1 0 30%;
-  }
+    display: flex;
+    flex-direction: column;
+    padding: $padding-section;
+    flex: 0 0 30%;
+    border: 1px solid $grey-light;
+    background: $color-white;
 
+    .btn{
+      margin-top: 50px;
+      width: 100%;
+      text-align: center;
+      align-self: flex-end;
+    }
+  }
 
 }

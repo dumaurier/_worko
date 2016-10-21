@@ -20,6 +20,21 @@ permalink: /post-a-job/
       </div>
       {% endfor %}
     </section>
+    
+    <section class="block block-recruitment">
+      <h4>Recruitment Centre - The ATS for the Rest of Us</h4>
+      <P>Applicant Manager is our handy tool included with every job posting. Recruit anywhere, anytime and rate and screen applicants from any device.</P>
+
+      <ul>
+        <li>
+          Sort through qualified applicants and easily rate talent.
+        </li>
+        <li>
+          A sleek resume view lets you screen candidates easily.
+        </li>
+      </ul>
+
+    </section>
 
     <section class="block block-products">
       <h2>Post a job that does everything you want it to. And then some.</h2>
@@ -28,14 +43,14 @@ permalink: /post-a-job/
       <div class="product">
         <h3>{{ video.title}}</h3>
         <p>{{ video.short-description }}</p>
-        <a class="btn" href="{{ video.url }}">But now for {{ video.price}}</a>
+        <a class="btn" href="{{ video.url }}">Buy now for {{ video.price}}</a>
       </div>
 
       {% assign niche = site.products | where: "shortname", "niche"  | first %}
       <div class="product">
         <h3>{{ niche.title}}</h3>
         <p>{{ niche.short-description }}</p>
-        <a class="btn" href="{{ niche.url }}">But now for {{ niche.price}}</a>
+        <a class="btn" href="{{ niche.url }}">Buy now for {{ niche.price}}</a>
       </div>
 
 
