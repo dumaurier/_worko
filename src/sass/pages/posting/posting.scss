@@ -1,29 +1,54 @@
 .block{
   @include fill-parent;
+  @include clearfix;
+  clear: left;
+  //padding: 20px;
 
   + .block{
-    margin-top: $content-spacing;
+    padding-top: $content-spacing;
   }
 }
 
+.block-container{
+  @include max-width-aligned;
+}
+
 .block-hero{
+  width: inherit;
+  background: $color-blue;
+  padding: $section-spacing 0;
+
+  .block-hero-container{
+    display: flex;
+    flex-flow: column;
+    //justify-content: center;
+    align-items: center;
+  }
+
   h1{
     @include heading(primary);
+    color: $color-white;
     text-align: center;
   }
 
   p{
     width: 30vw;
-    margin: 0 auto;
+    margin: 20px;
     text-align: center;
+    color: $color-white;
   }
 
   .btn{
     margin-top: $space-default * 2;
+    margin: 0 auto;
   }
 }
 
 .block-feature{
+  width: inherit;
+}
+
+.block-feature-container{
   display: flex;
   justify-content: space-between;
 
@@ -44,11 +69,15 @@
 }
 
 .block-recruitment{
-  background-image: url('http://hiring.workopolis.com/wp-content/uploads/sites/3/2016/08/applicant-manager-screenshot-bg.jpg');
-  height: 500px;
-  background-size: cover;
-  padding: 20px 60px 20px 60px;
-  
+  background-image: url('http://hiring.workopolis.com/wp-content/uploads/sites/3/2016/08/applicant-manager-screenshot-bg.jpg' );
+  background-repeat: no-repeat;
+  height: 600px;
+  background-color: $color-blue;
+  background-size: contain;;
+  background-position: right;
+
+  padding: 20px 60px 20px 160px;
+
   h4{
     color: $color-white;
     @include heading(primary);
@@ -64,14 +93,19 @@
     @include list;
     margin-top: $header-spacing;
     color: $color-white;
+    width: 30vw;
   }
 }
 
 .block-products{
+    background: $grey-ghost;
+}
+
+.block-products-container{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  background: $grey-ghost;
+  justify-content: center;
+
   padding: $container-spacing;
 
   h2{
@@ -87,6 +121,7 @@
     flex: 0 0 30%;
     border: 1px solid $grey-light;
     background: $color-white;
+    margin: 0 20px;
 
     .btn{
       margin-top: 50px;
@@ -97,3 +132,5 @@
   }
 
 }
+
+@import "../../components/pricing"

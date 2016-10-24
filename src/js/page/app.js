@@ -19,14 +19,114 @@ var Workopolis = Workopolis || {};
 
         /******************* FUNCTION DEFINITIONS *********************/
         init: function () {
-
             //this.initAccountSubMenu();
             //this.initHelpMenu();
             this.initHeaderTitle();
             this.initLanguageToggle();
+            //this.initPricer();
             Workopolis.AccessibilityEnhancer.init();
+            //console.log('hello page');
+        },
+
+        initPricer: function(){
+          //alert('hello');
+            // elements
+            var numberJobs = document.querySelector('.pricer-count');
+            var SJPrice = document.querySelector('.js-pricer-total');
+            var singelSave = document.querySelector('.js-pricer-single-save');
+            var unlimitedSave = document.querySelector('.js-unlimited-save');
+            var recoText = document.querySelector('.pricer-reco-text');
+            var toutPrice = document.querySelector('.pricer-tout-price');
+            var productReco = document.querySelector('.price-reco-val');
+
+            //pricing values
+            var SJPCost = "595";
+            var tax = ".15";
+            var subCost = "1200.00";
+
+            //Reco data
+            var pricerReco = [
+                {
+                    id: 1,
+                    text: 'If you know you only need to post a single job in the next 12 months then our Single Job Posting product may be right for you.',
+                    prod: 'Single Job Posting'
+                },
+                {
+                    id: 2,
+                    text: 'If you only post two jobs in the next year you\'re still better off with the Unlimited Subscription which includes over $500 in additional savings.',
+                    prod: 'Unlimited Subscription'
+                 },
+                {
+                    id: 3,
+                    text: 'The best deal is the Unlimited Subscription. Whether you post 3 or 300 jobs you will save money.',
+                    prod: 'Unlimited Subscription'
+                },
+                {
+                    id: 4,
+                    text: 'Yes, it really is a good deal. If you still need convincing please call one of our representative at 416-967-1111',
+                    prod: 'Unlimited Subscription'
+                }
+            ]
+
+            //user input - number of postings
+            var number = numberJobs.value;
+
+            numberJobs.addEventListener("input", function(e) {
+                number = numberJobs.value;
+                var total = number * SJPCost;
+                var taxed = total * tax;
+                var displayPrice = total;
+
+                document.querySelector('.js-pricer-reco').classList.add('is-active');
+
+                SJPrice.textContent = '$' + displayPrice;
+
+                var saving = subCost - displayPrice;
+                console.log(saving);
+
+                //Math-o-matic 5000
+                if(saving > 0){
+                    var saveNum = subCost - displayPrice;
+                    singelSave.textContent = '$' + saveNum;
+                    unlimitedSave.textContent = "--";
+                }
+                else{
+                    singelSave.textContent = '--';
+                    unlimitedSave.textContent = '$' + Math.abs(saving);
+                }
+
+                //Price Reco Thing
+
+                if( number == 1){
+                    console.log('1 posting');
+                    recoText.textContent = pricerReco[0].text;
+                    toutPrice.textContent = '$' + total;
+                    productReco.textContent = pricerReco[0].prod;
+                }
+                else if ( number == 2 ) {
+                    console.log('2 postings');
+                    recoText.textContent = pricerReco[1].text;
+                    toutPrice.textContent = '$' + Math.abs(saving);
+                    productReco.textContent = pricerReco[1].prod;
+                }
+
+                else if ( number >= 3 && number <= 20){
+                    console.log('between 3 and 20');
+                    recoText.textContent = pricerReco[2].text;
+                    toutPrice.textContent = '$' + Math.abs(saving);
+                    productReco.textContent = pricerReco[2].prod;
+                }
+                else{
+                    console.log('more than 20');
+                    recoText.textContent = pricerReco[3].text;
+                    toutPrice.textContent = '$' + Math.abs(saving);
+                    productReco.textContent = pricerReco[3].prod;
+                }
+            }, false);
+
 
         },
+
 
         initHeaderTitle: function () {
             var title = $('.header-page-title').val();
@@ -61,7 +161,7 @@ var Workopolis = Workopolis || {};
                     createCookie("fonts-loaded", "true", "14");
                 }
             }, function () {
-                console.log('Slow network, no webfonts');  
+                console.log('Slow network, no webfonts');
             });
         }
 

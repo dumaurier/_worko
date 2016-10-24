@@ -21,14 +21,10 @@ body{
 
 .container{
     display: block;
-    max-width: $max-width;
-    margin: 70px auto 0 auto;
+    max-width: 100%;
+    margin: 0 auto 0 auto;
     position: relative;
-    padding: 0 $padding-section $section-spacing $padding-section;
-
-    @include media($mq-small){
-        margin-top: 110px;
-    }
+    padding: $section-spacing 0;
 }
 
 .link--primary,
@@ -50,7 +46,7 @@ body{
 }
 
 .heading--secondary {
-    @include heading('secondary'); 
+    @include heading('secondary');
     color: $color-text-heading;
 }
 
