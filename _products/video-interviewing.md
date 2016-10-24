@@ -1,10 +1,12 @@
 ---
-shortname: "video"
-title: "Video Interviewing"
+title: Video Interviewing
+shortname: video
 price: "$225"
-url: "http://hiring.workopolis.com/solutions/all-solutions/"
-buy-button: "http://www.workopolis.com/purchasing/en/home/initiate?PromoCode=RAID4&Reset=True"
-short-description: "Appear within the top 3 search results of your postings search page for better visibility and a higher chance of getting in front of active and passive talent."
+url: http://hiring.workopolis.com/solutions/all-solutions/
+buy-button: http://www.workopolis.com/purchasing/en/home/initiate?PromoCode=RAID4&Reset=True
+short-description: Appear within the top 3 search results of your postings search
+  page for better visibility and a higher chance of getting in front of active and
+  passive talent. Bring Nachos!
 ---
 
 ## Video Interviewing

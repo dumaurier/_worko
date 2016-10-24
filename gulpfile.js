@@ -18,6 +18,12 @@ var messages = {
  * Build the Jekyll Site
  */
 gulp.task('jekyll-build', function (done) {
+    //browserSync.notify(messages.jekyllBuild);
+    return cp.spawn( jekyll , ['serve'], {stdio: 'inherit'})
+        .on('close', done)
+});
+
+gulp.task('jekyll-watch', function (done) {
     browserSync.notify(messages.jekyllBuild);
     return cp.spawn( jekyll , ['build'], {stdio: 'inherit'})
         .on('close', done)
@@ -53,7 +59,7 @@ gulp.task('minify', function() {
 /**
  * Rebuild Jekyll & do page reload
  */
-gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
+gulp.task('jekyll-rebuild', ['jekyll-watch'], function () {
 
     browserSync.reload();
 });
@@ -61,7 +67,7 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
 /**
  * Wait for jekyll-build, then launch the Server
  */
-gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
+gulp.task('browser-sync', ['sass', 'jekyll-watch'], function() {
     browserSync({
         server: {
             baseDir: '_site'

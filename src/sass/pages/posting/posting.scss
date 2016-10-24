@@ -46,17 +46,24 @@
 
 .block-feature{
   width: inherit;
+  margin: $section-spacing 0 0 0;
+  padding-bottom: $section-spacing;
+  background: $grey-ghost;
 }
 
 .block-feature-container{
+
   display: flex;
   justify-content: space-between;
 
   .feature-block{
-    //background: $grey-ghost;
+    padding: $space-default;
+    background: $color-white;
     flex: 1 0 0px;
-    padding: $content-spacing--small;
-    margin: $space-default;
+
+    &:nth-of-type(2){
+      margin: 0 20px;
+    }
 
     h4{
       @include heading(quaternary);
@@ -105,8 +112,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
-  padding: $container-spacing;
 
   h2{
     @include heading(primary);
