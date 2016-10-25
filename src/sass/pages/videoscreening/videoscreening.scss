@@ -1,0 +1,221 @@
+img {
+  max-width: 359px;
+  height: auto;
+}
+
+main.main {
+  @include font-gotham-book;
+  margin-top: 110px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.block {
+  margin: 0 auto;
+  padding: 30px 0;
+  width: 100%;
+  max-width: 1240px;
+}
+
+.video-screening .container-hero {
+  margin-top: 0;
+  padding: 0 0 20px;
+  background: url("http://hiring.workopolis.com/wp-content/uploads/sites/3/2016/10/reducedsize-banner.jpg") center no-repeat;
+  background-size: cover;
+  background-position: center top;
+  width: 100%;
+  height: 600px;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  display: table;
+  .block-hero{
+    display: table-cell;
+    vertical-align: middle;
+    h1 {
+      @include font-size(4);
+    }
+  }
+}
+
+.video-screening .container-info {
+  .block-info {
+    width: 725px;
+    text-align: center;
+    h2 {
+      padding: 0 40px;
+    }
+    p {
+      text-align: center;
+    }
+  }
+  .product {
+    margin: 25px 25%;
+    p {
+      @include font-size(0.875);
+      margin: 0;
+    }
+    .price-container {
+      background: $grey-dark;
+      padding: 20px 0;
+      h4 {
+        margin: 0;
+        text-align: center;
+      }
+      .price {
+        @include font-size(4);
+        font-weight: 700;
+        margin: 0;
+      }
+    }
+    .buy-container {
+      background: $grey-ghost;
+      padding: 20px 0;
+      p {
+        @include font-size(0.875);
+        padding: 5px 20px;
+        margin: 0;
+      }
+      button {
+        border-radius: 50px;
+        margin: 15px 0;
+      }
+    }
+  }
+  p {
+    margin: 10px 0;
+  }
+  strong {
+    @include font-size(1.125);
+  }
+  a {
+    font-weight: 600;
+  }
+}
+
+
+.video-screening .container-steps {
+  background: url("http://hiring.workopolis.com/wp-content/uploads/sites/3/2016/10/reducedsize-1.jpg") center no-repeat;
+  background-size: cover;
+  section.block.block-steps {
+    display: block;
+    .steps-block {
+      background: white;
+      width: 640px;
+      margin: 20px auto;
+      .step {
+        display: table;
+        height: 140px;
+        div {
+          padding-right: 20px;
+          padding-bottom: 0;
+          margin-bottom: 0;
+          display: table-cell;
+          vertical-align: middle;
+        }
+        div, strong {
+          @include font-size(1.1);
+          color: $grey
+        }
+      }
+      .step div.number {
+        height: 140px;
+        width: 140px;
+        padding-right: 0;
+      }
+    }
+  }
+  div.step-1.number {
+      content: url("http://hiring.workopolis.com/wp-content/themes/work/images/1.png");
+
+  }
+  div.step-2.number {
+      content: url("http://hiring.workopolis.com/wp-content/themes/work/images/2.png");
+  }
+  div.step-3.number {
+      content: url("http://hiring.workopolis.com/wp-content/themes/work/images/3.png");
+  }
+}
+
+
+.video-screening .container-feature {
+  .block.block-feature {
+    display: block;
+    .feature-group {
+      display: flex;
+      justify-content: space-around;
+      margin: 0 30px;
+      .feature-block {
+        padding: 0;
+      }
+    }
+  }
+}
+
+.video-screening .container-products {
+  background: $grey-ghost;
+  section.block.block-products {
+    width: 47%;
+    margin: 0 auto;
+    .product {
+      background: $color-white;
+      margin: 0 10px;
+      padding: 40px;
+      max-width: 50%;
+      a {
+        line-height: 30px;
+      }
+      a, p {
+        @include font-size(0.875);
+      }
+    }
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+  margin: 20px auto;
+}
+
+h1 {
+  @include font-size(4);
+}
+
+h1, h2 {
+  text-align: center;
+  @include font-size(2.5);
+  @include font-gotham-medium;
+  font-weight: 600;
+  letter-spacing: -1px;
+  line-height: 36px;
+  margin: 0 auto 50px;
+}
+
+.text-white {
+  color: white;
+}
+
+h3 {
+  @include font-size(2);
+  margin: 50px auto;
+}
+
+h4 {
+  @include font-size(1.5);
+  margin: 15px 0;
+  font-weight: 700;
+  text-align: left;
+}
+
+p {
+  color: $grey;
+}
+
+a {
+  color: $color-blue;
+  text-decoration: none;
+  font-weight: 600;
+  &:hover {
+    text-decoration: underline;
+  }
+}
