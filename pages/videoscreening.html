@@ -1,0 +1,85 @@
+---
+layout: default
+title: Workopolis | Video Screening
+permalink: /video-screening/
+---
+
+<main class="video-screening main">
+
+  <div class="container container-hero">
+    <section class="block block-hero">
+        <h1 class="text-white">Video Screening</h1>
+        <p class="text-white">Get to know applicants with a pre-recorded video interview - before meeting them face-to-face.</p>
+    </section>
+  </div>
+
+  <div class="container container-info">
+    <section class="block block-info">
+      <h2>Workopolis makes video screening easy</h2>
+      <p>Our recruiting specialists build you a customized, pre-recorded video interview, letting you see and hear your candidates in advance, improving your screening, and saving you time.</p>
+      {% assign video = site.products | where: "shortname", "video"  | first %}
+      <div class="product">
+        <div class="price-container text-white">
+          <h4>{{ video.title }}</h1>
+          <h3 class="price">{{ video.price }}</h3>
+          <p class="text-white"> per posting* </p>
+        </div>
+        <div class="buy-container">
+        <p> Send up to 20 personalized applicant invitations! </p>
+        <button class="btn" href="/">Buy Now</button>
+      </div>
+      </div>
+      <strong>{{ video.short-description }}</strong>
+      <p> <a href="">Contact</a> on of out people to learn more </p>
+    </section>
+  </div>
+
+  <div class="container container-steps">
+    <section class="block block-steps">
+      <h3 class="text-white">Streamline applicant screening in 3 easy steps.</h2>
+      {% for step in site.data.videoscreening_steps %}
+      <div class="steps-block">
+        <!-- <span class="number {{step.index}}"></span> -->
+        <div class="step">
+          <div class="step-{{step.index}} number">{{step.title}}</div>
+          <div class="step-{{step.index}}">{{step.title}}</div>
+        </div>
+      </div>
+      {% endfor %}
+    </section>
+  </div>
+
+  <div class="container container-feature">
+    <section class="block block-feature">
+      <h2>Add video screening to your hiring toolkit</h2>
+      <div class="feature-group">
+        {% for feature in site.data.videoscreening_features %}
+        <div class="feature-block">
+          <img src="{{feature.imgurl}}" alt="{{feature.title}}" />
+          <h4>{{feature.title}}</h4>
+          <p>{{feature.shortdesc}}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+  </div>
+
+  <div class="container container-products">
+    <section class="block block-products">
+        <h2>Looking for something more?</h2>
+        {% assign scout = site.products | where: "shortname", "scout"  | first %}
+        <div class="product">
+          <h4>{{ scout.title}}</h4>
+          <p>{{ scout.short-description }}</p>
+          <a class="link" href="{{ scout.url }}">Learn more</a>
+        </div>
+        {% assign niche = site.products | where: "shortname", "niche"  | first %}
+        <div class="product">
+          <h4>{{ niche.title}}</h4>
+          <p>{{ niche.short-description }}</p>
+          <a class="link" href="{{ niche.url }}">Learn more</a>
+        </div>
+    </section>
+  </div>
+
+</main>
