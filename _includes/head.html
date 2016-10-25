@@ -3,17 +3,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-  <link rel="stylesheet" type="text/css" href="//cloud.typography.com/7721754/804146/css/fonts.css" />
-  <link rel="stylesheet" type="text/css" href="//cdn.symbolset.com/8ce9ce30e75d16a8632f42cd903347a1e34beccf/symbolset.css" />
-<link rel="stylesheet" href="/assets/css/base.css">
-<script src="https://use.fontawesome.com/ccaebae231.js"></script>
-<script type="text/javascript">
-            if (document.cookie.indexOf("fonts-loaded") >= 0) {
-                document.documentElement.className += " fonts-loaded";
-                console.log('you should have our fonts cached');
-            }
-        </script>
-        <script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+
+  <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+
+  {% feed_meta %}
 </head>

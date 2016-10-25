@@ -1,6 +1,5 @@
-# frozen_string_literal: true
-source "http://rubygems.org"
+source 'http://rubygems.org'
 
-# gem "rails"
-
-gem 'jekyll-admin', group: :jekyll_plugins
+gem 'jekyll'
+gem 'jekyll-feed'
+gem 'jekyll-sitemap'
