@@ -141,6 +141,7 @@ main.main {
 .video-screening .container-feature {
   .block.block-feature {
     display: block;
+    background: $color-white;
     .feature-group {
       display: flex;
       justify-content: space-around;
@@ -155,13 +156,15 @@ main.main {
 .video-screening .container-products {
   background: $grey-ghost;
   section.block.block-products {
-    width: 47%;
+    width: 725px;
     margin: 0 auto;
     .product {
       background: $color-white;
+      display: inline-table;
       margin: 0 10px;
       padding: 40px;
-      max-width: 50%;
+      max-width: 47%;
+      height: 325px;
       a {
         line-height: 30px;
       }
