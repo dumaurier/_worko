@@ -1,76 +1,116 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title> worko by dumaurier</title>
+---
+layout: default
+title: worko
+---
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-light.css">
-    <meta name="viewport" content="width=device-width">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1> worko</h1>
-        <p>Jekyll - Starter</p>
+<main class="container">
 
-        <p class="view"><a href="https://github.com/dumaurier/_worko">View the Project on GitHub <small>dumaurier/_worko</small></a></p>
+  <h1>Jekyll - Workopolis Static Pages</h1>
+
+  <p>Using a static-site generator to build landing pages for Workopolis.</p>
+
+  <h2>Page Creation and Routes</h2>
+  <p>Static pages can be created in the <code>pages</code> folder. At the top of each HTML page you can define things like page layout, title and url. To define the pages URL just add a permalink to the Front Matter of the HTML file:</p>
+
+{% highlight html %}
+---
+layout: default
+title: Workopolis | Post A Job
+permalink: /post-a-job/
+---
+{% endhighlight %}
+
+<p>The Job Posting page will now be available at <a href="{{base}}/post-a-job/">here</a></p>.
+
+<h2>Working with Collections</h2>
+
+<p>Collections allow us to create structured data that can be referenced anywhere on the site. New Collections are defined in <code>_config.yml</code> and the collection data is stored in the folder matching the name of the collection.</p>
+
+{% highlight html %}
+name: Worko
+markdown: kramdown
+highlighter: rouge
+exclude: ["node_modules", "gulpfile.js", "package.json"]
+port: 4000
+collections:
+  products:
+{% endhighlight %}
+
+<p>Each record in the collection contains Front Matter and Markdown. Information defined in Front Matter can be used to output specific data from the collection</p>
+
+<p>This demo has a Collection called <code>_products</code> that contains information on a few Workopolis B2B products. To output this information we can use Liquid templats to loop through the collection:</p>
 
 
-        <ul>
-          <li><a href="https://github.com/dumaurier/_worko/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/dumaurier/_worko/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/dumaurier/_worko">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h1>
-<a id="worko-static" class="anchor" href="#worko-static" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Worko Static</h1>
+{% highlight html %}
+{% raw %}
+{% for product in site.products %}
+<div class="product-block">
+  <h4>{{product.title}}</h5>
+  <strong>{{product.price}}</strong>
+  <p>{{product.short-description}}</p>
+  <a class="btn" href="{{product.buy-button}}">Buy Now For {{product.price}}</a>
+</div>
+{% endfor %}
+{% endraw %}
+{% endhighlight %}
 
-<p>Initial version of a Jekyll site for Worko</p>
+<p>This will generate markup for each entry in the collection:</p>
 
-<h2>
-<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requirements:</h2>
+<section class="product-block-container">
+{% for product in site.products %}
+<div class="product-block">
+  <h4>{{product.title}}</h5>
+  <strong>{{product.price}}</strong>
+  <p>{{product.short-description}}</p>
+  <a class="btn" href="{{product.buy-button}}">Buy Now For {{product.price}}</a>
+</div>
+{% endfor %}
+</section>
 
-<ol>
-<li>Ruby</li>
-<li>Jekyll</li>
-<li>Node.js</li>
-<li>Gulp</li>
-</ol>
+<p>View the docs on <a href="https://shopify.github.io/liquid/">Liquid Templates</a></p>
 
-<h2>
-<a id="running-jekyll" class="anchor" href="#running-jekyll" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Running Jekyll</h2>
+<h2>Working with Data</h2>
 
-<ol>
-<li>Clone this repo</li>
-<li>Open a Terminal/CMD window in the destination folder and run <code>npm install</code>
-</li>
-<li>Type <code>gulp</code> to build the Jekyll site</li>
-</ol>
+<p>Jekyll also alllows you to define custome data that can be accessed through Liquid templates. Custome data can be created in YAML, JSON or CSV. A collection of data containing Workopolis' social links could be looped through anywhere on the site without manually entering the same data repeatedly.</p>
 
-<h2>
-<a id="using-jekyll-admin-extension" class="anchor" href="#using-jekyll-admin-extension" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Using Jekyll-Admin Extension</h2>
+<h5>social.yml</h5>
 
-<p>Info on the jekyll-admin extension is available here: <a href="https://github.com/jekyll/jekyll-admin">https://github.com/jekyll/jekyll-admin</a></p>
+{% highlight html %}
+-   name: twitter
+    url: https://twitter.com/Workopolis
 
-<ol>
-<li>Open a Terminal/CMD window and run <code>bundle install</code>. This will install the jeykll-admin extension</li>
-<li>To run an instance of Jekyll with the Admin interface run <code>gulp jekyll-build</code>
-</li>
-<li>To run browser-sync with or without the Admin interface run <code>gulp</code> in a separate Terminal/CMD window</li>
-</ol>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/dumaurier">dumaurier</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
-  </body>
-</html>
+-   name: facebook
+    url: https://facebook.com/Workopolis
+
+-   name: instagram
+    url: https://instagram.com/workopolis
+{% endhighlight %}
+
+<h5>Liquid Template</h5>
+
+{% highlight html %}
+{% raw %}
+<ul>
+{% for social in site.data.social %}
+  <li>
+    <a href="{{social.url}}">
+      {{ social.name }}
+    </a>
+  </li>
+{% endfor %}
+</ul>
+{% endraw %}
+{% endhighlight %}
+
+<h5>Markup</h5>
+<ul>
+{% for social in site.data.social %}
+  <li>
+    <a href="{{social.url}}">
+      {{ social.name }}
+    </a>
+  </li>
+{% endfor %}
+</ul>
+
+</main>
