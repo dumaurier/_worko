@@ -1,5 +1,6 @@
 ---
 shortname: "niche"
+group: "post"
 title: "Niche - Industry Target Job Posting"
 price: "$795"
 url: "http://hiring.workopolis.com/product/skilled-labour-recruiting/"

@@ -1,5 +1,6 @@
 ---
 shortname: "logo"
+group: addon
 title: "Company Logo"
 price: "$79"
 url: "http://hiring.workopolis.com/solutions/all-solutions/"
