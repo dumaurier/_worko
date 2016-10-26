@@ -1,13 +1,13 @@
 ---
-shortname: "bdt"
-group: "branding"
-title: "Standard Branded Job Posting"
-price: "$263"
-url: "http://hiring.workopolis.com/solutions/post-a-job/#perks-posting"
-buy-button: "https://www.workopolis.com/account/en/recruiter-login"
-short-description: "Appear within the top 3 search results of your postings search page for better visibility and a higher chance of getting in front of active and passive talent."
+shortname: bdt
+group: branding
+title: Standard Branded Job Posting
+price:
+url: http://hiring.workopolis.com/find-out-more/?title=Interested+in+Employer+Branding?&NetsuiteTitle=Standard+Branded+Job+Posting
+buy-button:
+short-description: Get the attention of active and passive talent with a posting that highlights your employer brand and gives people looking for work all the reasons they need to make you their employer of choice.
 ---
 
-## Featured Job
+## Standard Branded Job Posting
 
-Appear within the top 3 search results of your postings search page for better visibility and a higher chance of getting in front of active and passive talent.
+Get the attention of active and passive talent with a posting that highlights your employer brand and gives people looking for work all the reasons they need to make you their employer of choice.
