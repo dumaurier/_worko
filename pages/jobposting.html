@@ -155,14 +155,14 @@ permalink: /post-a-job/
         <div class="product">
           <h3>{{ video.title}}</h3>
           <p>{{ video.short-description }}</p>
-          <a class="btn" href="{{ video.url }}">Buy now for {{ video.price}}</a>
+          <a class="btn" href="{{ video.link }}">Buy now for {{ video.price}}</a>
         </div>
 
         {% assign niche = site.products | where: "shortname", "niche"  | first %}
         <div class="product">
           <h3>{{ niche.title}}</h3>
           <p>{{ niche.short-description }}</p>
-          <a class="btn" href="{{ niche.url }}">Buy now for {{ niche.price}}</a>
+          <a class="btn" href="{{ niche.link }}">Buy now for {{ niche.price}}</a>
         </div>
       </div>
 

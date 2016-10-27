@@ -175,16 +175,45 @@ main.main {
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
-  text-align: center;
-  margin: 20px auto;
+
+.video-screening{
+  h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    margin: 20px auto;
+  }
+
+  h3 {
+    @include font-size(2);
+    margin: 50px auto;
+  }
+
+  h4 {
+    @include font-size(1.5);
+    margin: 15px 0;
+    font-weight: 700;
+    text-align: left;
+  }
+
+  p {
+    color: $grey;
+  }
+
+  a {
+    color: $color-blue;
+    text-decoration: none;
+    font-weight: 600;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
+
 
 h1 {
   @include font-size(4);
 }
 
-h1, h2 {
+.video-screening h1,.video-screening h2 {
   text-align: center;
   @include font-size(2.5);
   @include font-gotham-medium;
@@ -196,29 +225,4 @@ h1, h2 {
 
 .text-white {
   color: white;
-}
-
-h3 {
-  @include font-size(2);
-  margin: 50px auto;
-}
-
-h4 {
-  @include font-size(1.5);
-  margin: 15px 0;
-  font-weight: 700;
-  text-align: left;
-}
-
-p {
-  color: $grey;
-}
-
-a {
-  color: $color-blue;
-  text-decoration: none;
-  font-weight: 600;
-  &:hover {
-    text-decoration: underline;
-  }
 }

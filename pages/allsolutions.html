@@ -26,7 +26,7 @@ permalink: /all-solutions/
           <h3>{{ posting.title}}</h3>
           <p>{{ posting.short-description }}</p>
           <a class="btn" href="{{ posting.buy-button }}">Buy now for {{ posting.price}}</a>
-          <a class="product-link" href="{{ posting.url}}">Learn more</a>
+          <a class="product-link" href="{{ posting.link}}">Learn more</a>
         </div>
         {% endfor %}
       </div>
@@ -37,8 +37,10 @@ permalink: /all-solutions/
     <div class="block block-testimonials">
       {% assign testimonial = site.data.testimonial | where: "id","1" | first %}
       <img src="{{ testimonial.pic }}" alt="{{ testimonial.name }}" />
-      <h6>{{ testimonial.name }}</h6>
-      <p>{{ testimonial.title }}
+      <div class="testimonial-person">
+        <h6>{{ testimonial.name }}</h6>
+        <p>{{ testimonial.title }}
+      </div>
       <q>{{ testimonial.quote }}
     </div>
   </section>
@@ -56,7 +58,7 @@ permalink: /all-solutions/
           <h3>{{ addon.title}}</h3>
           <p>{{ addon.short-description }}</p>
           <a class="btn" href="{{ addon.buy-button }}">Buy now for {{ addon.price}}</a>
-          <a class="product-link" href="{{ addon.url}}">Learn more</a>
+          <a class="product-link" href="{{ addon.link}}">Learn more</a>
         </div>
         {% endfor %}
       </div>
@@ -67,8 +69,10 @@ permalink: /all-solutions/
     <div class="block block-testimonials">
       {% assign testimonial = site.data.testimonial | where: "id","2" | first %}
       <img src="{{ testimonial.pic }}" alt="{{ testimonial.name }}" />
-      <h6>{{ testimonial.name }}</h6>
-      <p>{{ testimonial.title }}
+      <div class="testimonial-person">
+        <h6>{{ testimonial.name }}</h6>
+        <p>{{ testimonial.title }}
+      </div>
       <q>{{ testimonial.quote }}
     </div>
   </section>
@@ -86,7 +90,7 @@ permalink: /all-solutions/
           <h3>{{ branding.title}}</h3>
           <p>{{ branding.short-description }}</p>
           <a class="btn" href="{{ branding.buy-button }}">Buy now for {{ branding.price}}</a>
-          <a class="product-link" href="{{ branding.url}}">Learn more</a>
+          <a class="product-link" href="{{ branding.link}}">Learn more</a>
         </div>
         {% endfor %}
       </div>
@@ -97,9 +101,66 @@ permalink: /all-solutions/
     <div class="block block-testimonials">
       {% assign testimonial = site.data.testimonial | where: "id","3" | first %}
       <img src="{{ testimonial.pic }}" alt="{{ testimonial.name }}" />
-      <h6>{{ testimonial.name }}</h6>
-      <p>{{ testimonial.title }}
+      <div class="testimonial-person">
+        <h6>{{ testimonial.name }}</h6>
+        <p>{{ testimonial.title }}
+      </div>
       <q>{{ testimonial.quote }}
+    </div>
+  </section>
+
+  <section class="container container-product">
+    <div class="block block-products">
+      <div class="product-desc">
+        <h2>Advertise</h2>
+        <p>Get in front of all the right talent when you advertise with Workopolis.</p>
+      </div>
+      <div class="product-group">
+        {% assign ads = site.products | where: "group", "ads" %}
+        {% for ads in ads  %}
+        <div class="product">
+          <h3>{{ ads.title}}</h3>
+          <p>{{ ads.short-description }}</p>
+          <a class="btn" href="{{ ads.buy-button }}">Buy now for {{ ads.price}}</a>
+          <a class="product-link" href="{{ ads.link}}">Learn more</a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="container container-testimonial">
+    <div class="block block-testimonials">
+      {% assign testimonial = site.data.testimonial | where: "id","4" | first %}
+      <img src="{{ testimonial.pic }}" alt="{{ testimonial.name }}" />
+      <div class="testimonial-person">
+        <h6>{{ testimonial.name }}</h6>
+        <p>{{ testimonial.title }}
+      </div>
+      <q>{{ testimonial.quote }}
+    </div>
+  </section>
+
+  <section class="container container-product">
+    <div class="block block-products">
+      <div class="product-desc">
+        <h2>Manage Candidates</h2>
+        <p>Find, screen and hire the right people quickly with a talent acquisition solution that’s built to help track applicants better.</p>
+      </div>
+      <div class="product-group">
+        {% assign manage = site.products | where: "group", "manage" %}
+        {% for manage in manage  %}
+        <div class="product">
+          <h3>{{ manage.title}}</h3>
+          <p>{{ manage.short-description }}</p>
+          <a class="btn" href="{{ manage.buy-button }}">Buy now for {{ manage.price}}</a>
+          <a class="product-link" href="{{ manage.link}}">Learn more</a>
+        </div>
+          {% if manage.buy-button %}
+            <span>hello</span>
+          {% endif %}
+        {% endfor %}
+      </div>
     </div>
   </section>
 

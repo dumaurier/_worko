@@ -30,7 +30,7 @@ permalink: /video-screening/
       </div>
       </div>
       <strong>{{ video.short-description }}</strong>
-      <p> <a href="">Contact</a> on of out people to learn more </p>
+      <p> <a href="">Contact</a> one of our people to learn more </p>
     </section>
   </div>
 
@@ -71,13 +71,13 @@ permalink: /video-screening/
         <div class="product">
           <h4>{{ scout.title}}</h4>
           <p>{{ scout.short-description }}</p>
-          <a class="link" href="{{ scout.url }}">Learn more</a>
+          <a class="link" href="{{ scout.link }}">Learn more</a>
         </div>
         {% assign niche = site.products | where: "shortname", "niche"  | first %}
         <div class="product">
           <h4>{{ niche.title}}</h4>
           <p>{{ niche.short-description }}</p>
-          <a class="link" href="{{ niche.url }}">Learn more</a>
+          <a class="link" href="{{ niche.link }}">Learn more</a>
         </div>
     </section>
   </div>

@@ -5,5 +5,4 @@ exclude: ["node_modules", "gulpfile.js", "package.json","src"]
 port: 4000
 collections:
   products:
-    output: true
-    permalink: /products/:path/
+    output: false
