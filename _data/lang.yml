@@ -1,0 +1,26 @@
+en:
+  allsolutions:
+    slug: allsolutions
+    heroTitle: This is the english title
+    heroText: Oh, hi there.
+
+  langtest:
+    slug: langtest
+    lang: en
+    testTitle: This is a test title
+    testCopy: This is some random stuff to test multilingual pages in Jekyll
+    buyNowText: Buy now for
+    LearnMoreText: Learn more
+fr:
+  allsolutions:
+    slug: allsolutionsfr
+    heroTitle: This title is totally in FRENCH
+    heroText: avec le bibliotequeopsd!
+
+  langtest:
+    slug: langtestfr
+    lang: fr
+    testTitle: This is a test title IN FRENCH
+    testCopy: This is some random stuff to test multilingual pages in Jekyll IN FRENCH
+    buyNowText: Acheter
+    LearnMoreText: En savoir plus

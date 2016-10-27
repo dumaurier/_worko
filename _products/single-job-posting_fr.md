@@ -1,12 +1,12 @@
 ---
 shortname: posting
 group: post
-title: Single Job Posting
+title: Affiche standard 30 jours
 price: $595
 link: http://hiring.workopolis.com/solutions/post-a-job/
 buy-button: http://www.workopolis.com/purchasing/en/home/initiate?PromoCode=NJPS1&Reset=True
-short-description: Stays live for 30 days and can be used up to 12 months from date of purchase.
-lang: en
+short-description: Offre d’emploi mise en ligne pendant 30 jours; doit être utilisée dans les 12 mois suivant son achat.
+lang: fr
 ---
 
 ## Single Job Posting

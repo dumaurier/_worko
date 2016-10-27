@@ -3,6 +3,15 @@ markdown: kramdown
 highlighter: rouge
 exclude: ["node_modules", "gulpfile.js", "package.json","src"]
 port: 4000
+
+gems:
+- jekyll-language-plugin
+
 collections:
   products:
     output: false
+
+languages: ['en','fr']
+
+language_data: data.lang.%%
+language_includes_dir: _i18n
