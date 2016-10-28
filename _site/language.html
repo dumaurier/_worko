@@ -11,7 +11,7 @@
 ">
 
   <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="canonical" href="http://localhost:4000/language">
 
   <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Worko Jekyll" />
 </head>
@@ -82,82 +82,62 @@
   </nav>
 </aside>
 
-      <section class="instruct-main container">
-  <h1>Worko Jekyll.</h1>
+      <main class="container">
+  <h1>Language and Translations</h1>
 
-  <p>
-    This guide will help you get set up to run Jekyll on your local machine.
-  </p>
+  <p>We use <a href="https://github.com/vwochnik/jekyll-language-plugin">jekyll-language-plugin</a> for for page translations. General translation are stored in <code>_date/lang.yml</code>. Each page should have its own section in the <code>lang.yml</code> file.</p>
 
-  <h2>Getting set up.</h2>
+  <figure class="highlight"><pre><code class="language-html" data-lang="html">  
+  en:
+    allsolutions:
+      slug: allsolutions
+      heroTitle: Take the stress out of hiring
+      heroText: Hiring shouldn’t be complicated. That’s why each of our
+      solutions was built with you in mind.
+  fr:
+    allsolutions:
+      slug: allsolutionsfr
+      heroTitle: L’embauche sans stress.
+      heroText: L’embauche ne devrait pas être un exercice compliqué. Voilà
+      pourquoi chacune de nos solutions a été conçue en fonction de vos besoins.
+  
+  </code></pre></figure>
 
-  <p>
-    Requirements:
+  <p>When you create a new page, you must define the languages available for translation as well as the scope of the translations. The jekyll-language-plugin also exposes a variable that will alter the url of the page to include the language.</p>
 
-    <ol class="instruct-list">
-      <li>
-        <strong>Ruby</strong>
-        <p>
-          Windows: Download and install from here: <a href="http://rubyinstaller.org/">http://rubyinstaller.org/</a>
-        </p>
-        <p>
-          Mac: Guess what? Ruby is installed by default. Fun!
-        </p>
-      </li>
-      <li>
-        <strong>Bundler</strong>
-        <p>
-          We use Bundler to manage installion of Ruby Gems required by Jekyll. To install Bundler open a Terminal or Command window and run: <pre><code>$ gem install bundler --source http://rubygems.org</code></pre>
-          Windows will throw random SSL errors if you don't force Gems to download over http which is why we have to change the source download. If you're using a Mac you can omit the --source option.
-        </p>
-      </li>
-      <li>
-        <strong>Node.js</strong>
-        <p>
-          Node isn't required to run Jekyll itself but we use it for our development environment and asset pipeline. Download Node.js here: <a href="https://nodejs.org/en/">https://nodejs.org/en/</a>
-        </p>
-      </li>
-      <li>
-        <strong>Gulp</strong>
-        <p>
-          Gulp is fun to say. It's also helps us develop new pages in Jekyll. To install Gulp, open a Terminal or Command window and run <pre><code>$ npm install --global gulp-cli</code></pre>
-        </p>
-      </li>
-      <li>
-        <strong>Git</strong>
-        <p>
-          Create a folder called <q>Jekyll</q>. Open a Terminal or Command window inside your newly created folder and run <pre><code>$ git init</code></pre>. Then clone the Worko Jekyll repo:
-          <pre><code>$ git clone https://github.com/dumaurier/_worko.git</code></pre>
-        </p>
-      </li>
-      <li>
-        <strong>Jekyll</strong>
-        <p>
-          Change your directory to the new _worko repo:
-          <pre><code>$ cd _worko</code></pre>
-          And run:
-          <pre><code>$ bundle install</code></pre>
-          This will install Jekyll and any other required Gems.
-        </p>
-      </li>
-      <li>
-        <strong>NPM Modules</strong>
-        <p>
-          Gulp has several dependcies to run our development environment. To install them run:
-          <pre><code>$ npm install</code></pre>
-        </p>
-      </li>
-      <li>
-        <strong>Build the site.</strong>
-        <p>
-          That's it. From your Terminal or Command window run:
-          <pre><code>$ gulp</code></pre>
-          This will build the Jekyll site, start the asset pipeline and set up BrowserSync for live reload.
-        </p>
-      </li>
-    </ol>
-  </p>
-</section>
+  <figure class="highlight"><pre><code class="language-html" data-lang="html">  
+  ---
+  layout: default
+  title: Workopolis | Testing Languages with Collections and Data
+  permalink: /:language/langtest/
+  languages:
+  - en
+  - fr
+  subset: allsolutions
+  ---
+  
+  </code></pre></figure>
+
+  <p>To reference a translation in your page you can reference using the <code>t</code> Liquid tag followed by the name of the resource.</p>
+
+  <figure class="highlight"><pre><code class="language-html" data-lang="html">  
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"product-desc"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>{% t 'heroTitle' %}<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;p&gt;</span>{% t 'heroCopy' %}<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  
+  </code></pre></figure>
+
+
+
+
+
+
+
+
+
+
+</main>
 
     </main>
 

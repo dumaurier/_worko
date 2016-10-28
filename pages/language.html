@@ -1,0 +1,64 @@
+---
+layout: default
+permalink: language
+---
+
+<main class="container">
+  <h1>Language and Translations</h1>
+
+  <p>We use <a href="https://github.com/vwochnik/jekyll-language-plugin">jekyll-language-plugin</a> for for page translations. General translation are stored in <code>_date/lang.yml</code>. Each page should have its own section in the <code>lang.yml</code> file.</p>
+
+  {% highlight html %}
+  {% raw %}
+  en:
+    allsolutions:
+      slug: allsolutions
+      heroTitle: Take the stress out of hiring
+      heroText: Hiring shouldn’t be complicated. That’s why each of our
+      solutions was built with you in mind.
+  fr:
+    allsolutions:
+      slug: allsolutionsfr
+      heroTitle: L’embauche sans stress.
+      heroText: L’embauche ne devrait pas être un exercice compliqué. Voilà
+      pourquoi chacune de nos solutions a été conçue en fonction de vos besoins.
+  {% endraw %}
+  {% endhighlight %}
+
+  <p>When you create a new page, you must define the languages available for translation as well as the scope of the translations. The jekyll-language-plugin also exposes a variable that will alter the url of the page to include the language.</p>
+
+  {% highlight html %}
+  {% raw %}
+  ---
+  layout: default
+  title: Workopolis | Testing Languages with Collections and Data
+  permalink: /:language/langtest/
+  languages:
+  - en
+  - fr
+  subset: allsolutions
+  ---
+  {% endraw %}
+  {% endhighlight %}
+
+  <p>To reference a translation in your page you can reference using the <code>t</code> Liquid tag followed by the name of the resource.</p>
+
+  {% highlight html %}
+  {% raw %}
+  <div class="product-desc">
+    <h2>{% t 'heroTitle' %}</h2>
+    <p>{% t 'heroCopy' %}</p>
+  </div>
+  {% endraw %}
+  {% endhighlight %}
+
+
+
+
+
+
+
+
+
+
+</main>
