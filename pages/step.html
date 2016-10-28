@@ -1,0 +1,116 @@
+---
+layout: default
+permalink: liquid
+---
+
+<main class="container">
+
+  <h1>Jekyll - Workopolis Static Pages</h1>
+
+  <p>Using a static-site generator to build landing pages for Workopolis.</p>
+
+  <h2>Page Creation and Routes</h2>
+  <p>Static pages can be created in the <code>pages</code> folder. At the top of each HTML page you can define things like page layout, title and url. To define the pages URL just add a permalink to the Front Matter of the HTML file:</p>
+
+{% highlight html %}
+---
+layout: default
+title: Workopolis | Post A Job
+permalink: /post-a-job/
+---
+{% endhighlight %}
+
+<p>The Job Posting page will now be available at <a href="{{base}}/post-a-job/">here</a></p>.
+
+<h2>Working with Collections</h2>
+
+<p>Collections allow us to create structured data that can be referenced anywhere on the site. New Collections are defined in <code>_config.yml</code> and the collection data is stored in the folder matching the name of the collection.</p>
+
+{% highlight html %}
+name: Worko
+markdown: kramdown
+highlighter: rouge
+exclude: ["node_modules", "gulpfile.js", "package.json"]
+port: 4000
+collections:
+  products:
+{% endhighlight %}
+
+<p>Each record in the collection contains Front Matter and Markdown. Information defined in Front Matter can be used to output specific data from the collection</p>
+
+<p>This demo has a Collection called <code>_products</code> that contains information on a few Workopolis B2B products. To output this information we can use Liquid templats to loop through the collection:</p>
+
+
+{% highlight html %}
+{% raw %}
+{% for product in site.products %}
+<div class="product-block">
+  <h4>{{product.title}}</h5>
+  <strong>{{product.price}}</strong>
+  <p>{{product.short-description}}</p>
+  <a class="btn" href="{{product.buy-button}}">Buy Now For {{product.price}}</a>
+</div>
+{% endfor %}
+{% endraw %}
+{% endhighlight %}
+
+<p>This will generate markup for each entry in the collection:</p>
+
+<section class="product-block-container">
+{% for product in site.products %}
+<div class="product-block">
+  <h4>{{product.title}}</h5>
+  <strong>{{product.price}}</strong>
+  <p>{{product.short-description}}</p>
+  <a class="btn" href="{{product.buy-button}}">Buy Now For {{product.price}}</a>
+</div>
+{% endfor %}
+</section>
+
+<p>View the docs on <a href="https://shopify.github.io/liquid/">Liquid Templates</a></p>
+
+<h2>Working with Data</h2>
+
+<p>Jekyll also alllows you to define custome data that can be accessed through Liquid templates. Custome data can be created in YAML, JSON or CSV. A collection of data containing Workopolis' social links could be looped through anywhere on the site without manually entering the same data repeatedly.</p>
+
+<h5>social.yml</h5>
+
+{% highlight html %}
+-   name: twitter
+    url: https://twitter.com/Workopolis
+
+-   name: facebook
+    url: https://facebook.com/Workopolis
+
+-   name: instagram
+    url: https://instagram.com/workopolis
+{% endhighlight %}
+
+<h5>Liquid Template</h5>
+
+{% highlight html %}
+{% raw %}
+<ul>
+{% for social in site.data.social %}
+  <li>
+    <a href="{{social.url}}">
+      {{ social.name }}
+    </a>
+  </li>
+{% endfor %}
+</ul>
+{% endraw %}
+{% endhighlight %}
+
+<h5>Markup</h5>
+<ul>
+{% for social in site.data.social %}
+  <li>
+    <a href="{{social.url}}">
+      {{ social.name }}
+    </a>
+  </li>
+{% endfor %}
+</ul>
+
+</main>
