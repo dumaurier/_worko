@@ -3,78 +3,80 @@ layout: default
 ---
 
 <section class="instruct-main container">
-  <h1>Worko Jekyll.</h1>
+  <div class="contents">
+    <h1>Worko Jekyll.</h1>
 
-  <p>
-    This guide will help you get set up to run Jekyll on your local machine.
-  </p>
+    <p>
+      This guide will help you get set up to run Jekyll on your local machine.
+    </p>
 
-  <h2>Getting set up.</h2>
+    <h2>Getting set up.</h2>
 
-  <p>
-    Requirements:
+    <p>
+      Requirements:
 
-    <ol class="instruct-list">
-      <li>
-        <strong>Ruby</strong>
-        <p>
-          Windows: Download and install from here: <a href="http://rubyinstaller.org/">http://rubyinstaller.org/</a>
-        </p>
-        <p>
-          Mac: Guess what? Ruby is installed by default. Fun!
-        </p>
-      </li>
-      <li>
-        <strong>Bundler</strong>
-        <p>
-          We use Bundler to manage installion of Ruby Gems required by Jekyll. To install Bundler open a Terminal or Command window and run: <pre><code>$ gem install bundler --source http://rubygems.org</code></pre>
-          Windows will throw random SSL errors if you don't force Gems to download over http which is why we have to change the source download. If you're using a Mac you can omit the --source option.
-        </p>
-      </li>
-      <li>
-        <strong>Node.js</strong>
-        <p>
-          Node isn't required to run Jekyll itself but we use it for our development environment and asset pipeline. Download Node.js here: <a href="https://nodejs.org/en/">https://nodejs.org/en/</a>
-        </p>
-      </li>
-      <li>
-        <strong>Gulp</strong>
-        <p>
-          Gulp is fun to say. It's also helps us develop new pages in Jekyll. To install Gulp, open a Terminal or Command window and run <pre><code>$ npm install --global gulp-cli</code></pre>
-        </p>
-      </li>
-      <li>
-        <strong>Git</strong>
-        <p>
-          Create a folder called <q>Jekyll</q>. Open a Terminal or Command window inside your newly created folder and run <pre><code>$ git init</code></pre>. Then clone the Worko Jekyll repo:
-          <pre><code>$ git clone https://github.com/dumaurier/_worko.git</code></pre>
-        </p>
-      </li>
-      <li>
-        <strong>Jekyll</strong>
-        <p>
-          Change your directory to the new _worko repo:
-          <pre><code>$ cd _worko</code></pre>
-          And run:
-          <pre><code>$ bundle install</code></pre>
-          This will install Jekyll and any other required Gems.
-        </p>
-      </li>
-      <li>
-        <strong>NPM Modules</strong>
-        <p>
-          Gulp has several dependcies to run our development environment. To install them run:
-          <pre><code>$ npm install</code></pre>
-        </p>
-      </li>
-      <li>
-        <strong>Build the site.</strong>
-        <p>
-          That's it. From your Terminal or Command window run:
-          <pre><code>$ gulp</code></pre>
-          This will build the Jekyll site, start the asset pipeline and set up BrowserSync for live reload.
-        </p>
-      </li>
-    </ol>
-  </p>
+      <ol class="instruct-list">
+        <li>
+          <strong>Ruby</strong>
+          <p>
+            Windows: Download and install from here: <a href="http://rubyinstaller.org/">http://rubyinstaller.org/</a>
+          </p>
+          <p>
+            Mac: Guess what? Ruby is installed by default. Fun!
+          </p>
+        </li>
+        <li>
+          <strong>Bundler</strong>
+          <p>
+            We use Bundler to manage installion of Ruby Gems required by Jekyll. To install Bundler open a Terminal or Command window and run: <pre><code>$ gem install bundler --source http://rubygems.org</code></pre>
+            Windows will throw random SSL errors if you don't force Gems to download over http which is why we have to change the source download. If you're using a Mac you can omit the --source option.
+          </p>
+        </li>
+        <li>
+          <strong>Node.js</strong>
+          <p>
+            Node isn't required to run Jekyll itself but we use it for our development environment and asset pipeline. Download Node.js here: <a href="https://nodejs.org/en/">https://nodejs.org/en/</a>
+          </p>
+        </li>
+        <li>
+          <strong>Gulp</strong>
+          <p>
+            Gulp is fun to say. It's also helps us develop new pages in Jekyll. To install Gulp, open a Terminal or Command window and run <pre><code>$ npm install --global gulp-cli</code></pre>
+          </p>
+        </li>
+        <li>
+          <strong>Git</strong>
+          <p>
+            Create a folder called <q>Jekyll</q>. Open a Terminal or Command window inside your newly created folder and run <pre><code>$ git init</code></pre>. Then clone the Worko Jekyll repo:
+            <pre><code>$ git clone https://github.com/dumaurier/_worko.git</code></pre>
+          </p>
+        </li>
+        <li>
+          <strong>Jekyll</strong>
+          <p>
+            Change your directory to the new _worko repo:
+            <pre><code>$ cd _worko</code></pre>
+            And run:
+            <pre><code>$ bundle install</code></pre>
+            This will install Jekyll and any other required Gems.
+          </p>
+        </li>
+        <li>
+          <strong>NPM Modules</strong>
+          <p>
+            Gulp has several dependcies to run our development environment. To install them run:
+            <pre><code>$ npm install</code></pre>
+          </p>
+        </li>
+        <li>
+          <strong>Build the site.</strong>
+          <p>
+            That's it. From your Terminal or Command window run:
+            <pre><code>$ gulp</code></pre>
+            This will build the Jekyll site, start the asset pipeline and set up BrowserSync for live reload.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </div>
 </section>

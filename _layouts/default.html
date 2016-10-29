@@ -52,10 +52,54 @@
     </header>
 
     <main class="main" aria-label="Content">
+
       {% include sidebar.html %}
+      <button class="menu js-menu">Menu</button>
       {{ content }}
     </main>
 
   </body>
+  <script>
+  'use strict';
+
+  class docMenu {
+
+    constructor (){
+      this.menuTrigger = document.querySelector('.js-menu');
+      this.menu = document.querySelector('.side-nav');
+      this.overlay = document.querySelector('body');
+      this.menuClose = document.querySelector('.js-menu-close');
+      this.menuContentsEl = document.querySelector('.side-nav nav');
+
+      this.showMenu = this.showMenu.bind(this);
+      this.hideMenu = this.hideMenu.bind(this);
+      this.blockClicks = this.blockClicks.bind(this);
+
+      this.addEventListeners();
+    }
+
+    addEventListeners () {
+      this.menuTrigger.addEventListener('click', this.showMenu);
+      this.menuClose.addEventListener('click', this.hideMenu);
+      this.menuContentsEl.addEventListener('click', this.blockClicks);
+    }
+
+    blockClicks (evt) {
+      evt.stopPropagation();
+    }
+
+    showMenu () {
+    this.menu.classList.add('is-active');
+    this.overlay.classList.add('menu-is-active');
+    }
+
+    hideMenu () {
+      this.menu.classList.remove('is-active');
+      this.overlay.classList.remove('menu-is-active');
+    }
+  }
+
+  new docMenu();
+  </script>
 
 </html>
