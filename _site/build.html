@@ -11,7 +11,7 @@
 ">
 
   <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="canonical" href="http://localhost:4000/liquid">
+  <link rel="canonical" href="http://localhost:4000/build">
 
   <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Worko Jekyll" />
 </head>
@@ -114,137 +114,39 @@
 </aside>
 
       <button class="menu js-menu">Menu</button>
-      <section class="container">
+      <h1>Jekyll build options.</h1>
 
-  <div class="contents">
-    <h1>Liquid Templates.</h1>
+<p>
+  There are a few different options to build Jekyll. The simplest way to is simply open a Terminal/Command window inside your Jekyll folder and type <code>gulp</code>.
+</p>
 
-    <p>
-      Jekyll uses <a href="https://shopify.github.io/liquid/">Liquid</a> to process templates. Jekyll supports all of Liquid's filter and has added additional ones specific to Jekyll. You can read more on Jekyll specific tags and filters here: <a href="https://jekyllrb.com/docs/templates/">https://jekyllrb.com/docs/templates/</a>
-    </p>
+<p>
+  You can also run <code>gulp jekyll-build</code>. This will build the Jekyll site expose the UI editor. This editor is available at <a href="http://localhost:4000/admin">http://localhost:4000/admin</a>.
+</p>
 
-    <h2>Working with Collections</h2>
+<h2 id="admin">Jekyll Admin UI Editor</h2>
 
-    <p>Collections allow us to create structured data that can be referenced anywhere on the site. New Collections are defined in <code>_config.yml</code> and the collection data is stored in the folder matching the name of the collection.</p>
+<p>
+  The admin interface allows people to edit portions of the site without working directly with code. For example, a user cannot directly edit a page.html file but they can edit any translations, data file or collections that are used on the page.
+</p>
 
-    <figure class="highlight"><pre><code class="language-html" data-lang="html">name: Worko
-markdown: kramdown
-highlighter: rouge
-exclude: ["node_modules", "gulpfile.js", "package.json"]
-port: 4000
-collections:
-  products:
-    </code></pre></figure>
+<p>
+  For example, on the <a href="http://hiring.workopolis.com/all-solutions">All Solutions</a> page while a non-technincal user would not be able to edit the layout of the page, they would be able to edit:
 
-    <p>Each record in the collection contains Front Matter and Markdown. Information defined in Front Matter can be used to output specific data from the collection</p>
+  <ul>
+    <li>
+      All text and translations
+    </li>
+    <li>
+      Product cards stored in the _products collections
+    </li>
+    <li>
+      Customer testimonials stored in data files
+    </li>
+  </ul>
 
-    <p>This demo has a Collection called <code>_products</code> that contains information on a few Workopolis B2B products. To output this information we can use Liquid templats to loop through the collection:</p>
-
-
-    <figure class="highlight"><pre><code class="language-html" data-lang="html">    
-{% for product in site.products %}
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"product-block"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;h4&gt;</span>{{product.title}}<span class="nt">&lt;/h5&gt;</span>
-  <span class="nt">&lt;strong&gt;</span>{{product.price}}<span class="nt">&lt;/strong&gt;</span>
-  <span class="nt">&lt;p&gt;</span>{{product.short-description}}<span class="nt">&lt;/p&gt;</span>
-  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="na">href=</span><span class="s">"{{product.buy-button}}"</span><span class="nt">&gt;</span>Buy Now For {{product.price}}<span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-{% endfor %}
-    
-    </code></pre></figure>
-
-    <p>This will generate markup for each entry in the collection:</p>
-
-    <section class="product-block-container">
-    
-    <div class="product-block">
-      <h4>Advertise on Facebook</h5>
-      <strong></strong>
-      <p>Take advantage of social targeting and speak to active talent, as well as people waiting to come across the perfect job on a platform they're already engaged with.</p>
-      <a class="btn" href="">Buy Now For </a>
-    </div>
-    
-    <div class="product-block">
-      <h4>Advertise on the Google Display Network</h5>
-      <strong></strong>
-      <p>Extend your reach even further to get in front of people looking for specific job types across multiple sites.</p>
-      <a class="btn" href="">Buy Now For </a>
-    </div>
-    
-    <div class="product-block">
-      <h4>Advertise on Workopolis</h5>
-      <strong></strong>
-      <p>Reach 65,000 people looking for work daily on Workopolis and drive them right to your website to learn more about your company and open roles.</p>
-      <a class="btn" href="">Buy Now For </a>
-    </div>
-    
-    <div class="product-block">
-      <h4>Applicant Tracking System (iCIMS)</h5>
-      <strong></strong>
-      <p>Recruit, connect and onboard with a fully customizable applicant tracking system, powerful employer branded marketing tools to recruit passive talent, and automated onboarding software to help transition new talent into productive hires.</p>
-      <a class="btn" href="">Buy Now For </a>
-    </div>
-    
-    </section>
-
-    <h2>Working with Data</h2>
-
-    <p>Jekyll also alllows you to define custome data that can be accessed through Liquid templates. Custome data can be created in YAML, JSON or CSV. A collection of data containing Workopolis' social links could be looped through anywhere on the site without manually entering the same data repeatedly.</p>
-
-    <h5>social.yml</h5>
-
-    <figure class="highlight"><pre><code class="language-html" data-lang="html">-   name: twitter
-    url: https://twitter.com/Workopolis
-
--   name: facebook
-    url: https://facebook.com/Workopolis
-
--   name: instagram
-    url: https://instagram.com/workopolis
-    </code></pre></figure>
-
-    <h5>Liquid Template</h5>
-
-    <figure class="highlight"><pre><code class="language-html" data-lang="html">    
-<span class="nt">&lt;ul&gt;</span>
-{% for social in site.data.social %}
-  <span class="nt">&lt;li&gt;</span>
-    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{social.url}}"</span><span class="nt">&gt;</span>
-      {{ social.name }}
-    <span class="nt">&lt;/a&gt;</span>
-  <span class="nt">&lt;/li&gt;</span>
-{% endfor %}
-<span class="nt">&lt;/ul&gt;</span>
-    
-    </code></pre></figure>
-
-    <h5>Markup</h5>
-    <ul>
-    
-      <li>
-        <a href="https://twitter.com/Workopolis">
-          twitter
-        </a>
-      </li>
-    
-      <li>
-        <a href="https://facebook.com/Workopolis">
-          facebook
-        </a>
-      </li>
-    
-      <li>
-        <a href="https://instagram.com/workopolis">
-          instagram
-        </a>
-      </li>
-    
-    </ul>
-
-
-  </div>
-
-</section>
+  If Optimizely is available on the page, a non-technical user would also be able to change the position of each block of content on the page.
+</p>
 
     </main>
 
