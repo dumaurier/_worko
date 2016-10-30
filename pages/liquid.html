@@ -17,13 +17,13 @@ permalink: liquid
     <p>Collections allow us to create structured data that can be referenced anywhere on the site. New Collections are defined in <code>_config.yml</code> and the collection data is stored in the folder matching the name of the collection.</p>
 
     {% highlight html %}
-    name: Worko
-    markdown: kramdown
-    highlighter: rouge
-    exclude: ["node_modules", "gulpfile.js", "package.json"]
-    port: 4000
-    collections:
-      products:
+name: Worko
+markdown: kramdown
+highlighter: rouge
+exclude: ["node_modules", "gulpfile.js", "package.json"]
+port: 4000
+collections:
+  products:
     {% endhighlight %}
 
     <p>Each record in the collection contains Front Matter and Markdown. Information defined in Front Matter can be used to output specific data from the collection</p>
@@ -33,14 +33,14 @@ permalink: liquid
 
     {% highlight html %}
     {% raw %}
-    {% for product in site.products %}
-    <div class="product-block">
-      <h4>{{product.title}}</h5>
-      <strong>{{product.price}}</strong>
-      <p>{{product.short-description}}</p>
-      <a class="btn" href="{{product.buy-button}}">Buy Now For {{product.price}}</a>
-    </div>
-    {% endfor %}
+{% for product in site.products %}
+<div class="product-block">
+  <h4>{{product.title}}</h5>
+  <strong>{{product.price}}</strong>
+  <p>{{product.short-description}}</p>
+  <a class="btn" href="{{product.buy-button}}">Buy Now For {{product.price}}</a>
+</div>
+{% endfor %}
     {% endraw %}
     {% endhighlight %}
 
@@ -64,29 +64,29 @@ permalink: liquid
     <h5>social.yml</h5>
 
     {% highlight html %}
-    -   name: twitter
-        url: https://twitter.com/Workopolis
+-   name: twitter
+    url: https://twitter.com/Workopolis
 
-    -   name: facebook
-        url: https://facebook.com/Workopolis
+-   name: facebook
+    url: https://facebook.com/Workopolis
 
-    -   name: instagram
-        url: https://instagram.com/workopolis
+-   name: instagram
+    url: https://instagram.com/workopolis
     {% endhighlight %}
 
     <h5>Liquid Template</h5>
 
     {% highlight html %}
     {% raw %}
-    <ul>
-    {% for social in site.data.social %}
-      <li>
-        <a href="{{social.url}}">
-          {{ social.name }}
-        </a>
-      </li>
-    {% endfor %}
-    </ul>
+<ul>
+{% for social in site.data.social %}
+  <li>
+    <a href="{{social.url}}">
+      {{ social.name }}
+    </a>
+  </li>
+{% endfor %}
+</ul>
     {% endraw %}
     {% endhighlight %}
 

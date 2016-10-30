@@ -11,15 +11,15 @@ permalink: language
 
     {% highlight html %}
     {% raw %}
-    ---
-    layout: default
-    title: Workopolis | Testing Languages with Collections and Data
-    permalink: /:language/langtest/
-    languages:
-    - en
-    - fr
-    subset: allsolutions
-    ---
+---
+layout: default
+title: Workopolis | Testing Languages with Collections and Data
+permalink: /:language/langtest/
+languages:
+- en
+- fr
+subset: allsolutions
+---
     {% endraw %}
     {% endhighlight %}
 
@@ -27,18 +27,18 @@ permalink: language
 
     {% highlight html %}
     {% raw %}
-    en:
-      allsolutions:
-        slug: allsolutions
-        heroTitle: Take the stress out of hiring
-        heroText: Hiring shouldn’t be complicated. That’s why each of our
-        solutions was built with you in mind.
-    fr:
-      allsolutions:
-        slug: allsolutionsfr
-        heroTitle: L’embauche sans stress.
-        heroText: L’embauche ne devrait pas être un exercice compliqué. Voilà
-        pourquoi chacune de nos solutions a été conçue en fonction de vos besoins.
+en:
+  allsolutions:
+    slug: allsolutions
+    heroTitle: Take the stress out of hiring
+    heroText: Hiring shouldn’t be complicated. That’s why each of our
+    solutions was built with you in mind.
+fr:
+  allsolutions:
+    slug: allsolutionsfr
+    heroTitle: L’embauche sans stress.
+    heroText: L’embauche ne devrait pas être un exercice compliqué. Voilà
+    pourquoi chacune de nos solutions a été conçue en fonction de vos besoins.
     {% endraw %}
     {% endhighlight %}
 
@@ -46,10 +46,10 @@ permalink: language
 
     {% highlight html %}
     {% raw %}
-    <div class="product-desc">
-      <h2>{% t 'heroTitle' %}</h2>
-      <p>{% t 'heroCopy' %}</p>
-    </div>
+<div class="product-desc">
+  <h2>{% t 'heroTitle' %}</h2>
+  <p>{% t 'heroCopy' %}</p>
+</div>
     {% endraw %}
     {% endhighlight %}
 
