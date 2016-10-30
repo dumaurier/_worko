@@ -145,6 +145,10 @@ h2{
 
       a{
         color: #007ac9;
+
+        &:hover{
+          font-weight: 600;
+        }
       }
 
       + li{

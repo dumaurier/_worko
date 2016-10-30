@@ -47,7 +47,7 @@ collections:
     <p>This will generate markup for each entry in the collection:</p>
 
     <section class="product-block-container">
-    {% for product in site.products %}
+    {% for product in site.products limit:4%}
     <div class="product-block">
       <h4>{{product.title}}</h5>
       <strong>{{product.price}}</strong>
