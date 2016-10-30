@@ -26,6 +26,11 @@ body.menu-is-active{
   background: rgba(0,0,0,.4);
 }
 
+:target {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+
 h2{
   margin-top: 65px;
 }
@@ -51,7 +56,7 @@ h2{
   margin-top: 10px;
   display: block;
   height: 40px;
-  width: 150px;
+  width: 60px;
   float: left;
 }
 
@@ -64,6 +69,56 @@ h2{
   }
 
 }
+
+.worko-logo{
+  width: 150px;
+  transition: width .2s ease;
+  display: block;
+  margin: 0 auto;
+}
+
+.letter:not(.worko-logo-w){
+  transition: opacity .3s linear;
+  opacity: 1;
+}
+
+.worko-logo-w{
+  transform: translateY(0) scale(1) translateX(0);
+  transition: transform .4s ease-in-out;
+}
+
+.worko-logo-skyline{
+  transform: translateY(0) scale(1) translateX(0);
+  transition: transform .4s ease-in-out;
+}
+
+
+@media screen and (max-width: 700px){
+  body{
+    //background: #ccc;
+  }
+
+  .worko-logo{
+    width: 40px;
+  }
+
+  .worko-logo-skyline{
+    transform: scale(1);
+  }
+
+  .worko-logo-w{
+    transform: translateY(-1495px) scale(5.4) translateX(-420px);
+  }
+
+  .letter:not(.worko-logo-w){
+    opacity: 0;
+  }
+
+  .worko-logo-skyline{
+    transform: translateY(-440px) scale(2.2) translateX(-630px);
+  }
+}
+
 
 .main{
   margin-top: 60px;
@@ -96,6 +151,11 @@ h2{
         margin-top: 10px;
       }
     }
+
+    ul{
+      padding: 10px 15px;
+      font-size: 80%;
+    }
   }
 }
 
@@ -112,6 +172,15 @@ h2{
 a{
   color: #007ac9;
   font-weight: 500;
+}
+
+figure{
+  margin: 0;
+}
+
+code{
+  background: #dcdcdc;
+  padding: 0 3px;
 }
 
 pre{
@@ -140,6 +209,14 @@ pre code{
   flex: 0 0 27%;
 }
 
+.product{
+  width: 230px;
+  display: inline-block;
+  background: #f2f4f5;
+  padding: 15px 10px;
+  margin: 10px;
+}
+
 .menu{
   -webkit-appearance: none;
   border: 1px solid #007ac9;
@@ -153,6 +230,10 @@ pre code{
 }
 
 @media (min-width: 800px) {
+  .worko-logo-container{
+    width: 150px;
+  }
+
   .side-nav{
     transform: translateX(0);
     transition: transform .2s ease-in-out;

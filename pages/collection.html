@@ -1,0 +1,166 @@
+---
+layout: default
+permalink: collections
+---
+
+<section class="container">
+  <div class="contents">
+    <h1>Collections.</h1>
+    <p>
+      Collections allow us to create structred data that doesn't need to be its own page or is referenced in different parts of the site. For Workopolis, an example would be a collection of B2B products. Our collections also need to support both French and English.
+    </p>
+
+    <h2 id="create-collection">Creating new collections.</h2>
+    <p>
+      To create a new collection open <code>config.yml</code> and name your collection:
+
+      {% highlight html %}
+name: Worko
+markdown: kramdown
+highlighter: rouge
+exclude: ["node_modules", "gulpfile.js", "package.json"]
+port: 4000
+collections:
+  products:
+      {% endhighlight %}
+    </p>
+    <p>
+      Now create a folder with the same name define in <code>config.yml</code> but with an underscore at the front. For our <code>products</code> collection the folder will be named <code>_products</code>. Add new files inside the folder with a markdown extension. </p>
+
+      <p>
+      The Company Logo product will be called <code>logo.md</code>. This file will contain both Front Matter and markdown to define its contents. If a collection will be used on French and English pages you must specify the items language in the Front Matter of the item:</p>
+
+
+      <h3>logo.md - English</h3>
+      {% highlight html %}
+---
+shortname: logo
+group: addon
+lang: en
+title: Company Logo
+price: $79
+link: http://hiring.workopolis.com/solutions/all-solutions/
+buy-button: https://www.workopolis.com/account/en/recruiter-login
+short-description: Highlight your employer brand by including a company logo to help talent recognize that you're an employer of choice among your competitors.
+---
+
+## Company Logo
+
+Highlight your employer brand by including a company logo to help talent recognize that you're an employer of choice among your competitors.
+      {% endhighlight %}
+
+      <h3>logo.md - French</h3>
+      {% highlight html %}
+---
+shortname: logo
+group: addon
+lang: fr
+title: Logo d'employeur
+price: $79
+link: http://hiring.workopolis.com/fr/solutions/afficher-un-emploi/#perks-posting
+buy-button: http://www.workopolis.com/purchasing/fr/home/initiate?PromoCode=3NH02&Reset=True
+short-description: Mettez de l’avant votre marque d’employeur en incluant le logo de l’entreprise pour amener les candidats à vous voir comme un employeur de choix dans votre secteur.
+---
+
+## Logo d'employeur
+
+Mettez de l’avant votre marque d’employeur en incluant le logo de l’entreprise pour amener les candidats à vous voir comme un employeur de choix dans votre secteur.
+      {% endhighlight %}
+
+      <h2 id="reference-collection">Referencing data in a collection.</h2>
+
+      <p>
+        A basic example of looping through a collection is descriped in the <a href="/liquid">Liquid Templates</a> page.
+      </p>
+
+      <h2 id="single-collection">Referencing a single item from a collection.</h2>
+
+      <p>
+        To return a single item from a collection use the Liquid's <code>where</code> tag to reference a unique identifier from the collection combined with the <code>first</code> filter. In this case, we're referencing the <code>shortname</code> for the product:
+      </p>
+
+      {% highlight html %}
+      {% raw %}
+{% assign video = site.products | where: "shortname", "video"  | first %}
+<div class="product">
+  <h3>{{ video.title}}</h3>
+  <p>{{ video.short-description }}</p>
+  <a class="btn" href="{{ video.link }}">Buy now for {{ video.price}}</a>
+</div>
+      {% endraw %}
+      {% endhighlight %}
+
+      <p>
+        This will return the Video Screening product card from the collection:
+      </p>
+
+      {% assign video = site.products | where: "shortname", "video"  | first %}
+        <div class="product">
+          <h3>{{ video.title}}</h3>
+          <p>{{ video.short-description }}</p>
+          <a class="btn" href="{{ video.link }}">Buy now for {{ video.price}}</a>
+        </div>
+
+        <h2 id="group-collection">Referencing groups of items in a collection.</h2>
+
+        <p>
+          You can return a group of items from a collection by looping through the collection and filtering the results based on a group name. In this case we're returning all of Workopolis' job posting products:
+        </p>
+
+        {% highlight html %}
+        {% raw %}
+<div class="product-group">
+{% assign posting = site.products | where: "group", "post" %}
+{% for posting in posting  %}
+<div class="product">
+  <h3>{{ posting.title}}</h3>
+  <p>{{ posting.short-description }}</p>
+    <a class="btn" href="{{ posting.buy-button }}">Buy now for {{ posting.price}}</a>
+    <a class="product-link" href="{{ posting.link}}">Learn more</a>
+</div>
+{% endfor %}
+</div>
+        {% endraw %}
+        {% endhighlight%}
+
+        <p>
+          This will return each product card with a group name of <code>post</code>:
+        </p>
+        <div class="product-group">
+        {% assign posting = site.products | where: "group", "post" %}
+        {% for posting in posting  %}
+        <div class="product">
+          <h3>{{ posting.title}}</h3>
+          <p>{{ posting.short-description }}</p>
+            <a class="btn" href="{{ posting.buy-button }}">Buy now for {{ posting.price}}</a>
+            <a class="product-link" href="{{ posting.link}}">Learn more</a>
+        </div>
+        {% endfor %}
+        </div>
+
+        <h2 id="language-collections">Returning items from a collection based on page language.</h2>
+
+        <p>
+          When creating a page that will be presented in both French and English you may need to return items from a collection based on current language of the page. To do this, include an <code>if</code> statement that uses the <code>page.language</code> variable to match the language of an item in the collection.
+        </p>
+        <p>
+          <strong>Note:</strong> This requires that the items in the collection have a language attribute that matches output of the <code>page.language</code> variable. This was described at the top of this page.
+        </p>
+
+        {% highlight html %}
+        {% raw %}
+{% assign posting = site.products | where: "group", "post" %}
+{% for posting in posting  %}
+  {% if posting.lang == page.language %}
+  <div class="product">
+    <h3>{{ posting.title}}</h3>
+    <p>{{ posting.short-description }}</p>
+    <a class="btn" href="{{ posting.buy-button }}">{% t 'buyNowText' %} {{ posting.price}}</a>
+    <a class="product-link" href="{{ posting.link}}">{% t 'LearnMoreText' %}</a>
+</div>
+  {% endif %}
+{% endfor %}
+        {% endraw %}
+        {% endhighlight%}
+  </div>
+</section>

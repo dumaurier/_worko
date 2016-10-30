@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Worko Jekyll</title>
+  <meta name="description" content="Static site generator for Workopolis using Jekyll.
+">
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/collections">
+
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Worko Jekyll" />
+</head>
+
+
+  <body>
+    <header class="header">
+      <a class="worko-logo-container" href="/">
+            <svg xmlns="http://www.w3.org/2000/svg" height="400" width="400" viewBox="542 56 1220 390" class="worko-logo">
+
+                <title>Workopolis Logo</title>
+                <path class="worko-r letter" fill="#387C2B" d="M975.1,425.2H942l-25.9-25.9h-23.1v25.9h-23.5V314.5h54.3c23.3,0,42.4,19.1,42.4,42.4  c0,15.9-9.1,29.9-22.3,37.1L975.1,425.2z M942.7,356.9c0-10.4-8.5-18.9-18.9-18.9h-30.7v37.7h30.7 C934.2,375.8,942.7,367.3,942.7,356.9"></path>
+                <polygon class="worko-k letter" fill="#387C2B" points="1021.4,425.2 997.9,425.2 997.9,314.5 1021.4,314.5 1021.4,361.6 1068.5,314.5 1101.6,314.5 1048.6,367.5 1106.2,425.2 1073.4,425.2 1021.4,373.5"></polygon>
+                <path class="worko-p letter" fill="#387C2B" d="M1348.6,356.9c0,23.3-19.1,42.4-42.4,42.4h-30.8v25.9h-23.5V314.5h54.3    C1329.5,314.5,1348.6,333.6,1348.6,356.9 M1325.1,356.9c0-10.4-8.5-18.9-18.9-18.9h-30.8v37.7h30.8  C1316.6,375.8,1325.1,367.3,1325.1,356.9"></path>
+                <polygon class="worko-l letter" fill="#387C2B" points="1511.4,314.5 1535,314.5 1535,401.7 1582,401.7 1582,425.2 1511.4,425.2"></polygon>
+                <path class="worko-s letter" fill="#387C2B" d="M1713.3,427.5c-15.7,0-32-4-46-13.1l3.4-19.5c15,7,29,11,40.9,11c10,0,20.8-2.8,20.8-11.9      c0-17.6-67-11-67-48.5c0-18.2,18.9-33.5,43-33.5c16.3,0,32.2,4.7,47.7,14.4l-8.3,17.6c-11-5.7-25-10.4-36-10.4   c-13.1,0-19.3,4.2-19.3,10.8c0,16.3,66.8,12.5,66.8,47.1C1759.3,414.6,1737.5,427.5,1713.3,427.5"></path>
+                <rect class="worko-i letter" x="1613" y="314.5" fill="#387C2B" width="23.3" height="110.7"></rect>
+                <polygon class="worko-logo-w letter" fill="#387C2B" points="693.9,314.5 663.2,380.1 637.6,325.2 632.4,325.2 606.8,380.1 576,314.5 550.8,314.5 604.2,425.2 609.1,425.2 635,371.6 660.8,425.2 665.5,425.2 719.1,314.5"></polygon>
+                <path class="worko-0-first letter" fill="#387C2B" d="M827.2,327.6c-11.5-11.5-25.4-17.3-41.4-17.3c-16.2,0-30.3,5.7-41.8,17.1c-11.6,11.4-17.5,25.2-17.5,41       c0,18,6.5,32.8,19.2,44c11.5,10,24.7,15.1,39.2,15.1c16.4,0,30.5-5.7,42.1-17c11.6-11.3,17.4-25.2,17.4-41.4       C844.6,353,838.7,339.1,827.2,327.6 M785.2,404.1c-9,0-16.8-3.3-23.8-10c-6.9-6.7-10.3-15-10.3-25.4c0-9.9,3.3-18,10-24.8   c6.7-6.8,14.8-10.1,24.5-10.1c9.8,0,17.8,3.3,24.5,10.1c6.7,6.8,9.9,14.9,9.9,25c0,9.9-3.3,18.1-10.1,25       C803.2,400.8,795.1,404.1,785.2,404.1"></path>
+                <path class="worko-o-second letter" fill="#387C2B" d="M1468.9,327.6c-11.5-11.5-25.4-17.3-41.4-17.3c-16.2,0-30.3,5.7-41.8,17.1c-11.6,11.4-17.5,25.2-17.5,41       c0,18,6.5,32.8,19.2,44c11.5,10,24.7,15.1,39.2,15.1c16.4,0,30.5-5.7,42.1-17c11.6-11.3,17.4-25.2,17.4-41.4       C1486.2,353,1480.4,339.1,1468.9,327.6 M1426.8,404.1c-9.1,0-16.9-3.3-23.8-10c-7-6.7-10.3-15-10.3-25.4c0-9.9,3.3-18,10-24.8      c6.7-6.8,14.8-10.1,24.5-10.1c9.8,0,17.8,3.3,24.5,10.1c6.7,6.8,9.9,14.9,9.9,25c0,9.9-3.3,18.1-10.1,25       C1444.8,400.8,1436.7,404.1,1426.8,404.1"></path>
+                <path class="worko-0-third letter" fill="#387C2B" d="M1211,327.6c-11.5-11.5-25.4-17.3-41.4-17.3c-16.2,0-30.3,5.7-41.8,17.1c-11.6,11.4-17.5,25.2-17.5,41       c0,18,6.5,32.8,19.3,44c11.5,10,24.7,15.1,39.2,15.1c16.4,0,30.6-5.7,42.1-17c11.6-11.3,17.4-25.2,17.4-41.4       C1228.3,353,1222.5,339.1,1211,327.6 M1168.9,404.1c-9.1,0-16.9-3.3-23.8-10c-6.9-6.7-10.3-15-10.3-25.4c0-9.9,3.3-18,10-24.8      c6.7-6.8,14.7-10.1,24.5-10.1c9.8,0,17.8,3.3,24.5,10.1c6.7,6.8,9.9,14.9,9.9,25c0,9.9-3.3,18.1-10.1,25       C1186.9,400.8,1178.8,404.1,1168.9,404.1"></path>
+                <g class="worko-logo-skyline">
+                    <path fill="#00A94F" d="M911.5,216.5h-17.3v57.1c5.6-2.2,11.3-4.2,17.3-6.2L911.5,216.5L911.5,216.5z"></path>
+                    <path fill="#7AC143" d="M928.8,262V161.6h-17.3v105.8C917.1,265.5,922.9,263.7,928.8,262z"></path>
+                    <path fill="#C1D82F" d="M980.9,249.3v-47.6h-34.7v55.5C957.3,254.3,968.9,251.7,980.9,249.3z"></path>
+                    <path fill="#7AC143" d="M998.2,246v-66.9h-17.3v70.1C986.6,248.1,992.3,247,998.2,246z"></path>
+                    <path fill="#439539" d="M1032.9,240.7v-96.6h-34.7V246C1009.5,244,1021,242.3,1032.9,240.7z"></path>
+                    <path fill="#7AC143" d="M1310.5,245.9v-63.9h-17.3V243C1299,243.9,1304.8,244.9,1310.5,245.9z"></path>
+                    <path fill="#00A94F" d="M1206.4,234.4v-56.4h-17.4v55.6C1194.9,233.9,1200.7,234.2,1206.4,234.4z"></path>
+                    <path fill="#C1D82F" d="M1275.8,240.6v-71h-34.7v67.2C1252.9,237.9,1264.5,239.2,1275.8,240.6z"></path>
+                    <path fill="#00A94F" d="M1362.6,257v-53.7h-34.7v45.8C1339.9,251.5,1351.5,254.1,1362.6,257z"></path>
+                    <path fill="#387C2B" d="M1414.6,273.3v-56.8h-17.3v50.6C1403.2,269.1,1409,271.2,1414.6,273.3z"></path>
+                    <path fill="#7AC143" d="M1067.6,236.9v-59.3h-17.3v61C1056,238,1061.8,237.5,1067.6,236.9z"></path>
+                    <path fill="#00A94F" d="M1119.7,233.7v-45.1h-17.3v45.9C1108.1,234.2,1113.8,233.9,1119.7,233.7z"></path>
+                    <path fill="#C1D82F" d="M1154.8,233.1c5.7,0,11.3,0.1,16.9,0.1v-81H1137v81C1142.9,233.2,1148.8,233.1,1154.8,233.1z"></path>
+                    <path fill="#439539" d="M946.2,257.2V180h-17.3v82C934.5,260.3,940.2,258.7,946.2,257.2z"></path>
+                    <path fill="#00B1B0" d="M1050.3,238.7V111.8h-17.4v128.9C1038.6,240,1044.4,239.3,1050.3,238.7z"></path>
+                    <path fill="#387C2B" d="M1102.3,234.5v-68.9h-34.7v71.4C1079,235.9,1090.6,235.1,1102.3,234.5z"></path>
+                    <path fill="#0081C6" d="M1137,132.2h-17.3v101.6c5.7-0.2,11.5-0.4,17.3-0.5V132.2z"></path>
+                    <path fill="#35BDB2" d="M1189.1,233.7V109.8h-17.4v123.5C1177.5,233.4,1183.3,233.5,1189.1,233.7z"></path>
+                    <path fill="#7AC143" d="M1223.8,235.5V60.9h-17.3v173.5C1212.3,234.7,1218,235.1,1223.8,235.5z"></path>
+                    <path fill="#387C2B" d="M1241.1,236.9v-82.8h-17.3v81.4C1229.6,235.9,1235.4,236.4,1241.1,236.9z"></path>
+                    <path fill="#00A4E4" d="M1293.2,243V133h-17.3v107.6C1281.7,241.4,1287.5,242.2,1293.2,243z"></path>
+                    <path fill="#439539" d="M1327.9,249.1V102.6h-17.3v143.3C1316.4,246.9,1322.2,248,1327.9,249.1z"></path>
+                    <path fill="#7AC143" d="M1379.9,261.7v-79.8h-17.3v75C1368.5,258.5,1374.3,260.1,1379.9,261.7z"></path>
+                    <path fill="#00A94F" d="M1397.3,267.1v-110h-17.4v104.5C1385.9,263.5,1391.6,265.3,1397.3,267.1z"></path>
+                </g>
+                <rect x="378" y="-111" fill="none" width="1548" height="834"></rect>
+            </svg>
+        </a>
+        <h1>Development</h1>
+    </header>
+
+    <main class="main" aria-label="Content">
+
+      <aside class="side-nav">
+  <button class="menu js-menu-close">Close</button>
+
+  <nav>
+    <ul>
+      <li>
+        <a href="/_worko/">Installation</a>
+      </li>
+      <li>
+        <a href="/_worko/collections">Collections</a>
+        <ul>
+          <li>
+            <a href="/_worko/collections#create-collection">Creating new collection</a>
+          </li>
+          <li>
+            <a href="/_worko/collections#reference-collection">Referencing collection data</a>
+          </li>
+          <li>
+            <a href="/_worko/collections#single-collection">Referencing a single item in a collection</a>
+          </li>
+          <li>
+            <a href="/_worko/collections#group-collection">Referencing groups in a collection</a>
+          </li>
+          <li>
+            <a href="/_worko/collections#language-collections">Referencing collection data by language</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="/_worko/liquid">Liquid Templates</a>
+      </li>
+      <li>
+        <a href="/_worko/language">Language and Translations</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+
+      <button class="menu js-menu">Menu</button>
+      <section class="container">
+  <div class="contents">
+    <h1>Collections.</h1>
+    <p>
+      Collections allow us to create structred data that doesn't need to be its own page or is referenced in different parts of the site. For Workopolis, an example would be a collection of B2B products. Our collections also need to support both French and English.
+    </p>
+
+    <h2 id="create-collection">Creating new collections.</h2>
+    <p>
+      To create a new collection open <code>config.yml</code> and name your collection:
+
+      <figure class="highlight"><pre><code class="language-html" data-lang="html">name: Worko
+markdown: kramdown
+highlighter: rouge
+exclude: ["node_modules", "gulpfile.js", "package.json"]
+port: 4000
+collections:
+  products:
+      </code></pre></figure>
+    </p>
+    <p>
+      Now create a folder with the same name define in <code>config.yml</code> but with an underscore at the front. For our <code>products</code> collection the folder will be named <code>_products</code>. Add new files inside the folder with a markdown extension. </p>
+
+      <p>
+      The Company Logo product will be called <code>logo.md</code>. This file will contain both Front Matter and markdown to define its contents. If a collection will be used on French and English pages you must specify the items language in the Front Matter of the item:</p>
+
+
+      <h3>logo.md - English</h3>
+      <figure class="highlight"><pre><code class="language-html" data-lang="html">---
+shortname: logo
+group: addon
+lang: en
+title: Company Logo
+price: $79
+link: http://hiring.workopolis.com/solutions/all-solutions/
+buy-button: https://www.workopolis.com/account/en/recruiter-login
+short-description: Highlight your employer brand by including a company logo to help talent recognize that you're an employer of choice among your competitors.
+---
+
+## Company Logo
+
+Highlight your employer brand by including a company logo to help talent recognize that you're an employer of choice among your competitors.
+      </code></pre></figure>
+
+      <h3>logo.md - French</h3>
+      <figure class="highlight"><pre><code class="language-html" data-lang="html">---
+shortname: logo
+group: addon
+lang: fr
+title: Logo d'employeur
+price: $79
+link: http://hiring.workopolis.com/fr/solutions/afficher-un-emploi/#perks-posting
+buy-button: http://www.workopolis.com/purchasing/fr/home/initiate?PromoCode=3NH02<span class="err">&amp;</span>Reset=True
+short-description: Mettez de l’avant votre marque d’employeur en incluant le logo de l’entreprise pour amener les candidats à vous voir comme un employeur de choix dans votre secteur.
+---
+
+## Logo d'employeur
+
+Mettez de l’avant votre marque d’employeur en incluant le logo de l’entreprise pour amener les candidats à vous voir comme un employeur de choix dans votre secteur.
+      </code></pre></figure>
+
+      <h2 id="reference-collection">Referencing data in a collection.</h2>
+
+      <p>
+        A basic example of looping through a collection is descriped in the <a href="/liquid">Liquid Templates</a> page.
+      </p>
+
+      <h2 id="single-collection">Referencing a single item from a collection.</h2>
+
+      <p>
+        To return a single item from a collection use the Liquid's <code>where</code> tag to reference a unique identifier from the collection combined with the <code>first</code> filter. In this case, we're referencing the <code>shortname</code> for the product:
+      </p>
+
+      <figure class="highlight"><pre><code class="language-html" data-lang="html">      
+{% assign video = site.products | where: "shortname", "video"  | first %}
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"product"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;h3&gt;</span>{{ video.title}}<span class="nt">&lt;/h3&gt;</span>
+  <span class="nt">&lt;p&gt;</span>{{ video.short-description }}<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="na">href=</span><span class="s">"{{ video.link }}"</span><span class="nt">&gt;</span>Buy now for {{ video.price}}<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+      
+      </code></pre></figure>
+
+      <p>
+        This will return the Video Screening product card from the collection:
+      </p>
+
+      
+        <div class="product">
+          <h3>Video Interviewing</h3>
+          <p>Screen applicants before you decide to bring them in with the convenience of a recorded video interview - a great tool for getting the insight you need on skills and personality.</p>
+          <a class="btn" href="http://hiring.workopolis.com/solutions/all-solutions/">Buy now for $225</a>
+        </div>
+
+        <h2 id="group-collection">Referencing groups of items in a collection.</h2>
+
+        <p>
+          You can return a group of items from a collection by looping through the collection and filtering the results based on a group name. In this case we're returning all of Workopolis' job posting products:
+        </p>
+
+        <figure class="highlight"><pre><code class="language-html" data-lang="html">        
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"product-group"</span><span class="nt">&gt;</span>
+{% assign posting = site.products | where: "group", "post" %}
+{% for posting in posting  %}
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"product"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;h3&gt;</span>{{ posting.title}}<span class="nt">&lt;/h3&gt;</span>
+  <span class="nt">&lt;p&gt;</span>{{ posting.short-description }}<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="na">href=</span><span class="s">"{{ posting.buy-button }}"</span><span class="nt">&gt;</span>Buy now for {{ posting.price}}<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"product-link"</span> <span class="na">href=</span><span class="s">"{{ posting.link}}"</span><span class="nt">&gt;</span>Learn more<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+{% endfor %}
+<span class="nt">&lt;/div&gt;</span>
+        
+        </code></pre></figure>
+
+        <p>
+          This will return each product card with a group name of <code>post</code>:
+        </p>
+        <div class="product-group">
+        
+        
+        <div class="product">
+          <h3>Niche - Industry Target Job Posting</h3>
+          <p>Reach industry-certified professionals and get your job posting in front of qualified talent for roles that can be challenging to fill through with access to our extensive network of industry-specific sites.</p>
+            <a class="btn" href="http://www.workopolis.com/purchasing/en/home/initiate?promoCode=2NCA7&Reset=True">Buy now for $795</a>
+            <a class="product-link" href="http://hiring.workopolis.com/product/skilled-labour-recruiting/">Learn more</a>
+        </div>
+        
+        <div class="product">
+          <h3>Recruiter Assisted Job Posting</h3>
+          <p>Finding the right hire takes time. Our Scout specialists define your job criteria, look for the talent you want and screen qualified candidates, so all you have to do is hire.</p>
+            <a class="btn" href="http://www.workopolis.com/purchasing/en/home/initiate?PromoCode=5C0UT&Reset=True">Buy now for $745</a>
+            <a class="product-link" href="http://hiring.workopolis.com/product/find-employees-with-scout/">Learn more</a>
+        </div>
+        
+        <div class="product">
+          <h3>Single Job Posting</h3>
+          <p>Stays live for 30 days and can be used up to 12 months from date of purchase.</p>
+            <a class="btn" href="http://www.workopolis.com/purchasing/en/home/initiate?PromoCode=NJPS1&Reset=True">Buy now for $595</a>
+            <a class="product-link" href="http://hiring.workopolis.com/solutions/post-a-job/">Learn more</a>
+        </div>
+        
+        <div class="product">
+          <h3>Affiche standard 30 jours</h3>
+          <p>Offre d’emploi mise en ligne pendant 30 jours; doit être utilisée dans les 12 mois suivant son achat.</p>
+            <a class="btn" href="http://www.workopolis.com/purchasing/en/home/initiate?PromoCode=NJPS1&Reset=True">Buy now for $595</a>
+            <a class="product-link" href="http://hiring.workopolis.com/solutions/post-a-job/">Learn more</a>
+        </div>
+        
+        </div>
+
+        <h2 id="language-collections">Returning items from a collection based on page language.</h2>
+
+        <p>
+          When creating a page that will be presented in both French and English you may need to return items from a collection based on current language of the page. To do this, include an <code>if</code> statement that uses the <code>page.language</code> variable to match the language of an item in the collection.
+        </p>
+        <p>
+          <strong>Note:</strong> This requires that the items in the collection have a language attribute that matches output of the <code>page.language</code> variable. This was described at the top of this page.
+        </p>
+
+        <figure class="highlight"><pre><code class="language-html" data-lang="html">        
+{% assign posting = site.products | where: "group", "post" %}
+{% for posting in posting  %}
+  {% if posting.lang == page.language %}
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"product"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h3&gt;</span>{{ posting.title}}<span class="nt">&lt;/h3&gt;</span>
+    <span class="nt">&lt;p&gt;</span>{{ posting.short-description }}<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="na">href=</span><span class="s">"{{ posting.buy-button }}"</span><span class="nt">&gt;</span>{% t 'buyNowText' %} {{ posting.price}}<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"product-link"</span> <span class="na">href=</span><span class="s">"{{ posting.link}}"</span><span class="nt">&gt;</span>{% t 'LearnMoreText' %}<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+  {% endif %}
+{% endfor %}
+        
+        </code></pre></figure>
+  </div>
+</section>
+
+    </main>
+
+  </body>
+  <script>
+  'use strict';
+
+  class docMenu {
+
+    constructor (){
+      this.menuTrigger = document.querySelector('.js-menu');
+      this.menu = document.querySelector('.side-nav');
+      this.overlay = document.querySelector('body');
+      this.menuClose = document.querySelector('.js-menu-close');
+      this.menuContentsEl = document.querySelector('.side-nav nav');
+
+      this.showMenu = this.showMenu.bind(this);
+      this.hideMenu = this.hideMenu.bind(this);
+      this.blockClicks = this.blockClicks.bind(this);
+
+      this.addEventListeners();
+    }
+
+    addEventListeners () {
+      this.menuTrigger.addEventListener('click', this.showMenu);
+      this.menuClose.addEventListener('click', this.hideMenu);
+      this.menuContentsEl.addEventListener('click', this.blockClicks);
+    }
+
+    blockClicks (evt) {
+      evt.stopPropagation();
+    }
+
+    showMenu () {
+    this.menu.classList.add('is-active');
+    this.overlay.classList.add('menu-is-active');
+    }
+
+    hideMenu () {
+      this.menu.classList.remove('is-active');
+      this.overlay.classList.remove('menu-is-active');
+    }
+  }
+
+  new docMenu();
+  </script>
+
+</html>
