@@ -39,7 +39,7 @@ h2{
   position: fixed;
   height: 60px;
   background: #007ac9;
-  width: 100%;
+  width: 100vw;
   top: 0;
   padding: 0 20px;
 
@@ -48,7 +48,6 @@ h2{
     padding: 0 20px;
     line-height: 60px;
     margin: 0;
-    float: left;
   }
 }
 
