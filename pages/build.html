@@ -3,36 +3,41 @@ layout: default
 permalink: build
 ---
 
+<section class="container">
+  <div class="contents">
+    <p>
+      There are a few different options to build Jekyll. The simplest way to is simply open a Terminal/Command window inside your Jekyll folder and type <code>gulp</code>.
+    </p>
+
+    <p>
+      You can also run <code>gulp jekyll-build</code>. This will build the Jekyll site expose the UI editor. This editor is available at <a href="http://localhost:4000/admin">http://localhost:4000/admin</a>.
+    </p>
+
+    <h2 id="admin">Jekyll Admin UI Editor</h2>
+
+    <p>
+      The admin interface allows people to edit portions of the site without working directly with code. For example, a user cannot directly edit a page.html file but they can edit any translations, data file or collections that are used on the page.
+    </p>
+
+    <p>
+      For example, on the <a href="http://hiring.workopolis.com/all-solutions">All Solutions</a> page while a non-technincal user would not be able to edit the layout of the page, they would be able to edit:
+
+      <ul>
+        <li>
+          All text and translations
+        </li>
+        <li>
+          Product cards stored in the _products collections
+        </li>
+        <li>
+          Customer testimonials stored in data files
+        </li>
+      </ul>
+
+      If Optimizely is available on the page, a non-technical user would also be able to change the position of each block of content on the page.
+    </p>
+
+  </div>
+  </section>
+
 <h1>Jekyll build options.</h1>
-
-<p>
-  There are a few different options to build Jekyll. The simplest way to is simply open a Terminal/Command window inside your Jekyll folder and type <code>gulp</code>.
-</p>
-
-<p>
-  You can also run <code>gulp jekyll-build</code>. This will build the Jekyll site expose the UI editor. This editor is available at <a href="http://localhost:4000/admin">http://localhost:4000/admin</a>.
-</p>
-
-<h2 id="admin">Jekyll Admin UI Editor</h2>
-
-<p>
-  The admin interface allows people to edit portions of the site without working directly with code. For example, a user cannot directly edit a page.html file but they can edit any translations, data file or collections that are used on the page.
-</p>
-
-<p>
-  For example, on the <a href="http://hiring.workopolis.com/all-solutions">All Solutions</a> page while a non-technincal user would not be able to edit the layout of the page, they would be able to edit:
-
-  <ul>
-    <li>
-      All text and translations
-    </li>
-    <li>
-      Product cards stored in the _products collections
-    </li>
-    <li>
-      Customer testimonials stored in data files
-    </li>
-  </ul>
-
-  If Optimizely is available on the page, a non-technical user would also be able to change the position of each block of content on the page.
-</p>

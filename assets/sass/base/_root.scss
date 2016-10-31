@@ -39,7 +39,7 @@ h2{
   position: fixed;
   height: 60px;
   background: #007ac9;
-  width: 100vw;
+  width: 100%;
   top: 0;
   padding: 0 20px;
 
@@ -48,6 +48,7 @@ h2{
     padding: 0 20px;
     line-height: 60px;
     margin: 0;
+    font-size: 1.2rem;
   }
 }
 
@@ -96,6 +97,8 @@ h2{
   body{
     //background: #ccc;
   }
+
+
 
   .worko-logo{
     width: 40px;
@@ -235,6 +238,10 @@ pre code{
 @media (min-width: 800px) {
   .worko-logo-container{
     width: 150px;
+  }
+
+  .header h1{
+    font-size: 2rem;
   }
 
   .side-nav{
