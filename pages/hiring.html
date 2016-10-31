@@ -1,0 +1,129 @@
+---
+layout: default
+title: Workopolis | Homepage
+permalink: /hiring/
+---
+<main class="hiring-page">
+
+  <section class="hero-section">
+    <div class="hero-overlay">
+    </div> <!-- end of hero-overlay -->
+    <div class="hero-content">
+      <h1 class="hero-header">Hiring made easy</h1>
+      <p class="hero-text">We're in the business of connecting great companies with the right people.</p>
+      <div class="button hero-button">
+        <a class="hero-button--link" href="">Get started - Post a job today</a>
+      </div> <!-- end of button hero-button -->
+    </div> <!-- end of hero-content -->
+  </section> <!-- end of hero-section -->
+
+  <section class="brandLogo-section">
+    <div class="brandLogo-content">
+      <p class="brandLogo-text"><strong>Thousands of businesses</strong> trust Workopolis to help them find their next hire. You should too!</p>
+      <div class="brandLogo-logo-wrapper">
+        <img class="brandLogo-logo" src="http://hiring.workopolis.com/wp-content/uploads/sites/3/2016/06/customer-bell.png" alt="Bell Canada logo"/>
+        <img class="brandLogo-logo" src="http://hiring.workopolis.com/wp-content/uploads/sites/3/2016/06/customer-rbc.png" alt="Royal Bank of Canada logo"/>
+        <img class="brandLogo-logo" src="http://hiring.workopolis.com/wp-content/uploads/sites/3/2016/06/customer-honda.png" alt="Honda logo"/>
+        <img class="brandLogo-logo" src="http://hiring.workopolis.com/wp-content/uploads/sites/3/2016/06/customer-tim-hortons.png" alt="Tim Hortons logo"/>
+        <img class="brandLogo-logo" src="http://hiring.workopolis.com/wp-content/uploads/sites/3/2016/06/homedepot.png" alt="Home Depot logo"/>
+        <img class="brandLogo-logo" src="http://hiring.workopolis.com/wp-content/uploads/sites/3/2016/06/customer-rogers.png" alt="Rogers logo"/>
+        <img class="brandLogo-logo" src="http://hiring.workopolis.com/wp-content/uploads/sites/3/2016/06/customer-auto-trader.png" alt="Auto Trader.ca logo"/>
+        <img class="brandLogo-logo" src="http://hiring.workopolis.com/wp-content/uploads/sites/3/2016/06/customer-schneider-electric.png" alt="Schneider Electric logo"/>
+        <img class="brandLogo-logo" src="http://hiring.workopolis.com/wp-content/uploads/sites/3/2016/06/customer-cara.png" alt="Cara logo"/>
+      </div> <!-- end of brandLogo-logos -->
+    </div> <!-- end of brandLogo-content -->
+  </section> <!-- end of brandLogo-section -->
+
+  <section class="hiringSolutions-section">
+    <div class="wrapper hiringSolutions-content">
+      <h2 class="hiringSolutions-header">Hiring solutions with you in mind.</h2>
+      <p class="hiringSolutions-text">We've designed solutions to fit your needs and your budget.</p>
+      <div class="solutions-toggleTabs">
+        <ul class="solutions-tabs">
+          <li class="solution-single-tab"><a href="" class="tablink">Under 50 Employees</a></li>
+          <li class="solution-single-tab"><a href="" class="tablink">50-200 Employees</a></li>
+          <li class="solution-single-tab"><a href="" class="tablink">200-500 Employees</a></li>
+          <li class="solution-single-tab"><a href="" class="tablink">Over 500 Employees</a></li>
+        </ul> <!-- end of solutions-tabs -->
+
+        <div class="tab-slides">
+          <div id="tab-under50" class="tab-under50 tabcontent">
+            <p class="user-quote">
+              "I need to fill roles quickly and am fairly limited on time and budget. With no access to in-house HR, I'm looking for expertise that can help me hire a competent candidate."
+            </p>
+            {% assign standard = site.products | where: "shortname", "standard"  | first %}
+            <div class="standard-posting product-wrapper">
+              <h3 class="product-heading">{{ standard.title }}</h3>
+              <p class="product-text">{{ standard.short-blurb}}</p>
+              <a class="buy-now-btn btn" href="{{ standard.buy-button }}">Buy Now {{ standard.price }}</a>
+              <a class="learn-more-btn" href="{{ standard.url }}">Learn More</a>
+            </div> <!-- end of standard-posting -->
+            {% assign scout = site.products | where: "shortname", "scout"  | first %}
+            <div class="recruiter-assisted">
+              <h3 class="product-heading">{{ scout.title }}</h3>
+              <p>{{ scout.short-blurb}}</p>
+              <a href="{{ scout.buy-button }}">Buy Now {{ scout.price }}</a>
+              <a class="learn-more-btn" href="{{ scout.url }}">Learn More</a>
+            </div> <!-- end of recruiter-assisted -->
+          </div> <!-- end of tab-under50 -->
+
+          <div id="tab-50to200" class="tab-50to200 tabcontent">
+            <p class="user-quote">
+              "I post roles as soon as they need to be filled, and have a lot of other responsibilities. I'm looking for a way to hire that's quick, easy and affordable."
+            </p>
+            {% assign niche = site.products | where: "shortname", "niche"  | first %}
+            <div class="industry-targeted">
+              <h3>{{ niche.title }}</h3>
+              <p>{{ niche.short-blurb}}</p>
+              <a href="{{ niche.buy-button }}">Buy Now {{ niche.price }}</a>
+              <a href="{{ niche.url }}">Learn More</a>
+            </div> <!-- end of industry-targeted -->
+
+            {% assign video = site.products | where: "shortname", "video"  | first %}
+            <div class="video-interviewing">
+              <h3>{{ video.title }}</h3>
+              <p>{{ video.short-blurb}}</p>
+              <a href="{{ video.buy-button }}">Buy Now {{ video.price }}</a>
+              <a href="{{ video.url }}">Learn More</a>
+            </div> <!-- end of video-interviewing -->
+          </div> <!-- end of 50to200 -->
+
+          <div id="tab-200to500" class="tab-200to500 tabcontent">
+              <p class="user-quote">"I'm looking to fellow HR experts that undrstand my company needs and can help elevate my employer brand. I have a limited budget, but I'm open to trying a new solutoin that's easy to use and delivers value and results."</p>
+              {% assign branded-job = site.products | where: "shortname", "branded-job"  | first %}
+              <div class="branded-job">
+                <h3>{{ branded-job.title }}</h3>
+                <p>{{ branded-job.short-blurb}}</p>
+                <a href="{{ branded-job.url }}">Learn More</a>
+              </div> <!-- end of branded-job -->
+
+              {% assign online-ads = site.products | where: "shortname", "online-ads"  | first %}
+              <div class="online-ads">
+                <h3>{{ online-ads.title }}</h3>
+                <p>{{ online-ads.short-blurb}}</p>
+                <a href="{{ online-ads.url }}">Learn More</a>
+              </div> <!-- end of online-ads-->
+          </div> <!-- end of 200to500 -->
+
+          <div id="tab-over500" class="tab-over500 tabcontent">
+            <p class="user-quote"> "I post jobs often and have anATS, but receive way too many applications. I'm competing with other big brands, so attracting the right talent is difficult. I want to see results and am looking to manage my hiring process better so I can turn qualified candidates into actual hires."</p>
+            {% assign applify = site.products | where: "shortname", "applify"  | first %}
+            <div class="applify">
+              <h3>{{ applify.title }}</h3>
+              <p>{{ applify.short-blurb}}</p>
+              <a href="{{ applify.url }}">Learn More</a>
+            </div> <!-- end of applify -->
+
+            {% assign unlimited-postings = site.products | where: "shortname", "unlimited-postings"  | first %}
+            <div class="unlimited-postings">
+              <h3>{{ unlimited-postings.title }}</h3>
+              <p>{{ unlimited-postings.short-blurb}}</p>
+              <a href="{{ unlimited-postings.url }}">Learn More</a>
+            </div> <!-- end of unlimited-postings-->
+          </div> <!-- end of over500 -->
+        </div> <!-- end of tab-slides -->
+      </div> <!-- end of solutions-toggleTabs -->
+    </div> <!-- end of brandLogo-content -->
+  </section> <!-- end of hiringSolutions-section -->
+
+</main> <!-- end of hiring-page -->
