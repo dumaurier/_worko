@@ -1,0 +1,35 @@
+---
+layout: default
+title: Workopolis | Testing Languages with Collections and Data
+permalink: /:language/langtest/
+languages:
+- en
+- fr
+subset: langtest
+---
+
+<main class="main all-solutions">
+  <section class="container container-product">
+    <div class="block block-products">
+      <div class="product-desc">
+        <h2>{% t 'testTitle' %}</h2>
+        <p>{% t 'testCopy' %}</p>
+      </div>
+      <div class="product-group">
+        {% assign posting = site.products | where: "group", "post" %}
+
+        {% for posting in posting  %}
+          {% if posting.lang == page.language %}
+        <div class="product">
+          <h3>{{ posting.title}}</h3>
+          <p>{{ posting.short-description }}</p>
+          <a class="btn" href="{{ posting.buy-button }}">{% t 'buyNowText' %} {{ posting.price}}</a>
+          <a class="product-link" href="{{ posting.link}}">{% t 'LearnMoreText' %}</a>
+        </div>
+          {% endif %}
+        {% endfor %}
+
+      </div>
+    </div>
+  </section>
+</main>
