@@ -39,10 +39,7 @@ var Workopolis = Workopolis || {};
             var toutPrice = document.querySelector('.pricer-tout-price');
             var productReco = document.querySelector('.price-reco-val');
 
-            //pricing values
-            var SJPCost = "595";
-            var tax = ".15";
-            var subCost = "1200.00";
+
 
             //Reco data
             var pricerReco = [
@@ -71,8 +68,14 @@ var Workopolis = Workopolis || {};
             //user input - number of postings
             var number = numberJobs.value;
 
+            //pricing values
+            var SJPCost = "595";
+            var tax = ".15";
+            var subCost = "1200.00";
+
             numberJobs.addEventListener("input", function(e) {
                 number = numberJobs.value;
+
                 var total = number * SJPCost;
                 var taxed = total * tax;
                 var displayPrice = total;
@@ -127,6 +130,49 @@ var Workopolis = Workopolis || {};
 
         },
 
+        initLocamativeTitle: function(){
+            var location = [
+                'in Ontario',
+                'in Alberta',
+                'in Nova Scotia',
+                'in Quebec',
+                'in British Colombia',
+                'in Saskatchewan',
+                'in Manitoba',
+                'in Newfoundland',
+                'in New Brunswick',
+                'in Prince Edward Island',
+                'in Nunavat',
+                'in Yukon',
+                'in Northwest Territories',
+                'in Canada'
+            ];
+
+
+            var maxLoops = 10;
+            var counter = 0;
+
+            (function next() {
+                if (counter++ > maxLoops) return;
+
+                    setTimeout(function() {
+                        var rando = location[Math.floor(Math.random() * location.length)];
+                        var locaChange = document.querySelector('.locamotive');
+                        locaChange.textContent = rando;
+                    next();
+                }, 300);
+
+
+            }) ();
+        },
+
+        initCanada: function(){
+            setTimeout(function() {
+                var locaChange = document.querySelector('.locamotive');
+                locaChange.textContent = 'Anywhere in Canada';
+            },3700);
+
+        },
 
         initHeaderTitle: function () {
             var title = $('.header-page-title').val();

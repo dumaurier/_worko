@@ -19,6 +19,10 @@ body{
     color: $color-text-heading;
 }
 
+.left{
+  float: left !important;
+}
+
 .container{
     display: block;
     max-width: 100%;
