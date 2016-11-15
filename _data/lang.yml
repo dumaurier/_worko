@@ -1,4 +1,15 @@
 en:
+  home:
+    heroHeader: Hiring made easy
+    heroText: We're in the business of connecting great companies with the right people.
+    heroCTA:  Get started - Post a job today
+    hiringSol: Hiring solutions with you in mind.
+    hiringSolText: We've designed solutions to fit your needs and your budget.
+    tabOne: Under 50 Employees
+    tabTwo: 50-200 Employees
+    tabThree: 200-500 Employees
+    tabFour: Over 500 Employees
+
   allsolutions:
     slug: allsolutions
     heroTitle: This is the english title
@@ -12,6 +23,17 @@ en:
     buyNowText: Buy now for
     LearnMoreText: Learn more
 fr:
+  home:
+    heroHeader: L’embauche simplifiée.
+    heroText: Notre mandat - mettre en contact d’excellentes entreprises avec les bons employés.
+    heroCTA:  Lancez-vous! Affichez un emploi dès maintenant!
+    hiringSol: Des solutions d’embauche pensées pour vous.
+    hiringSolText: Nous avons conçu des solutions en fonction de vos besoins et de votre budget.
+    tabOne: Moins de 50 employés
+    tabTwo: De 50 à 200 employés
+    tabThree: De 200 à 500 employés
+    tabFour: Plus de 500 employés
+
   allsolutions:
     slug: allsolutionsfr
     heroTitle: This title is totally in FRENCH
