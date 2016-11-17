@@ -37,7 +37,6 @@ gulp.task('jekyll-watch', function (done) {
    return gulp.src([
      'src/js/vendor/jquery-3.1.1.min.js',
      'src/js/vendor/fontfaceobserver.js',
-     'src/js/vendor/hogan-3.0.2.min.js',
      'src/js/objects/**/*.js',
      'src/js/page/**/*.js'
    ])
@@ -67,7 +66,7 @@ gulp.task('jekyll-rebuild', ['jekyll-watch'], function () {
 /**
  * Wait for jekyll-build, then launch the Server
  */
-gulp.task('browser-sync', ['sass', 'jekyll-watch'], function() {
+gulp.task('browser-sync', ['sass', 'jekyll-watch', 'sass-fast'], function() {
     browserSync({
         server: {
             baseDir: '_site'
@@ -94,11 +93,29 @@ gulp.task('sass', function () {
 });
 
 /**
+ * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)
+ */
+gulp.task('sass-fast', function () {
+    return gulp.src('src/sass/base-fast.scss')
+        .pipe(sass({
+            outputStyle: 'compressed',
+            includePaths: ['scss'],
+            includePaths: bourbon,
+            includePaths: neat,
+            onError: browserSync.notify
+        }))
+        .pipe(prefix(['last 5 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
+        .pipe(gulp.dest('_site/assets/css'))
+        .pipe(browserSync.reload({stream:true}))
+        .pipe(gulp.dest('assets/css'));
+});
+
+/**
  * Watch scss files for changes & recompile
  * Watch html/md files, run jekyll & reload BrowserSync
  */
 gulp.task('watch', function () {
-    gulp.watch('src/**/*.scss', ['sass']);
+    gulp.watch('src/**/*.scss', ['sass','sass-fast']);
     gulp.watch(['*.html','pages/*.html','src/js/**/*.js', '_layouts/*.html', '_includes/*.html', '_posts/*'], ['jekyll-rebuild']);
 });
 

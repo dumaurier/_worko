@@ -1,0 +1,171 @@
+---
+layout: speed
+title: Workopolis | All Hiring Solutions
+permalink: /:language/all-solutions-fast/
+languages:
+- en
+- fr
+subset: allsolutions
+---
+
+<main class="main all-solutions">
+  <section class="container container-hero">
+    <div class="block block-hero">
+      <h1>{% t 'heroTitle' %}</h1>
+      <p>{% t 'heroText' %}</p>
+      <a class="btn" href="/">{% t 'heroBtn' %}</a>
+    </div>
+  </section>
+
+  <section class="container container-product">
+    <div class="block block-products">
+      <div class="product-desc">
+        <h2>Post a job</h2>
+        <p>Workopolis job postings are fully loaded with live training, support, performance updates and optional features to help your posting standout. Plus, they’re easy to create and instantly visible to talent.</p>
+      </div>
+      <div class="product-group">
+        {% assign posting = site.products | where: "group", "post" %}
+        {% for posting in posting  %}
+        <div class="product">
+          <h3>{{ posting.title}}</h3>
+          <p>{{ posting.short-description }}</p>
+          <a class="btn" href="{{ posting.buy-button }}">Buy now for {{ posting.price}}</a>
+          <a class="product-link" href="{{ posting.link}}">Learn more</a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="container container-testimonial">
+    <div class="block block-testimonials">
+      {% assign testimonial = site.data.testimonial-fast | where: "id","1" | first %}
+      <img src="/{{ testimonial.pic }}" alt="{{ testimonial.name }}" />
+      <div class="testimonial-person">
+        <h6>{{ testimonial.name }}</h6>
+        <p>{{ testimonial.title }}
+      </div>
+      <q>{{ testimonial.quote }}
+    </div>
+  </section>
+
+  <section class="container container-product">
+    <div class="block block-products">
+      <div class="product-desc">
+        <h2>Power your job posting</h2>
+        <p>Give your posting exactly what it needs to get the right kind of attention from people looking for work at a company like yours, and opt-in for extra features that perk up postings to find the right person quickly.</p>
+      </div>
+      <div class="product-group">
+        {% assign addon = site.products | where: "group", "addon" %}
+        {% for addon in addon  %}
+        <div class="product">
+          <h3>{{ addon.title}}</h3>
+          <p>{{ addon.short-description }}</p>
+          <a class="btn" href="{{ addon.buy-button }}">Buy now for {{ addon.price}}</a>
+          <a class="product-link" href="{{ addon.link}}">Learn more</a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="container container-testimonial">
+    <div class="block block-testimonials">
+      {% assign testimonial = site.data.testimonial-fast | where: "id","2" | first %}
+      <img src="/{{ testimonial.pic }}" alt="{{ testimonial.name }}" />
+      <div class="testimonial-person">
+        <h6>{{ testimonial.name }}</h6>
+        <p>{{ testimonial.title }}
+      </div>
+      <q>{{ testimonial.quote }}
+    </div>
+  </section>
+
+  <section class="container container-product">
+    <div class="block block-products">
+      <div class="product-desc">
+        <h2>Build your employer brand</h2>
+        <p>Standout among competitors with a strong employer brand that shows off your company culture, values and mission, and invite people with a similar ambition and set of values to learn more about what it’s like to work at a company like yours.</p>
+      </div>
+      <div class="product-group">
+        {% assign branding = site.products | where: "group", "branding" %}
+        {% for branding in branding  %}
+        <div class="product">
+          <h3>{{ branding.title}}</h3>
+          <p>{{ branding.short-description }}</p>
+          <a class="btn" href="{{ branding.buy-button }}">Buy now for {{ branding.price}}</a>
+          <a class="product-link" href="{{ branding.link}}">Learn more</a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="container container-testimonial">
+    <div class="block block-testimonials">
+      {% assign testimonial = site.data.testimonial-fast | where: "id","3" | first %}
+      <img src="/{{ testimonial.pic }}" alt="{{ testimonial.name }}" />
+      <div class="testimonial-person">
+        <h6>{{ testimonial.name }}</h6>
+        <p>{{ testimonial.title }}
+      </div>
+      <q>{{ testimonial.quote }}
+    </div>
+  </section>
+
+  <section class="container container-product">
+    <div class="block block-products">
+      <div class="product-desc">
+        <h2>Advertise</h2>
+        <p>Get in front of all the right talent when you advertise with Workopolis.</p>
+      </div>
+      <div class="product-group">
+        {% assign ads = site.products | where: "group", "ads" %}
+        {% for ads in ads  %}
+        <div class="product">
+          <h3>{{ ads.title}}</h3>
+          <p>{{ ads.short-description }}</p>
+          <a class="btn" href="{{ ads.buy-button }}">Buy now for {{ ads.price}}</a>
+          <a class="product-link" href="{{ ads.link}}">Learn more</a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="container container-testimonial">
+    <div class="block block-testimonials">
+      {% assign testimonial = site.data.testimonial-fast | where: "id","4" | first %}
+      <img src="/{{ testimonial.pic }}" alt="{{ testimonial.name }}" />
+      <div class="testimonial-person">
+        <h6>{{ testimonial.name }}</h6>
+        <p>{{ testimonial.title }}
+      </div>
+      <q>{{ testimonial.quote }}
+    </div>
+  </section>
+
+  <section class="container container-product">
+    <div class="block block-products">
+      <div class="product-desc">
+        <h2>Manage Candidates</h2>
+        <p>Find, screen and hire the right people quickly with a talent acquisition solution that’s built to help track applicants better.</p>
+      </div>
+      <div class="product-group">
+        {% assign manage = site.products | where: "group", "manage" %}
+        {% for manage in manage  %}
+        <div class="product">
+          <h3>{{ manage.title}}</h3>
+          <p>{{ manage.short-description }}</p>
+          <a class="btn" href="{{ manage.buy-button }}">Buy now for {{ manage.price}}</a>
+          <a class="product-link" href="{{ manage.link}}">Learn more</a>
+        </div>
+          {% if manage.buy-button %}
+            <span>hello</span>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+</main>

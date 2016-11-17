@@ -12,8 +12,9 @@ en:
 
   allsolutions:
     slug: allsolutions
-    heroTitle: This is the english title
-    heroText: Oh, hi there.
+    heroTitle: Take the stress out of hiring
+    heroText: Hiring shouldn’t be complicated. That’s why each of our solutions was built with you in mind.
+    heroBtn: See all hiring solutions
 
   langtest:
     slug: langtest
@@ -36,8 +37,9 @@ fr:
 
   allsolutions:
     slug: allsolutionsfr
-    heroTitle: This title is totally in FRENCH
-    heroText: avec le bibliotequeopsd!
+    heroTitle: L’embauche sans stress.
+    heroText: L’embauche ne devrait pas être un exercice compliqué. Voilà pourquoi chacune de nos solutions a été conçue en fonction de vos besoins.
+    heroBtn: Voir toutes les solutions d’embauche
 
   langtest:
     slug: langtestfr

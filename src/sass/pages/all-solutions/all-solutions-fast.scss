@@ -1,0 +1,96 @@
+
+
+.all-solutions .container-hero {
+  margin-top: 0;
+  padding: 0 0 20px;
+  background: $grey;
+  width: 100%;
+  height: 600px;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  display: table;
+  .block-hero{
+    display: flex;
+    flex-flow: column nowrap;
+    h1 {
+      @include font-size(4);
+    }
+  }
+}
+
+.all-solutions .container{
+  margin-top: 0;
+  padding: $padding-section 0;
+}
+
+.all-solutions p{
+  @include font-size(1);
+  margin-bottom: $padding-section;
+}
+
+.all-solutions .btn{
+  @include font-size(0.8125);
+}
+
+.product-link{
+  display: inline-block;
+  float: right;
+  @include font-size(0.8125);
+  color: $color-blue;
+  margin-top: $space-default;
+}
+
+.block-products{
+  background: $color-white;
+}
+
+.product-desc{
+  @include span-columns(4 of 12);
+
+  h2{
+    @include heading(quaternary);
+  }
+}
+
+
+.product-group{
+  @include span-columns(8 of 12);
+  @include omega;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .product{
+    flex:0 1 45%;
+    margin-bottom: $padding-section;
+  }
+}
+
+.container-testimonial{
+  background: $grey-ghost;
+}
+
+.block-testimonials{
+  img{
+    @include span-columns(1 of 12);
+  }
+
+  .testimonial-person{
+    @include span-columns (3 of 12);
+
+    h6{
+      margin: 0;
+    }
+  }
+
+  q{
+    @include span-columns( 6 of 12);
+    @include font-size(0.875);
+    font-style: italic;
+    margin-left: $sidebar-spacing;
+    line-height: 1.5;
+  }
+
+}
