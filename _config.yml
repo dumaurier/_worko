@@ -7,6 +7,9 @@ port: 4000
 gems:
 - jekyll-language-plugin
 
+sass:
+  style: :compressed
+
 collections:
   products:
     output: false

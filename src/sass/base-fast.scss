@@ -15,7 +15,8 @@
 
 
 //Components
-@import "components/header/header";
+//@import "components/header/header";
+@import "components/contact";
 
 
 //Pages
@@ -25,3 +26,6 @@
 @import "Pages/videoscreening/videoscreening";
 @import "Pages/all-solutions/all-solutions-fast";
 //  @import "Pages/postnew/postnew"
+.main{
+  display: block;
+}

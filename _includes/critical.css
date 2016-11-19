@@ -1,0 +1,493 @@
+//////////////////////////////////////
+//Offical New Colours - Late 2016 ////
+//////////////////////////////////////
+$color-green: #39822b;
+$color-blue: #007ac9;
+$color-purple: #850057;
+$color-pink: #d10074;
+$color-orange: #cf4829;
+$color-green-neon: #69be28;
+$color-white: #ffffff;
+
+//Blacks & Greys
+$grey-dark: #25282e;
+$grey: #525967;
+$grey-light: #caced4;
+$grey-steel: #e5e8ea;
+$grey-ghost: #f2f4f5;
+
+$font-fast: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$max-width:  1240px;
+
+// Spacing and widths
+$space-default: 10px;
+$padding-section: 20px;
+$thumbnail-width: 200px;
+$ribbon-spacing: 50px 0;
+
+$container-spacing: 100px;
+$section-spacing: 60px;
+$content-spacing: 50px;
+$content-spacing--small: 20px;
+$header-spacing: 35px;
+$sidebar-spacing: 25px;
+
+$nav-height: 70px;
+
+
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * 16) + px;
+  font-size: $sizeValue + rem;
+}
+
+@mixin zed ($z) {
+  @if $z == "low"{z-index: 100;}
+  @else if $z == "mid"{z-index: 200;}
+  @else if $z == "high"{z-index: 300;}
+  @else if $z == "top"{z-index: 400;}
+  @else if $z == "hammer"{z-index: 9999 !important;}
+  @else {z-index: 0;}
+}
+
+@mixin heading{
+  font-family: $font-fast;
+  font-weight: 700;
+  color: $grey-dark;
+}
+
+//Base defaults and helpers
+html,body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body{
+    font-family: $font-fast;
+    font-style: normal;
+    font-weight: 400;
+    color: $grey-dark;
+}
+
+.main{
+  display: none;
+}
+
+
+.employer-header-anon{
+  position: fixed;
+  width: 100vw;
+  background: $color-white;
+  top: 0;
+  @include zed(top);
+}
+
+//resets - fix in the framework
+.employer-header-anon ul{
+  padding: 0;
+}
+
+.employer-header-anon li{
+  list-style: none;
+}
+//end resets
+
+.eha-support-container{
+  display: none;
+  border-bottom: 1px solid  $grey-light;
+}
+
+.eha-support-nav{
+  max-width: $max-width;
+  margin: 0 auto;
+  height: 30px;
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+.eha-support-nav-item{
+  display: inline-block;
+  height: 100%;
+}
+
+.eha-support-nav-item-link{
+  @include font-size(0.775);
+  display: inline-block;
+  line-height: 30px;
+  margin: 0 20px;
+}
+
+.eha-primary-container{
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 5px;
+  display: flex;
+  height: 70px;
+  justify-content: flex-start;
+  align-items: center;
+
+  ul{
+    margin: 0;
+  }
+}
+
+.eha-logo-container{
+  display: block;
+  width: 50px;
+}
+
+.worko-logo{
+  width: 100%;
+  height: 100%;
+}
+
+.eha-nav-container{
+  background: $color-white;
+  position: fixed;
+  left: 0;
+  top: 70px;
+  width: 100vw;
+  height: 100vh;
+  transform: translateX(-100vw);
+  transition: transform .3s ease;
+
+  &.is-active{
+    transform: translateX(0);
+    background: $grey-dark;
+
+    .eha-nav-item-link{
+      color: $color-white;
+    }
+  }
+}
+
+.eha-nav{
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+//MAIN NAV
+.eha-nav{
+  //@include clearfix;
+}
+
+.eha-nav--sub{
+  display: none;
+  position: absolute;
+  width: 210px;
+  left: 0;
+  top:  70px;
+  background: $color-white;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+.eha-nav--sub-item{
+  padding: $space-default $content-spacing--small;
+
+  &:hover{
+    color: $color-green;
+  }
+}
+
+.eha-nav-item{
+  position: relative;
+  display: inline-block;
+}
+
+.eha-nav-item-link{
+  @include font-size(1);
+  display: inline-block;
+  height: 70px;
+  line-height: 70px;
+  padding: 0 $content-spacing--small;
+  position: relative;
+}
+
+
+
+.eha-signin-item{
+  float: left;
+
+  &:first-of-type{
+    display: none;
+  }
+}
+
+.eha-signin-item-link{
+  @include font-size(0.8125);
+  display: inline-block;
+  line-height: 70px;
+  padding: 0 $space-default;
+}
+
+////MOBILE BUTTON STUFF
+.eha-primary-container {
+  .menu-icon-container{
+    -webkit-appearance: none;
+    background: $color-white;
+    border: none;
+    margin: 0 20px;
+  }
+
+  .menu-icon--group{
+    background: $color-white;
+    stroke: $grey-dark;
+  }
+
+  .menu-text{
+    color: $grey-dark;
+  }
+}
+
+@media screen and (min-width: 768px){
+  .eha-support-container{
+    display: block;
+  }
+
+  .eha-primary-container{
+    padding: 0 $space-default;
+    justify-content: flex-start;
+  }
+
+  .eha-signin{
+    position: absolute;
+    right: 20px;
+  }
+}
+
+@media screen and (min-width: 1024px){
+  //MAIN NAV
+  .eha-primary-container .menu-icon-container{
+    display: none;
+  }
+
+  .eha-primary-container{
+    justify-content: space-between;
+  }
+
+  .eha-signin{
+    position: relative;
+
+  }
+
+  .eha-signin-item{
+  float: left;
+
+  &:first-of-type{
+    display: block;
+  }
+}
+
+  .eha-nav-container{
+    position: relative;
+    height: 100%;
+    width: auto;
+    margin-top: 0;
+    top: 0;
+    border-right: none;
+    transform: translateX(0);
+  }
+
+  .eha-nav{
+    display: block;
+    //@include clearfix;
+  }
+
+  .eha-nav--sub{
+    display: none;
+    position: absolute;
+    width: 210px;
+    left: 0;
+    top:  70px;
+    background: $color-white;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+  }
+
+  .eha-nav--sub-item{
+    padding: $space-default $content-spacing--small;
+
+    &:hover{
+      color: $color-green;
+    }
+  }
+
+  .eha-nav-item{
+    position: relative;
+    display: inline-block;
+
+    &::before{
+      background: $color-green;
+      content: "";
+      display: block;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      bottom: 20px;
+      width: 100%;
+      height: 2px;
+      transition: transform .2s cubic-bezier(.24,.55,.25,.55);
+      transform: scaleX(0);
+    }
+
+    &:hover{
+      text-decoration: none;
+
+      &::before{
+      transform: scaleX(1);;
+      }
+
+      .eha-nav--sub{
+        display: block;
+      }
+    }
+  }
+
+  .eha-nav-item-link{
+    @include font-size(1);
+    color: $grey-dark;
+    display: inline-block;
+    height: 70px;
+    line-height: 70px;
+    padding: 0 $content-spacing--small;
+    position: relative;
+  }
+
+}
+
+@media screen and (min-width: 1240px){
+  .eha-primary-container{
+    padding: 0 20px;
+  }
+}
+
+//Mobile Hamburger
+.menu-icon-container{
+  display: flex;
+  align-items: center;
+  height: 60px;
+  float: left;
+  width: auto;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.menu-icon-container.is-active{
+  //background: #25282E;
+}
+
+
+.menu-text{
+  @include font-size(0.875);
+  display: inline-block;
+  margin-left: 10px;
+  color: $color-white;
+}
+
+.menu-text__close{
+  display: none;
+}
+
+.menu-icon-container.is-active .menu-text__close {
+  display: inline;
+  color: $color-white;
+}
+
+.menu-text__open{
+  display: inline;
+}
+
+.menu-icon-container.is-active .menu-text__open{
+  display: none;
+}
+
+.menu-icon{
+  width: 30px;
+  height: 30px;
+
+}
+
+.menu-icon--group{
+  display: block;
+  stroke: $color-white;
+}
+
+.menu-icon-container.is-active .menu-icon--group {
+  stroke: #F2F2F2;
+}
+
+.menu-icon--line{
+  transform: rotate(0);
+  opacity: 1;
+  transition: all .1s linear;
+}
+
+.menu-icon-container.is-active .menu-icon--line:first-of-type{
+  transform: rotate(45deg);
+  transform-origin: 15px 55px;
+}
+
+.menu-icon-container.is-active  .menu-icon--line:nth-of-type(2){
+  opacity: 0;
+}
+
+.menu-icon-container.is-active  .menu-icon--line:last-of-type{
+  transform: rotate(-45deg);
+  transform-origin: 25px 95px;
+}
+
+
+// I really need to refactor this.worko-logo
+.worko-logo{
+  width: 134px;
+  height: 40px;
+}
+
+.letter:not(.worko-logo-w){
+  opacity: 1;
+}
+
+.worko-logo-w{
+  transform: translateY(0), scale(1), translateX(0);
+}
+
+.worko-logo-skyline{
+  transform: translateY(0), scale(1), translateX(0);
+}
+
+
+@media screen and (max-width: 1100px){
+  .worko-logo{
+    width: 45px;
+    height: 45px;
+  }
+
+  .worko-logo-skyline{
+    transform: scale(1);
+  }
+
+  .worko-logo-w{
+    transform: translateY(-1495px), scale(5.4), translateX(-420px);
+  }
+
+  .letter:not(.worko-logo-w){
+    opacity: 0;
+  }
+
+  .worko-logo-skyline{
+    transform: translateY(-440px), scale(2.2), translateX(-630px);
+  }
+}
