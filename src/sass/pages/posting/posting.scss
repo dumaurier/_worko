@@ -4,9 +4,6 @@
   clear: left;
   //padding: 20px;
 
-  + .block{
-    padding-top: $content-spacing;
-  }
 }
 
 .block-container{
@@ -25,7 +22,7 @@
   }
 
   h1{
-    @include heading(primary);
+    @include font-size(4);
     color: $color-white;
     text-align: center;
   }
@@ -49,7 +46,6 @@
 
 .block-feature{
   width: inherit;
-  margin: $section-spacing 0 0 0;
   padding-bottom: $section-spacing;
   background: $grey-ghost;
 }
@@ -61,7 +57,7 @@
 
   .feature-block{
     padding: $space-default;
-    background: $color-white;
+    //background: $color-white;
     flex: 1 0 0px;
 
     &:nth-of-type(2){
@@ -79,7 +75,7 @@
 }
 
 .block-recruitment{
-  background-image: url('http://hiring.workopolis.com/wp-content/uploads/sites/3/2016/08/applicant-manager-screenshot-bg.jpg' );
+  background-image: url('/images/applicant-manager-screenshot-bg.jpg' );
   background-repeat: no-repeat;
   height: 600px;
   background-color: $color-blue;

@@ -2,21 +2,32 @@
 <html lang="">
 
   <head lang="">
+  <script>
+    // https://github.com/filamentgroup/loadCSS
+    !function(e){"use strict"
+    var n=function(n,t,o){function i(e){return f.body?e():void setTimeout(function(){i(e)})}var d,r,a,l,f=e.document,s=f.createElement("link"),u=o||"all"
+    return t?d=t:(r=(f.body||f.getElementsByTagName("head")[0]).childNodes,d=r[r.length-1]),a=f.styleSheets,s.rel="stylesheet",s.href=n,s.media="only x",i(function(){d.parentNode.insertBefore(s,t?d:d.nextSibling)}),l=function(e){for(var n=s.href,t=a.length;t--;)if(a[t].href===n)return e()
+    setTimeout(function(){l(e)})},s.addEventListener&&s.addEventListener("load",function(){this.media=u}),s.onloadcssdefined=l,l(function(){s.media!==u&&(s.media=u)}),s}
+    "undefined"!=typeof exports?exports.loadCSS=n:e.loadCSS=n}("undefined"!=typeof global?global:this)
+  </script>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Workopolis | Post A Job</title>
   <meta name="description" content="">
-  <link rel="stylesheet" type="text/css" href="//cloud.typography.com/7721754/804146/css/fonts.css" />
-  <link rel="stylesheet" type="text/css" href="//cdn.symbolset.com/8ce9ce30e75d16a8632f42cd903347a1e34beccf/symbolset.css" />
-  <link rel="stylesheet" href="/assets/css/base.css">
-<script type="text/javascript">
-            if (document.cookie.indexOf("fonts-loaded") >= 0) {
-                document.documentElement.className += " fonts-loaded";
-                console.log('you should have our fonts cached');
-            }
-        </script>
+
+  
+
+  <style>
+    html,body{height:100%;margin:0;padding:0;position:relative}html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";font-style:normal;font-weight:400;color:#25282e}.main{display:none}.employer-header-anon{position:fixed;width:100vw;background:#fff;top:0;z-index:400}.employer-header-anon ul{padding:0}.employer-header-anon li{list-style:none}.eha-support-container{display:none;border-bottom:1px solid #caced4}.eha-support-nav{max-width:1240px;margin:0 auto;height:30px;display:flex;justify-content:flex-end}.eha-support-nav-item{display:inline-block;height:100%}.eha-support-nav-item-link{font-size:12.4px;font-size:.775rem;display:inline-block;line-height:30px;margin:0 20px}.eha-primary-container{max-width:1240px;margin:0 auto;padding:0 5px;display:flex;height:70px;justify-content:flex-start;align-items:center}.eha-primary-container ul{margin:0}.eha-logo-container{display:block;width:50px}.worko-logo{width:100%;height:100%}.eha-nav-container{background:#fff;position:fixed;left:0;top:70px;width:100vw;height:100vh;transform:translateX(-100vw);transition:transform .3s ease}.eha-nav-container.is-active{transform:translateX(0);background:#25282e}.eha-nav-container.is-active .eha-nav-item-link{color:#fff}.eha-nav{display:flex;flex-direction:column}.eha-nav--sub{display:none;position:absolute;width:210px;left:0;top:70px;background:#fff;border-left:1px solid #ccc;border-right:1px solid #ccc}.eha-nav--sub-item{padding:10px 20px}.eha-nav--sub-item:hover{color:#39822b}.eha-nav-item{position:relative;display:inline-block}.eha-nav-item-link{font-size:16px;font-size:1rem;display:inline-block;height:70px;line-height:70px;padding:0 20px;position:relative}.eha-signin-item{float:left}.eha-signin-item:first-of-type{display:none}.eha-signin-item-link{font-size:13px;font-size:.8125rem;display:inline-block;line-height:70px;padding:0 10px}.eha-primary-container .menu-icon-container{-webkit-appearance:none;background:#fff;border:none;margin:0 20px}.eha-primary-container .menu-icon--group{background:#fff;stroke:#25282e}.eha-primary-container .menu-text{color:#25282e}@media screen and (min-width: 768px){.eha-support-container{display:block}.eha-primary-container{padding:0 10px;justify-content:flex-start}.eha-signin{position:absolute;right:20px}}@media screen and (min-width: 1024px){.eha-primary-container .menu-icon-container{display:none}.eha-primary-container{justify-content:space-between}.eha-signin{position:relative}.eha-signin-item{float:left}.eha-signin-item:first-of-type{display:block}.eha-nav-container{position:relative;height:100%;width:auto;margin-top:0;top:0;border-right:none;transform:translateX(0)}.eha-nav{display:block}.eha-nav--sub{display:none;position:absolute;width:210px;left:0;top:70px;background:#fff;border-left:1px solid #ccc;border-right:1px solid #ccc}.eha-nav--sub-item{padding:10px 20px}.eha-nav--sub-item:hover{color:#39822b}.eha-nav-item{position:relative;display:inline-block}.eha-nav-item::before{background:#39822b;content:"";display:block;width:100%;position:absolute;left:0;bottom:20px;width:100%;height:2px;transition:transform 0.2s cubic-bezier(0.24, 0.55, 0.25, 0.55);transform:scaleX(0)}.eha-nav-item:hover{text-decoration:none}.eha-nav-item:hover::before{transform:scaleX(1)}.eha-nav-item:hover .eha-nav--sub{display:block}.eha-nav-item-link{font-size:16px;font-size:1rem;color:#25282e;display:inline-block;height:70px;line-height:70px;padding:0 20px;position:relative}}@media screen and (min-width: 1240px){.eha-primary-container{padding:0 20px}}.menu-icon-container{display:flex;align-items:center;height:60px;float:left;width:auto;padding:5px 10px;cursor:pointer}.menu-text{font-size:14px;font-size:.875rem;display:inline-block;margin-left:10px;color:#fff}.menu-text__close{display:none}.menu-icon-container.is-active .menu-text__close{display:inline;color:#fff}.menu-text__open{display:inline}.menu-icon-container.is-active .menu-text__open{display:none}.menu-icon{width:30px;height:30px}.menu-icon--group{display:block;stroke:#fff}.menu-icon-container.is-active .menu-icon--group{stroke:#F2F2F2}.menu-icon--line{transform:rotate(0);opacity:1;transition:all .1s linear}.menu-icon-container.is-active .menu-icon--line:first-of-type{transform:rotate(45deg);transform-origin:15px 55px}.menu-icon-container.is-active .menu-icon--line:nth-of-type(2){opacity:0}.menu-icon-container.is-active .menu-icon--line:last-of-type{transform:rotate(-45deg);transform-origin:25px 95px}.worko-logo{width:134px;height:40px}.letter:not(.worko-logo-w){opacity:1}.worko-logo-w{transform:translateY(0),scale(1),translateX(0)}.worko-logo-skyline{transform:translateY(0),scale(1),translateX(0)}@media screen and (max-width: 1100px){.worko-logo{width:45px;height:45px}.worko-logo-skyline{transform:scale(1)}.worko-logo-w{transform:translateY(-1495px),scale(5.4),translateX(-420px)}.letter:not(.worko-logo-w){opacity:0}.worko-logo-skyline{transform:translateY(-440px),scale(2.2),translateX(-630px)}}
+
+  </style>
+
+  <script>
+  loadCSS('/assets/css/base-fast.css');
+  </script>
+
 </head>
 
 
@@ -154,136 +165,33 @@
 </header>
 
 
-      <main class="container post">
-    <section class="block block-hero">
-      <div class="block-container block-hero-container">
+      <main class="main post">
+    <section class="container block-hero">
+      <div class="block block-hero-container">
         <h1>Job Postings that work</h1>
         <p>Posting are powered to reach thousands of people looking for work at a company like yours. So you can  find the best person for the job.</p>
         <a class="btn" href="/">Get started - Post a job TODAY</a>
       </div>
     </section>
 
-    <section class="block block-table">
-      <div  class="block-container block-table">
-        <h2 class="pricing-header">What's it Worth?</h2>
-          <p class="tout-text left">
-            We know how important recuitment investments are to a company, regardless of the size. That's why we created the Unlimited Subscription. Whether you need to post two jobs a year or twenty, we've got you covered.
-          </p>
 
-          <div class="pricer">
-            <label class="pricer-label">How many roles do you need to fill in the next year?
-              <input type="number" min="1" step="1" value="1" class="pricer-count" />
-            </label>
-
-              <div class="pricer-results-container">
-                <div class="pricer-results">
-                  <h3>Single Job Posting</h5>
-                  <ul class="pricer-list">
-                    <li>
-                      <span class="pricer-item">Price:</span>
-                      <span class="pricer-cost">$595</span>
-                    </li>
-                    <li>
-                      <span class="pricer-item">Company Logo:</span>
-                      <span class="pricer-cost">Not Included</span>
-                    </li>
-                    <li>
-                      <span class="pricer-item">Featured Job:</span>
-                      <span class="pricer-cost">Not Included</span>
-                    </li>
-                    <li>
-                      <span class="pricer-item">Resume DB Views:</span>
-                      <span class="pricer-cost">Not Included</span>
-                    </li>
-                    <!--<li>
-                      <span class="pricer-item">HST:</span>
-                      <span class="pricer-cost">15%</span>
-                    </li>-->
-                    <li>
-                      <span class="pricer-item">Total Cost:</span>
-                      <span class="pricer-cost js-pricer-total">$684.25</span>
-                    </li>
-                    <li class="pricer-saver">
-                      <span class="pricer-item">Savings:</span>
-                      <span class="pricer-cost js-pricer-single-save">$610.00</span>
-                    </li>
-                  </ul>
-
-                </div>
-                <div class="pricer-results js-unsub">
-                  <h3>Unlimited Subscription</h5>
-                  <ul class="pricer-list">
-                    <li>
-                      <span class="pricer-item">Price:</span>
-                      <span class="pricer-cost">$1200</span>
-                    </li>
-                    <li>
-                      <span class="pricer-item">Company Logo (Free):</span>
-                      <span class="pricer-cost">$100</span>
-                    </li>
-                    <li>
-                      <span class="pricer-item">Featured Job (Free):</span>
-                      <span class="pricer-cost">$263</span>
-                    </li>
-                    <li>
-                      <span class="pricer-item">Resume DB Views (Free):</span>
-                      <span class="pricer-cost">$250</span>
-                    </li>
-                     <li>
-                      <span class="pricer-item">Total Cost:</span>
-                      <span class="pricer-cost">$1380.00</span>
-                    </li>
-                    <li>
-                      <span class="pricer-item"><strong>Unlimited Value:</strong></span>
-                      <span class="pricer-cost"><strong>$1813</strong></span>
-                    </li>
-                    <!--<li>
-                      <span class="pricer-item">HST:</span>
-                      <span class="pricer-cost">15%</span>
-                    </li>-->
-
-                    <li class="pricer-saver">
-                      <span class="pricer-item">Savings:</span>
-                      <span class="pricer-cost js-unlimited-save">--</span>
-                    </li>
-                  </ul>
-
-                </div>
-                <div class="pricer-results js-pricer-reco pricer-reco">
-                  <h3>You save: <span class="pricer-tout-price"></span></h3>
-                   <div class="pricer-tout">
-                      <p class="price-reco-text">We recommend our <strong class="price-reco-val"></strong> product.</p>
-                    </div>
-
-                    <div class="pricer-reco js-reco-single">
-                      <p class="pricer-reco-text"></p>
-
-                      <button class="btn cta" href="/">Buy Now</button>
-                    </div>
-                  </div>
-              </div>
-
-          </div>
-        </div>
-    </section>
-
-    <section class="block block-feature">
-      <div class="block-container block-feature-container">
+    <section class="container block-feature">
+      <div class="block block-feature-container">
         
         <div class="feature-block">
-          <img src="http://hiring.workopolis.com/wp-content/uploads/sites/3/2016/06/reach-talent.png" alt="Reach more local talent" />
+          <img src="/images/reach-talent.jpg" alt="Reach more local talent" />
           <h4>Reach more local talent</h4>
           <p>Workopolis has been around for 16 years, which means our network is huge. As a trusted Canadian brand, we’re constantly growing, so your job postings get in front of the talent you want.</p>
         </div>
         
         <div class="feature-block">
-          <img src="http://hiring.workopolis.com/wp-content/uploads/sites/3/2016/06/share.png" alt="Share to Social" />
+          <img src="/images/share.jpg" alt="Share to Social" />
           <h4>Share to Social</h4>
           <p>The social world is where a lot of recruiting happens, so we push every job to our Facebook and Twitter pages. This puts your postings in front of people looking for work, even when they’re not actively searching, so you get all the exposure you possibly can.</p>
         </div>
         
         <div class="feature-block">
-          <img src="http://hiring.workopolis.com/wp-content/uploads/sites/3/2016/06/connect.png" alt="Connect with e-mail" />
+          <img src="/images/connect.jpg" alt="Connect with e-mail" />
           <h4>Connect with e-mail</h4>
           <p>Job postings get sent directly to people who match the skills and experience you’re looking for, so your role gets in front of the right people.</p>
         </div>
@@ -291,8 +199,8 @@
       </div>
     </section>
 
-    <section class="block block-recruitment">
-      <div class="block-container block-recruitment-container">
+    <section class="container block-recruitment">
+      <div class="block block-recruitment-container">
         <h4>Recruitment Centre - The ATS for the Rest of Us</h4>
         <P>Applicant Manager is our handy tool included with every job posting. Recruit anywhere, anytime and rate and screen applicants from any device.</P>
         <ul>
@@ -309,8 +217,8 @@
       </div>
     </section>
 
-    <section class="block block-products">
-      <div class="block-container block-products-container">
+    <section class="container block-products">
+      <div class="block block-products-container">
         <h2>Post a job that does everything you want it to. And then some.</h2>
 
         
@@ -327,16 +235,30 @@
           <a class="btn" href="http://hiring.workopolis.com/product/skilled-labour-recruiting/">Buy now for $795</a>
         </div>
       </div>
-
-
     </section>
+
+    <section class="contact-us container">
+  <div class="block">
+    <h1><q>I'm still not quite sure what I need.</q></h1>
+    <p>
+      If that's you, we can help.
+    </p>
+    <p>
+      <a class="btn ghost"href="http://hiring.workopolis.com/find-out-more/?title=Have+us+call+you&NetsuiteTitle=Job+Postings">Have us call you</a>
+      <a class="btn ghost"href="http://hiring.workopolis.com/find-out-more/?title=Have+us+call+you&NetsuiteTitle=Job+Postings">Chat live</a>
+    </p>
+    <p>
+      <strong><a class="link link-white" href="tel:1-888-641-4047">Give us a call at 1-888-641-4047</a></strong>
+    </p>
+  </div>
+</section>
+
 </main>
 
 
     <footer class="global-footer" role="contentinfo">
 
 </footer>
-<script src="/assets/js/bundle.js"></script>
 
 
   </body>
