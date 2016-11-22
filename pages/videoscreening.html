@@ -1,17 +1,17 @@
 ---
-layout: default
+layout: speed
 title: Workopolis | Video Screening
 permalink: /video-screening/
 ---
 
-<main class="video-screening main">
+<main class="main video-screening">
 
-  <div class="container container-hero">
-    <section class="block block-hero">
-        <h1 class="text-white">Video Screening</h1>
-        <p class="text-white">Get to know applicants with a pre-recorded video interview - before meeting them face-to-face.</p>
-    </section>
-  </div>
+  <section class="container block-hero">
+    <div class="block block-hero-container">
+        <h1>Video Screening</h1>
+        <p>Get to know applicants with a pre-recorded video interview - before meeting them face-to-face.</p>
+    </div>
+  </section>
 
   <div class="container container-info">
     <section class="block block-info">
@@ -36,7 +36,7 @@ permalink: /video-screening/
 
   <div class="container container-steps">
     <section class="block block-steps">
-      <h3 class="text-white">Streamline applicant screening in 3 easy steps.</h2>
+      <h3>Streamline applicant screening in 3 easy steps.</h2>
       {% for step in site.data.videoscreening_steps %}
       <div class="steps-block">
         <!-- <span class="number {{step.index}}"></span> -->
@@ -52,7 +52,7 @@ permalink: /video-screening/
   <div class="container container-feature">
     <section class="block block-feature">
       <h2>Add video screening to your hiring toolkit</h2>
-      <div class="feature-group">
+      <div class="feature-container">
         {% for feature in site.data.videoscreening_features %}
         <div class="feature-block">
           <img src="{{feature.imgurl}}" alt="{{feature.title}}" />

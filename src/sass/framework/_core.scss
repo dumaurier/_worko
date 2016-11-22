@@ -1,67 +1,28 @@
-﻿//Base defaults and helpers
-html,body{
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    position: relative;
-}
-
-html {
-  box-sizing: border-box;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-body{
-    @include font-gotham-book;
-    color: $color-text-heading;
-}
-
-.left{
-  float: left !important;
+.main {
+  margin-top: 110px;
+  width: 100%;
+  max-width: 100%;
 }
 
 .container{
     display: block;
     max-width: 100%;
-    //margin: 70px auto 0 auto;
     position: relative;
     padding: $section-spacing 0;
 }
 
-.link--primary,
-.link--navigation {
-    @include default-link-styles('light');
+.block {
+  margin: 0 auto;
+  padding: 30px 0;
+  max-width: 1240px;
 }
 
-.link--primaryDarkBg {
-    @include default-link-styles('dark');
+.block-container{
+  @include max-width-aligned;
 }
 
-.link--secondary {
-    @include default-link-styles('light', 'secondary');
-}
-
-.heading--primary {
-    @include heading('primary');
-    color: $color-text-heading;
-}
-
-.heading--secondary {
-    @include heading('secondary');
-    color: $color-text-heading;
-}
-
-.heading--tertiary {
-    @include heading('tertiary');
-    color: $color-text-heading;
-}
-
-.heading-link{
-    text-decoration: none;
-    color: inherit;
+.text-white{
+  color: $color-white;
 }
 
 //resets overflow value on devices wider than an average mobile device to hide scroll bars

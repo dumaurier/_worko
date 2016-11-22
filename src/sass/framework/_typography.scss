@@ -1,17 +1,8 @@
 /************** TYPOGRAPHY *************/
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6{
-	@include font-whitney-bold;
-}
 
 //Base styles for paragraphs and inline quotations
 p{
-    @include font-gotham-book;
     @include font-size(1);
 		line-height:1.5;
     text-align:left;
@@ -37,16 +28,6 @@ p{
         + p{
             margin-top: $padding-section;
         }
-    }
-
- //Removes margin-top from paragraphs preceded by a heading. Space between the heading and first paragraph will be handled by the margin on the heading.
- h1 + p,
- h2 + p,
- h3 + p,
- h4 + p,
- h5 + p,
- h6 + p{
-    margin-top:0;
     }
 
 dt{font-weight:bold;}

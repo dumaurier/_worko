@@ -1,43 +1,3 @@
-img {
-  max-width: 359px;
-  height: auto;
-}
-
-main.main {
-  @include font-gotham-book;
-  margin-top: 110px;
-  width: 100%;
-  max-width: 100%;
-}
-
-.block {
-  margin: 0 auto;
-  padding: 30px 0;
-  //width: 100%;
-  max-width: 1240px;
-}
-
-.video-screening .container-hero {
-  margin-top: 0;
-  padding: 0 0 20px;
-  background: url("http://hiring.workopolis.com/wp-content/uploads/sites/3/2016/10/reducedsize-banner.jpg") center no-repeat;
-  background-size: cover;
-  background-position: center top;
-  width: 100%;
-  height: 600px;
-  top: 0;
-  left: 0;
-  background-repeat: no-repeat;
-  display: table;
-  .block-hero{
-    display: table-cell;
-    vertical-align: middle;
-    h1 {
-      @include font-size(4);
-    }
-  }
-}
-
 .video-screening .container-info {
   .block-info {
     width: 725px;
@@ -95,8 +55,8 @@ main.main {
 
 
 .video-screening .container-steps {
-  background: url("http://hiring.workopolis.com/wp-content/uploads/sites/3/2016/10/reducedsize-1.jpg") center no-repeat;
-  background-size: cover;
+  background: $grey-ghost;
+  color: $grey-dark;
   section.block.block-steps {
     display: block;
     .steps-block {
@@ -148,6 +108,12 @@ main.main {
       margin: 0 30px;
       .feature-block {
         padding: 0;
+        flex: 1 0 30%;
+
+
+        img{
+          width: 100%;
+        }
       }
     }
   }
@@ -194,9 +160,6 @@ main.main {
     text-align: left;
   }
 
-  p {
-    color: $grey;
-  }
 
   a {
     color: $color-blue;
@@ -221,8 +184,4 @@ h1 {
   letter-spacing: -1px;
   line-height: 36px;
   margin: 0 auto 50px;
-}
-
-.text-white {
-  color: white;
 }

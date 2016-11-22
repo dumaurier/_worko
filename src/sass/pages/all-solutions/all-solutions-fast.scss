@@ -1,24 +1,3 @@
-
-
-.all-solutions .container-hero {
-  margin-top: 0;
-  padding: 0 0 20px;
-  background: $grey;
-  width: 100%;
-  height: 600px;
-  top: 0;
-  left: 0;
-  background-repeat: no-repeat;
-  display: table;
-  .block-hero{
-    display: flex;
-    flex-flow: column nowrap;
-    h1 {
-      @include font-size(4);
-    }
-  }
-}
-
 .all-solutions .container{
   margin-top: 0;
   padding: $padding-section 0;
