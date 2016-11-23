@@ -1,0 +1,31 @@
+.block-products{
+    background: $grey-ghost;
+
+    h3{
+      @include heading(tertiary);
+      text-align: center;
+    }
+}
+
+.block-products-container{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+
+  .product{
+
+    h3{
+        text-align: left;
+    }
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0 $padding-section $padding-section $padding-section;
+    flex: 0 0 30%;
+    border: 1px solid $grey-light;
+    background: $color-white;
+    margin: 0 20px;
+  }
+
+}

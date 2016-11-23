@@ -21,6 +21,10 @@
   @include max-width-aligned;
 }
 
+a{
+  color: $color-blue;
+}
+
 .text-white{
   color: $color-white;
 }

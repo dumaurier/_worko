@@ -97,14 +97,24 @@ $font-fast: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, san
 }
 
 @mixin heading($type) {
-  @include font-whitney-bold;
   font-weight: 600;
   line-height: 1.5;
 
-  @if $type == "primary"{font-size: 2.2rem;font-weight: 700;}
-  @else if $type == "secondary"{font-size: 2.1rem;font-weight: 600;}
-  @else if $type == "tertiary"{font-size: 1.8rem;font-weight: 600;}
-  @else if $type == "quaternary"{font-size: 1.3rem;}
+  @if $type == "primary"{
+    @include font-size(4);
+    font-weight: 700;
+  }
+  @else if $type == "secondary"{
+    @include font-size(2);
+    font-weight: 600;
+  }
+  @else if $type == "tertiary"{
+    @include font-size(1.5);
+    font-weight: 600;
+  }
+  @else if $type == "quaternary"{
+    font-size: 1.3rem;
+  }
   @else {font-size: 1rem;}
 }
 

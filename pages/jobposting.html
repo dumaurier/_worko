@@ -46,22 +46,25 @@ permalink: /post-a-job/
     </section>
 
     <section class="container block-products">
-      <div class="block block-products-container">
-        <h2>Post a job that does everything you want it to. And then some.</h2>
+      <div class="block">
+        <h3>Post a job that does everything you want it to. And then some.</h2>
 
-        {% assign video = site.products | where: "shortname", "video"  | first %}
-        <div class="product">
-          <h3>{{ video.title}}</h3>
-          <p>{{ video.short-description }}</p>
-          <a class="btn" href="{{ video.link }}">Buy now for {{ video.price}}</a>
+        <div class="block-products-container">
+          {% assign video = site.products | where: "shortname", "video"  | first %}
+          <div class="product">
+            <h3>{{ video.title}}</h3>
+            <p>{{ video.short-description }}</p>
+            <a href="{{ video.link }}">Buy now for {{ video.price}}</a>
+          </div>
+
+          {% assign niche = site.products | where: "shortname", "niche"  | first %}
+          <div class="product">
+            <h3>{{ niche.title}}</h3>
+            <p>{{ niche.short-description }}</p>
+            <a href="{{ niche.link }}">Buy now for {{ niche.price}}</a>
+          </div>
         </div>
 
-        {% assign niche = site.products | where: "shortname", "niche"  | first %}
-        <div class="product">
-          <h3>{{ niche.title}}</h3>
-          <p>{{ niche.short-description }}</p>
-          <a class="btn" href="{{ niche.link }}">Buy now for {{ niche.price}}</a>
-        </div>
       </div>
     </section>
 
