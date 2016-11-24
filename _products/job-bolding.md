@@ -2,8 +2,8 @@
 title: Job Bolding
 group: addon
 shortname: bolding
-price: $53
-link:
+price: "$53"
+link: 
 buy-button: https://www.workopolis.com/account/en/recruiter-login
 short-description: Bolded job postings stand-out with up to 19% more views.
 ---

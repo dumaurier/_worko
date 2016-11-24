@@ -2,10 +2,11 @@
 title: Job Post Writing
 group: addon
 shortname: post-writing
-price: $100
-link:
+price: "$100"
+link: 
 buy-button: http://www.workopolis.com/purchasing/en/home/initiate?PromoCode=RAID1&Reset=True
-short-description: Our recruiting specialists help you define job criteria and write a posting that speaks to the talent you’re looking for.
+short-description: Our recruiting specialists help you define job criteria and write
+  a posting that speaks to the talent you’re looking for.
 ---
 
 ## Video Interviewing

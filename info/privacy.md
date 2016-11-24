@@ -1,9 +1,8 @@
 ---
-layout: simple
 title: Workopolis | About Workopolis
-permalink: /privacy/
+permalink: "/privacy/"
+layout: simple
 ---
-
 
 <section>
         <div class="main">

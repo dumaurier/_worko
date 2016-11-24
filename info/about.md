@@ -1,7 +1,7 @@
 ---
-layout: speed
 title: Workopolis | About Workopolis
-permalink: /about/
+permalink: "/about/"
+layout: speed
 ---
 
 <style>

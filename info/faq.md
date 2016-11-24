@@ -1,7 +1,7 @@
 ---
-layout: speed
 title: Workopolis | About Workopolis
-permalink: /faq/
+permalink: "/faq/"
+layout: speed
 ---
 
 <style>
